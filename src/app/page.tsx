@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <div className="text-4xl py-10">
+      <div className="text-4xl py-24">
         <h1>
           We&rsquo;re making podcasting better for audiences, podcasters, and
           developers. <br />

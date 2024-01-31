@@ -6,15 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pm2-start": "pm2 start 'pnpm start' --name 'app'"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
     "lucide-react": "^0.320.0",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-color-util": "^1.0.3",
-    "tailwind-merge": "^2.2.1"
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -24,9 +29,9 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
 }
