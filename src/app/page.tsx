@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <div className="text-4xl py-24">
+      <div className="text-4xl py-24 lg:py-60 flex flex-col justify-center">
         <h1>
-          We&rsquo;re making podcasting better for audiences, podcasters, and
-          developers. <br />
+          Making podcasting better for audiences, podcasters, and developers.
+          <br />
           <br />
           <span className="font-bold">This is Podcasting 2.0!</span>
         </h1>
@@ -25,7 +25,8 @@ export default function Home() {
             <h2 className="my-3 text-2xl">For audiences</h2>
             <p>
               Enjoy richer listening and viewing experiences! Podcasting 2.0
-              lets you follow, engage, support, and share podcasts more easily.
+              lets you follow, engage with, support, and share podcasts more
+              easily.
             </p>
             {/* <LinkContainer to="/apps">
               <Button>Try a better podcast app!</Button>

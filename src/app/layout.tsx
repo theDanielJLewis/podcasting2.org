@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/ui/Footer";
+import { Header } from "@/components/ui/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,8 +24,8 @@ export default function RootLayout({
           inter.className + " flex min-h-screen flex-col transition-colors"
         }
       >
-        {/* <Header /> */}
-        <div className="flex shrink grow overflow-hidden dark:bg-slate-900 text-slate-800 dark:text-slate-100">
+        <Header />
+        <div className="flex shrink grow overflow-hidden text-slate-800 dark:bg-slate-900 dark:text-slate-100">
           <main className="container mx-auto p-4">{children}</main>
         </div>
         <Footer />
