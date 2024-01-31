@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { Code, Headphones, Mic } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Podcasting 2.0",
@@ -8,10 +9,55 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="container flex max-w-lg flex-col justify-center gap-4">
-      <div className="">
-        <h1 className="text-2xl">Podcasting 2.0</h1>
+    <>
+      <div className="text-4xl py-10">
+        <h1>
+          We&rsquo;re making podcasting better for audiences, podcasters, and
+          developers. <br />
+          <br />
+          <span className="font-bold">This is Podcasting 2.0!</span>
+        </h1>
       </div>
-    </main>
+      <div>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="py-3">
+            <Headphones size={48} />
+            <h2 className="my-3 text-2xl">For audiences</h2>
+            <p>
+              Enjoy richer listening and viewing experiences! Podcasting 2.0
+              lets you follow, engage, support, and share podcasts more easily.
+            </p>
+            {/* <LinkContainer to="/apps">
+              <Button>Try a better podcast app!</Button>
+            </LinkContainer> */}
+          </div>
+          <div className="py-3">
+            <Mic size={48} />
+
+            <h2 className="my-3 text-2xl">For podcasters</h2>
+            <p>
+              Podcasting 2.0 offers the new Podcast Namespace to improve your
+              podcast, grow your audience, and even monetize your show!
+            </p>
+            {/* <LinkContainer to="/podcasters">
+              <Button>Upgrade to Podcasting 2.0!</Button>
+            </LinkContainer> */}
+          </div>
+          <div className="py-3">
+            <Code size={48} />
+
+            <h2 className="my-3 text-2xl">For developers</h2>
+            <p>
+              Integrate an open, inclusive, always-free podcast catalog API and
+              add Podcasting 2.0 features to your app. Make finding, following,
+              and funding podcasts easier for your users!
+            </p>
+            {/* <LinkContainer to="/developers">
+              <Button>Put Podcasting 2.0 in your app!</Button>
+            </LinkContainer> */}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

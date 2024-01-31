@@ -1,7 +1,9 @@
 export function Footer() {
   return (
-    <footer className="flex items-center bg-gray-100 dark:bg-gray-800 p-4">
-      Created by Daniel J. Lewis and James Cridland.
+    <footer className="bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-400">
+      <div className="container mx-auto p-4">
+        Created by Daniel J. Lewis and James Cridland.
+      </div>
     </footer>
   );
 }
