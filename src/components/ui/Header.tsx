@@ -34,6 +34,14 @@ export function Header() {
               Developers
             </Link>
           </li>
+          <li>
+            <Link
+              href="/podcast-namespace"
+              className="transition-all hover:text-primary"
+            >
+              Podcast Namespace
+            </Link>
+          </li>
         </ul>
       </div>
     </header>
