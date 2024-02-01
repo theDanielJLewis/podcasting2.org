@@ -201,7 +201,7 @@
   },
   {
     "name": "valueTimeSplit",
-    "label": "Value Time Split",
+    "label": "Wallet Switching (Value Time Split)",
     "tag": "<podcast:valueTimeSplit>",
     "description": "",
     "levels": ["podcast:value"],
