@@ -24,9 +24,9 @@ export default function PodcastersPage() {
       </p>
       <p>
         Podcasting 2.0 changes that by finally bringing fresh innovation to
-        podcasting's core technology of RSS. We do this through the Podcast
-        Namespace: a new standard for RSS feeds that bring multiple benefits for
-        audiences, podcasters, and developers.
+        podcasting&rsquo;s core technology of RSS. We do this through the
+        Podcast Namespace: a new standard for RSS feeds that bring multiple
+        benefits for audiences, podcasters, and developers.
       </p>
       <h3>Podcast Namespace benefits</h3>
       <ul className="list-disc pl-4">
@@ -41,7 +41,7 @@ export default function PodcastersPage() {
           more
         </li>
         <li>Lock your podcast against theft</li>
-        <li>Notify your audience when you're live-streaming</li>
+        <li>Notify your audience when you&rsquo;re live-streaming</li>
         <li>Deliver new episodes more quickly to your podcast followers</li>
         <li>Protect your podcast from censorship and deplatforming</li>
       </ul>
@@ -49,7 +49,7 @@ export default function PodcastersPage() {
       <ol>
         <li>
           Ensure your podcast is in the Podcast Index, and{" "}
-          <Link href="">add your podcast if it's not included</Link>.
+          <Link href="">add your podcast if it&rsquo;s not included</Link>.
         </li>
         <li>
           Check with your podcast-feed-publishing tool for support of the
@@ -60,7 +60,7 @@ export default function PodcastersPage() {
           Prepare your podcast to receive streaming Bitcoin/Satoshis and
           Boostagrams through Value 4 Value.{" "}
           <a href="http://adam.curry.com/html/HowtoreceiveBitcoini-BrxM2PDPNJ7Zzbz7G28xk4H0D658fH.html">
-            Here's a guide
+            Here&rsquo;s a guide
           </a>
           .
         </li>

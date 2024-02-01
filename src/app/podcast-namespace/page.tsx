@@ -15,8 +15,8 @@ export default function PodcastNamespacePage() {
       <p>
         <strong>
           <code>
-            &lt;rss version="2.0"
-            xmlns:podcast="https://podcastindex.org/namespace/1.0"&gt;
+            &lt;rss version=&quot;2.0&quot;
+            xmlns:podcast=&quot;https://podcastindex.org/namespace/1.0&quot;&gt;
           </code>
         </strong>
       </p>
