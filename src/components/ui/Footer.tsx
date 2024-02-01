@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SiGithub } from "react-icons/si";
 export function Footer() {
@@ -14,13 +15,15 @@ export function Footer() {
             className="inline-block"
           >
             CC BY 4.0
-            <img
+            <Image
               className="ml-1 inline-block h-3 align-baseline"
               src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+              alt="Creative Commons"
             />
-            <img
+            <Image
               className="ml-1 inline-block h-3 align-baseline"
               src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+              alt="Attribution 4.0 International"
             />
           </a>
         </div>
