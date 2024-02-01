@@ -15,12 +15,12 @@ export function Footer() {
             className="inline-block"
           >
             CC BY 4.0
-            <Image
+            <img
               className="ml-1 inline-block h-3 align-baseline"
               src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
               alt="Creative Commons"
             />
-            <Image
+            <img
               className="ml-1 inline-block h-3 align-baseline"
               src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
               alt="Attribution 4.0 International"
