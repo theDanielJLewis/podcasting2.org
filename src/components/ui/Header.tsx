@@ -11,27 +11,13 @@ export function Header() {
             </Link>
           </li>
           <li className="ml-auto">
-            <Link
-              href="/audiences"
-              className="transition-all hover:text-primary"
-            >
-              Audiences
+            <Link href="/about" className="transition-all hover:text-primary">
+              Why?
             </Link>
           </li>
           <li>
-            <Link
-              href="/podcasters"
-              className="transition-all hover:text-primary"
-            >
-              Podcasters
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/developers"
-              className="transition-all hover:text-primary"
-            >
-              Developers
+            <Link href="/apps" className="transition-all hover:text-primary">
+              Apps
             </Link>
           </li>
           <li>

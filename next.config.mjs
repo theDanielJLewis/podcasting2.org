@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         pathname: "/presskit/icons/**",
       },
+      {
+        protocol: "https",
+        hostname: "podcastindex.org",
+        port: "",
+        pathname: "/api/images/**",
+      },
     ],
   },
 };

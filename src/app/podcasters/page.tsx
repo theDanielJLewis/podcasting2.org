@@ -46,7 +46,7 @@ export default function PodcastersPage() {
         <li>Protect your podcast from censorship and deplatforming</li>
       </ul>
       <h2>How to get started</h2>
-      <ol>
+      <ol className="list-number">
         <li>
           Ensure your podcast is in the Podcast Index, and{" "}
           <Link href="">add your podcast if it&rsquo;s not included</Link>.
