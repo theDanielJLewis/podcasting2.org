@@ -11,15 +11,13 @@ export const metadata: Metadata = {
 export default function PodcastNamespacePage() {
   return (
     <>
-      <h1 className="text-4xl">Podcast Namespace</h1>
-      <p>
-        <strong>
-          <code>
-            &lt;rss version=&quot;2.0&quot;
-            xmlns:podcast=&quot;https://podcastindex.org/namespace/1.0&quot;&gt;
-          </code>
-        </strong>
-      </p>
+      <div className="flex flex-col justify-center py-16 text-xl lg:py-36">
+        <h1 className="text-4xl">Podcast Namespace</h1>
+        <code>
+          &lt;rss version=&quot;2.0&quot;
+          xmlns:podcast=&quot;https://podcastindex.org/namespace/1.0&quot;&gt;
+        </code>
+      </div>
 
       <p>
         Since the{" "}

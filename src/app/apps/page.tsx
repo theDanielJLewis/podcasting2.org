@@ -12,13 +12,13 @@ export default async function AudiencesPage() {
 
   return (
     <>
-      <div className="flex flex-col justify-center py-24 text-xl lg:py-60">
+      <div className="flex flex-col justify-center py-16 text-xl lg:py-36">
         <h1>Enjoy Podcasting 2.0 with a modern podcast app!</h1>
-        <p>
+        <span>
           Your favorite podcasts are better in a Podcasting 2.0 app, letting you
           show your support, see dynamic content, engage in the community, and
           more!
-        </p>
+        </span>
       </div>
       <Apps apps={apps} />
     </>

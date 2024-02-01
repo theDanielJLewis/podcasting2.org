@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Code, Headphones, Lightbulb, Mic } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Podcasting 2.0",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col justify-center py-24 text-4xl lg:py-60">
+      <div className="flex flex-col justify-center py-24 lg:py-60">
         <h1>
           Making podcasting better for audiences, podcasters, and developers.
           <br />
@@ -29,7 +30,9 @@ export default function Home() {
               lets you follow, engage with, support, and share podcasts more
               easily.
             </p>
-            <Button className="mt-auto">Find a better app!</Button>
+            <Link href="/apps" className="mt-auto">
+              <Button>Find a better app!</Button>
+            </Link>
             {/* <LinkContainer to="/apps">
               <Button>Try a better podcast app!</Button>
             </LinkContainer> */}
@@ -42,7 +45,10 @@ export default function Home() {
               Podcasting 2.0 offers the new Podcast Namespace to improve your
               podcast, grow your audience, and even monetize your show!
             </p>
-            <Button className="mt-auto">Upgrade my podcast!</Button>
+            <Link href="/podcasters" className="mt-auto">
+              <Button>Upgrade my podcast!</Button>
+            </Link>
+
             {/* <LinkContainer to="/podcasters">
               <Button>Upgrade to Podcasting 2.0!</Button>
             </LinkContainer> */}
@@ -56,7 +62,9 @@ export default function Home() {
               add Podcasting 2.0 features to your app. Make finding, following,
               and funding podcasts easier for your users!
             </p>
-            <Button className="mt-auto">Innovate my app!</Button>
+            <Link href="/podcast-namespace" className="mt-auto">
+              <Button>Add the Podcast Namespace!</Button>
+            </Link>
             {/* <LinkContainer to="/developers">
               <Button>Put Podcasting 2.0 in your app!</Button>
             </LinkContainer> */}
