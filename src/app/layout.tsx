@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/ui/Footer";
 import { Header } from "@/components/ui/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Podcasting 2.0",
@@ -21,7 +21,7 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={
-          inter.className + " flex min-h-screen flex-col transition-colors"
+          openSans.className + " flex min-h-screen flex-col transition-colors"
         }
       >
         <Header />

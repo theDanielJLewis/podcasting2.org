@@ -12,15 +12,15 @@ p {
 }
 
 h1 {
-  @apply text-4xl;
+  @apply mb-4 text-4xl;
 }
 
 h2 {
-  @apply text-2xl;
+  @apply mb-4 mt-8 text-2xl;
 }
 
 h3 {
-  @apply text-xl;
+  @apply my-4 text-xl;
 }
 
 h4 {

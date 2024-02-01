@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Code, Headphones, Mic } from "lucide-react";
+import { Code, Headphones, Lightbulb, Mic } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Podcasting 2.0",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <div className="text-4xl py-24 lg:py-60 flex flex-col justify-center">
+      <div className="flex flex-col justify-center py-24 text-4xl lg:py-60">
         <h1>
           Making podcasting better for audiences, podcasters, and developers.
           <br />
@@ -19,8 +20,8 @@ export default function Home() {
         </h1>
       </div>
       <div>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="py-3">
+        <div className="grid gap-8 md:grid-cols-3">
+          <div className="flex flex-col items-start py-3">
             <Headphones size={48} />
             <h2 className="my-3 text-2xl">For audiences</h2>
             <p>
@@ -28,11 +29,12 @@ export default function Home() {
               lets you follow, engage with, support, and share podcasts more
               easily.
             </p>
+            <Button className="mt-auto">Find a better app!</Button>
             {/* <LinkContainer to="/apps">
               <Button>Try a better podcast app!</Button>
             </LinkContainer> */}
           </div>
-          <div className="py-3">
+          <div className="flex flex-col items-start py-3">
             <Mic size={48} />
 
             <h2 className="my-3 text-2xl">For podcasters</h2>
@@ -40,11 +42,12 @@ export default function Home() {
               Podcasting 2.0 offers the new Podcast Namespace to improve your
               podcast, grow your audience, and even monetize your show!
             </p>
+            <Button className="mt-auto">Upgrade my podcast!</Button>
             {/* <LinkContainer to="/podcasters">
               <Button>Upgrade to Podcasting 2.0!</Button>
             </LinkContainer> */}
           </div>
-          <div className="py-3">
+          <div className="flex flex-col items-start py-3">
             <Code size={48} />
 
             <h2 className="my-3 text-2xl">For developers</h2>
@@ -53,10 +56,22 @@ export default function Home() {
               add Podcasting 2.0 features to your app. Make finding, following,
               and funding podcasts easier for your users!
             </p>
+            <Button className="mt-auto">Innovate my app!</Button>
             {/* <LinkContainer to="/developers">
               <Button>Put Podcasting 2.0 in your app!</Button>
             </LinkContainer> */}
           </div>
+          {/* <div className="col-span-full flex flex-col items-start py-3">
+            <Lightbulb size={48} />
+
+            <h2 className="my-3 text-2xl">For anyone with ideas</h2>
+            <p>
+              Integrate an open, inclusive, always-free podcast catalog API and
+              add Podcasting 2.0 features to your app. Make finding, following,
+              and funding podcasts easier for your users!
+            </p>
+            <Button className="mt-auto">Get involved!</Button>
+          </div> */}
         </div>
       </div>
     </>

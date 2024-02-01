@@ -6,8 +6,8 @@ export function Footer() {
     <footer className="bg-slate-100 text-slate-600 dark:bg-slate-950 dark:text-slate-400">
       <div className="container mx-auto flex items-center p-4">
         <div>
-          Created by Daniel J. Lewis and James Cridland. All content is licensed
-          under{" "}
+          Podcasting2.org created by Daniel J. Lewis and James Cridland. All
+          content is licensed under{" "}
           <a
             href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
             target="_blank"
