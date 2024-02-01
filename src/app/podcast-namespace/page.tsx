@@ -1,4 +1,7 @@
 import { Metadata } from "next";
+import { Badge } from "@/components/ui/badge";
+import podcastNamespaceTags from "@/data/podcastNamespaceTags.json";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Podcast Namespace",
@@ -80,172 +83,26 @@ export default function PodcastNamespacePage() {
           :
         </p>
 
-        <h2>
-          <code>&lt;podcast:alternateEnclosure&gt;</code>
-        </h2>
-        <ul>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#alternate-enclosure">
-              podcast:alternateEnclosure
-            </a>{" "}
-            - different bitrates, video versions, etc
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#block">
-              podcast:block
-            </a>{" "}
-            - creator requests not to be included in a directory
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#chapters">
-              podcast:chapters
-            </a>{" "}
-            - independently editable chapters
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#episode">
-              podcast:episode
-            </a>{" "}
-            - episode numbers and names
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding">
-              podcast:funding
-            </a>{" "}
-            - links to donate or fund a show
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid">
-              podcast:guid
-            </a>{" "}
-            - a unique, global identifier for a podcast
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#images">
-              podcast:images
-            </a>{" "}
-            - multiple image resources for podcasts
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#license">
-              podcast:license
-            </a>{" "}
-            - define the license applied to a podcast
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#live-item">
-              podcast:liveItem
-            </a>{" "}
-            - deliver live shows to apps
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#location">
-              podcast:location
-            </a>{" "}
-            - &ldquo;where &rdquo;s this podcast about?”
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#locked">
-              podcast:locked
-            </a>{" "}
-            - require permission to import a feed
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium">
-              podcast:medium
-            </a>{" "}
-            - a description of the type of content in a feed
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person">
-              podcast:person
-            </a>{" "}
-            - credits for hosts and guests
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#season">
-              podcast:season
-            </a>{" "}
-            - named seasons/series
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#social-interact">
-              podcast:socialInteract
-            </a>{" "}
-            - comments for podcast episodes
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#soundbite">
-              podcast:soundbite
-            </a>{" "}
-            - suggested clips
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#trailer">
-              podcast:trailer
-            </a>{" "}
-            - specify a trailer (per season)
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#transcript">
-              podcast:transcript
-            </a>{" "}
-            - captions and transcripts for podcasts
-          </li>
-          <li>
-            <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value">
-              podcast:value
-            </a>{" "}
-            - a payment layer for podcasts
-          </li>
-        </ul>
-
-        <h2 id="this-website">This website</h2>
-
-        <p>
-          This website will be a place to give full examples of how to use the
-          new podcast namespace tags. It is editable by the community; and you
-          will also be able to use this to{" "}
-          <a href="https://github.com/jamescridland/podcastnamespace.org/discussions">
-            ask questions
-          </a>{" "}
-          about implementation.
-        </p>
-
-        <h3 id="examples">Examples</h3>
-        <ul>
-          <li>
-            <a href="https://podcastnamespace.org/tag/funding">
-              podcast:funding
-            </a>
-            , a way to link to donation payment links for your podcast
-          </li>
-          <li>
-            <a href="https://podcastnamespace.org/tag/guid">podcast:guid</a>,
-            unique, global identifier for a podcast
-          </li>
-          <li>
-            <a href="https://podcastnamespace.org/tag/person">podcast:person</a>
-            , credits for hosts, guests and others
-          </li>
-          <li>
-            <a href="https://podcastnamespace.org/tag/transcript">
-              podcast:transcript
-            </a>
-            , closed-captions and transcripts for podcasts
-          </li>
-          <li>
-            <a href="https://podcastnamespace.org/tag/value">podcast:value</a> -
-            a payment layer for podcasts
-          </li>
-        </ul>
-
-        <p>
-          It’s edited by James Cridland, the Editor of{" "}
-          <a href="https://podnews.net">Podnews</a>; but anyone can submit their
-          edits to make this resource better, using the Github link in the
-          bottom left. Alternatively, please contact James at james@crid.land
-        </p>
+        {podcastNamespaceTags.map((tag) => (
+          <>
+            <h2>
+              <code>&lt;{tag.name}&gt;</code>{" "}
+              {tag.level.map((level) => (
+                <Badge variant="secondary">{level}</Badge>
+              ))}
+            </h2>
+            <p>{tag.description}</p>
+            <p>
+              <Link href={tag.documentationUrl}>Documentation</Link>
+              {tag.exampleUrl && (
+                <>
+                  {" "}
+                  | <Link href={tag.exampleUrl}>Example</Link>
+                </>
+              )}
+            </p>
+          </>
+        ))}
       </section>
     </>
   );

@@ -1,0 +1,157 @@
+[
+  {
+    "name": "podcast:transcript",
+    "description": "captions and transcripts for podcasts",
+    "level": ["item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#transcript",
+    "exampleUrl": "https://podcastnamespace.org/tag/transcript"
+  },
+  {
+    "name": "podcast:locked",
+    "description": "require permission to import a feed",
+    "level": ["channel", "item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#locked"
+  },
+  {
+    "name": "podcast:funding",
+    "description": "links to donate or fund a show",
+    "level": ["channel"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding",
+    "exampleUrl": "https://podcastnamespace.org/tag/funding"
+  },
+  {
+    "name": "podcast:chapters",
+    "description": "independently editable chapters",
+    "level": ["item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#chapters"
+  },
+  {
+    "name": "podcast:soundbite",
+    "description": "suggested clips",
+    "level": ["item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#soundbite"
+  },
+  {
+    "name": "podcast:person",
+    "description": "credits for hosts and guests",
+    "level": ["channel", "item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person",
+    "exampleUrl": "https://podcastnamespace.org/tag/person"
+  },
+  {
+    "name": "podcast:location",
+    "description": "where is this podcast about?",
+    "level": ["channel"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#location"
+  },
+  {
+    "name": "podcast:season",
+    "description": "named seasons/series",
+    "level": ["item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#season"
+  },
+  {
+    "name": "podcast:episode",
+    "description": "episode numbers and names",
+    "level": ["item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#episode"
+  },
+  {
+    "name": "podcast:trailer",
+    "description": "specify a trailer (per season)",
+    "level": ["item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#trailer"
+  },
+  {
+    "name": "podcast:license",
+    "description": "define the license applied to a podcast",
+    "level": ["channel"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#license"
+  },
+  {
+    "name": "podcast:alternateEnclosure",
+    "description": "different bitrates, video versions, etc",
+    "level": ["item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#alternate-enclosure"
+  },
+  {
+    "name": "podcast:guid",
+    "description": "a unique, global identifier for a podcast",
+    "level": ["channel"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid",
+    "exampleUrl": "https://podcastnamespace.org/tag/guid"
+  },
+  {
+    "name": "podcast:value",
+    "description": "a payment layer for podcasts",
+    "level": ["channel", "item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value",
+    "exampleUrl": "https://podcastnamespace.org/tag/value"
+  },
+  {
+    "name": "podcast:medium",
+    "description": "a description of the type of content in a feed",
+    "level": ["channel"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium"
+  },
+  {
+    "name": "podcast:images",
+    "description": "multiple image resources for podcasts",
+    "level": [""],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#images"
+  },
+  {
+    "name": "podcast:liveItem",
+    "description": "deliver live shows to apps",
+    "level": ["channel"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#live-item"
+  },
+  {
+    "name": "podcast:socialInteract",
+    "description": "comments for podcast episodes",
+    "level": ["item"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#social-interact"
+  },
+  {
+    "name": "podcast:block",
+    "description": "creator requests not to be included in a directory",
+    "level": ["channel"],
+    "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#block"
+  },
+  {
+    "name": "podcast:txt",
+    "description": "",
+    "level": ["channel", "item"],
+    "documentationUrl": ""
+  },
+  {
+    "name": "podcast:remoteItem",
+    "description": "",
+    "level": ["channel", "podcast:podroll", "podcast:valueTimeSplit"],
+    "documentationUrl": ""
+  },
+  {
+    "name": "podcast:podroll",
+    "description": "",
+    "level": [""],
+    "documentationUrl": ""
+  },
+  {
+    "name": "podcast:updateFrequency",
+    "description": "",
+    "level": ["channel"],
+    "documentationUrl": ""
+  },
+  {
+    "name": "podcast:podping",
+    "description": "",
+    "level": ["channel"],
+    "documentationUrl": ""
+  },
+  {
+    "name": "podcast:valueTimeSplit",
+    "description": "",
+    "level": ["podcast:value"],
+    "documentationUrl": ""
+  }
+]
