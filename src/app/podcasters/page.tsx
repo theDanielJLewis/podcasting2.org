@@ -31,10 +31,10 @@ export default function PodcastersPage() {
         benefits for audiences, podcasters, and developers.
       </p>
       <h3>Podcast Namespace benefits</h3>
-      <ul className="list-disc pl-4">
+      <ul className="list-disc pl-8">
         <li>
-          Add and edit interactive chapters - <em>without</em>
-          re-uploading your media file
+          Add and edit interactive chapters—<em>without</em> re-uploading your
+          media file
         </li>
         <li>Earn money directly from your audience</li>
         <li>Engage through comments accessible accross multiple apps</li>
@@ -48,15 +48,19 @@ export default function PodcastersPage() {
         <li>Protect your podcast from censorship and deplatforming</li>
       </ul>
       <h2>How to get started</h2>
-      <ol className="list-number">
+      <ol className="list-decimal pl-8">
         <li>
           Ensure your podcast is in the Podcast Index, and{" "}
-          <Link href="">add your podcast if it&rsquo;s not included</Link>.
+          <Link href="https://podcastindex.org/add">
+            add your podcast if it&rsquo;s not included
+          </Link>
+          .
         </li>
         <li>
           Check with your podcast-feed-publishing tool for support of the
-          Podcasting 2.0 features from the new Podcast Namespace.{" "}
-          <Link href="">You might even want to switch providers.</Link>
+          Podcasting 2.0 features from the{" "}
+          <Link href="/podcast-namespace">new Podcast Namespace</Link>. You
+          might even want to switch providers in order to get the new features.
         </li>
         <li>
           Prepare your podcast to receive streaming Bitcoin/Satoshis and
@@ -67,8 +71,8 @@ export default function PodcastersPage() {
           .
         </li>
         <li>
-          Encourage your audience to get a better podcast app by going to
-          NewPodcastApps.com.
+          Encourage your audience to get a better podcast app from
+          <Link href="http://podcastapps.com">PodcastApps.com</Link>.
         </li>
         <li>
           <a href="https://podcastindex.social/invite/hfcQYbjq">

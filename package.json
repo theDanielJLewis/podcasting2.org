@@ -1,6 +1,6 @@
 {
   "name": "podcasting2.org",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -25,10 +25,8 @@
     "prism-react-renderer": "^2.3.1",
     "react": "^18.2.0",
     "react-code-block": "^1.0.0",
-    "react-code-blocks": "^0.1.6",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
-    "react-js-nl2br": "^1.0.1",
     "tailwind-color-util": "^1.0.3",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
