@@ -2,6 +2,7 @@
   {
     "label": "Transcript",
     "tag": "<podcast:transcript>",
+    "slug": "transcript",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#transcript",
     "description": {
       "short": "captions and transcripts for podcasts",
@@ -62,6 +63,7 @@
   {
     "label": "Locked",
     "tag": "<podcast:locked>",
+    "slug": "locked",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#locked",
     "description": {
       "short": "require permission to import a feed",
@@ -95,6 +97,7 @@
   {
     "label": "Funding",
     "tag": "<podcast:funding>",
+    "slug": "funding",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding",
     "description": {
       "short": "links to donate or fund a show",
@@ -129,6 +132,7 @@
   {
     "label": "Chapters",
     "tag": "<podcast:chapters>",
+    "slug": "chapters",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#chapters",
     "description": {
       "short": "independently editable chapters",
@@ -161,6 +165,7 @@
   {
     "label": "Soundbite",
     "tag": "<podcast:soundbite>",
+    "slug": "soundbite",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#soundbite",
     "description": {
       "short": "suggested clips",
@@ -200,6 +205,7 @@
   {
     "label": "Person",
     "tag": "<podcast:person>",
+    "slug": "person",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#person",
     "description": {
       "short": "credits for hosts and guests",
@@ -263,6 +269,7 @@
   {
     "label": "Location",
     "tag": "<podcast:location>",
+    "slug": "location",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#location",
     "description": {
       "short": "where is this podcast about?",
@@ -309,6 +316,7 @@
   {
     "label": "Season",
     "tag": "<podcast:season>",
+    "slug": "season",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#season",
     "description": {
       "short": "named and numbered seasons/series",
@@ -353,6 +361,7 @@
   {
     "label": "Episode",
     "tag": "<podcast:episode>",
+    "slug": "episode",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#episode",
     "description": {
       "short": "episode numbers and names",
@@ -398,6 +407,7 @@
   {
     "label": "Trailer",
     "tag": "<podcast:trailer>",
+    "slug": "trailer",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#trailer",
     "description": {
       "short": "specify a trailer (per season)",
@@ -456,6 +466,7 @@
   {
     "label": "License",
     "tag": "<podcast:license>",
+    "slug": "license",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#license",
     "description": {
       "short": "define the license applied to a podcast",
@@ -490,6 +501,7 @@
   {
     "label": "Alternate Enclosure",
     "tag": "<podcast:alternateEnclosure>",
+    "slug": "alternateEnclosure",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#alternate-enclosure",
     "description": {
       "short": "different bitrates, video versions, etc",
@@ -565,6 +577,7 @@
   {
     "label": "Source",
     "tag": "<podcast:source>",
+    "slug": "source",
     "description": {
       "long": "This element defines a uri location for a <podcast:alternateEnclosure>` media file. It is meant to be used as a child of the `<podcast:alternateEnclosure>` element. At least one `<podcast:source>` element must be present within every `<podcast:alternateEnclosure>` element."
     },
@@ -595,6 +608,7 @@
   {
     "label": "Integrity",
     "tag": "<podcast:integrity>",
+    "slug": "integrity",
     "description": {
       "long": "This element defines a method of verifying integrity of the media given either an [SRI-compliant integrity string](https://www.w3.org/TR/SRI/) (preferred) or a base64 encoded PGP signature. This element is optional within a `<podcast:alternateEnclosure>` element. It allows to ensure that the file has not been tampered with."
     },
@@ -623,8 +637,9 @@
     ]
   },
   {
-    "label": "Guid",
+    "label": "GUID",
     "tag": "<podcast:guid>",
+    "slug": "guid",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid",
     "description": {
       "short": "a unique, global identifier for a podcast",
@@ -655,6 +670,7 @@
   {
     "label": "Value",
     "tag": "<podcast:value>",
+    "slug": "value",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value",
     "description": {
       "short": "a payment layer for podcasts",
@@ -694,6 +710,7 @@
   {
     "label": "Value Recipient",
     "tag": "<podcast:valueRecipient>",
+    "slug": "valueRecipient",
     "description": {
       "long": "The `valueRecipient` tag designates various destinations for payments to be sent to during consumption of the enclosed media. Each recipient is considered to receive a \"split\" of the total payment according to the number of shares given in the `split` attribute.\n\nThis element may only exist within a parent `<podcast:value>` element.\n\nThere is no limit on how many `valueRecipient` elements can be present in a given `<podcast:value>` element.\n\nThis is a complex tag, so implementors are HIGHLY encouraged to read the companion [document](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for a complete understanding of how this tag works and what it is capable of."
     },
@@ -750,6 +767,7 @@
   {
     "label": "Medium",
     "tag": "<podcast:medium>",
+    "slug": "medium",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#medium",
     "description": {
       "short": "a description of the type of content in a feed",
@@ -786,6 +804,7 @@
   {
     "label": "Images",
     "tag": "<podcast:images>",
+    "slug": "images",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#images",
     "description": {
       "short": "multiple image resources for podcasts",
@@ -814,6 +833,7 @@
   {
     "label": "Live Item",
     "tag": "<podcast:liveItem>",
+    "slug": "liveItem",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#live-item",
     "description": {
       "short": "deliver live shows to apps",
@@ -864,6 +884,7 @@
   {
     "label": "Content Link",
     "tag": "<podcast:contentLink>",
+    "slug": "contentLink",
     "description": {
       "long": "The `contentLink` tag is used to indicate that the content begin delivered by the parent element can be found at an external location instead of, or in addition to, being delivered directly to the tag itself within an app. In most instances it is used as a fallback link for the user to use when the app itself can't handle a certain content delivery directly.\n\nFor instance, perhaps a podcast feed specifies a `<podcast:liveItem>` to deliver a live stream to apps. The feed may also give a `<podcast:contentLink>` pointing to YouTube and Twitch versions of the live stream as well, just in case the listener uses an app that doesn't fully support live streaming content.\n\nCurrently this tag is only indicated for use in the `<podcast:liveItem>` tag. In the future, its use will be expanded."
     },
@@ -896,6 +917,7 @@
   {
     "label": "Social Interact",
     "tag": "<podcast:socialInteract>",
+    "slug": "socialInteract",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#social-interact",
     "description": {
       "short": "comments for podcast episodes",
@@ -960,6 +982,7 @@
   {
     "label": "Block",
     "tag": "<podcast:block>",
+    "slug": "block",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#block",
     "description": {
       "short": "creator requests not to be included in a directory",
@@ -1003,6 +1026,7 @@
   {
     "label": "Txt",
     "tag": "<podcast:txt>",
+    "slug": "txt",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#txt",
     "description": {
       "long": "This element holds free-form text and is modeled after the DNS \"[TXT](https://en.wikipedia.org/wiki/TXT_record)\" record. It's meant to allow for usages that might be niche or otherwise not rise to the level of needing a dedicated tag. Just like TXT records in DNS allowed for new things like [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework#Implementation) to evolve, this tag can allow novel techniques to be created and sandboxed without a formalization process."
@@ -1043,6 +1067,7 @@
   {
     "label": "Remote Item",
     "tag": "<podcast:remoteItem>",
+    "slug": "remoteItem",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#remote-item",
     "description": {
       "long": "This element provides a way to \"point\" to another feed or an `<item>` in another feed in order to obtain some sort of data that the other feed or feed item has. This allows a podcast app to know where to go and fetch the data being requested. What data is being requested is determined by the parent item. For instance, if the parent item is a `<podcast:podroll>` element, then the remote feed's `<channel>` metadata is needed.\n\nUsing the `feedGuid` attribute is the preferred way to address a remote feed since, but there are times when an app may not have access to a list of resolvable `<podcast:guid>`'s. In that case, it can be beneficial to include the `feedUrl` attribute for those cases as a fallback. If both are present and the app is capable the `feedGuid` should be resolved and used."
@@ -1094,6 +1119,7 @@
   {
     "label": "Podroll",
     "tag": "<podcast:podroll>",
+    "slug": "podroll",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#podroll",
     "description": {
       "long": "This element allows for a podcaster to include references to one or more podcasts in it's `<channel>` as a way of \"recommending\" other podcasts to their listener."
@@ -1115,6 +1141,7 @@
   {
     "label": "Update Frequency",
     "tag": "<podcast:updateFrequency>",
+    "slug": "updateFrequency",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#update-frequency",
     "description": {
       "long": "This element allows a podcaster to express their intended release schedule as structured data and text."
@@ -1179,6 +1206,7 @@
   {
     "label": "Podping",
     "tag": "<podcast:podping>",
+    "slug": "podping",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#podping",
     "description": {
       "long": "This element allows feed owners to signal to aggregators that the feed sends out [`Podping`](https://github.com/Podcastindex-org/podping) notifications when changes are made to it, reducing the need for frequent speculative feed polling."
@@ -1197,6 +1225,7 @@
   {
     "label": "Value Time Split",
     "tag": "<podcast:valueTimeSplit>",
+    "slug": "valueTimeSplit",
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value-time-split",
 
     "description": {
