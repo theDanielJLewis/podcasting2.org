@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import podcastNamespaceTags from "@/data/podcastNamespaceTags.json";
 import Link from "next/link";
 import { NamespaceTag } from "@/components/NamespaceTag";
+import _ from "lodash";
 
 export const metadata: Metadata = {
   title: "Podcast Namespace",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function PodcastNamespacePage() {
+  const tags = _.sortBy(podcastNamespaceTags, "popular");
   return (
     <>
       <div className="flex flex-col justify-center py-16 text-xl lg:py-36">
@@ -66,21 +68,11 @@ export default function PodcastNamespacePage() {
         <a href="https://podcastindex.org/apps?appTypes=app">podcast apps</a>.
       </p>
 
-      <h2 id="-all-the-base-tags">
-        <i className="pi pi-podcasting20certifiedbadge"></i> All the base tags
-      </h2>
-
-      <p>
-        From{" "}
-        <a href="https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md">
-          the specification document
-        </a>
-        :
-      </p>
-
-      {podcastNamespaceTags.map((tag) => (
-        <NamespaceTag tag={tag} key={tag.label} />
-      ))}
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {tags.map((tag) => (
+          <NamespaceTag tag={tag} key={tag.label} />
+        ))}
+      </div>
     </>
   );
 }

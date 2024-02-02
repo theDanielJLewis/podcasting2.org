@@ -4,7 +4,7 @@ import Markdown from "markdown-to-jsx";
 import { notFound } from "next/navigation";
 import { MyCodeBlock } from "@/components/ui/MyCodeBlock";
 export default function SingleTag({ params }: { params: { slug: string } }) {
-  const tag = podcastNamespaceTags.find(
+  const tag: NamespaceTag | undefined = podcastNamespaceTags.find(
     (tag) => tag.slug.toLowerCase() === params.slug.toLowerCase(),
   );
   if (!tag) {
@@ -22,10 +22,13 @@ export default function SingleTag({ params }: { params: { slug: string } }) {
         {tag.parents.length === 1 ? "Parent" : "Parents"}
         {": "}
         {tag.parents.map((parent) => (
-          <Badge variant="secondary" className="m-0.5">
+          <Badge variant="secondary" className="m-0.5" key={parent}>
             <code>{parent}</code>
           </Badge>
         ))}
+        {tag.parentsDescription && (
+          <Markdown>{tag.parentsDescription}</Markdown>
+        )}
       </div>
       <div className="mb-8">
         Count:{" "}
@@ -34,13 +37,26 @@ export default function SingleTag({ params }: { params: { slug: string } }) {
         </Badge>
       </div>
 
+      {tag.nodeValue && (
+        <>
+          <h2>Node value</h2>
+          <Markdown>{tag.nodeValue}</Markdown>
+        </>
+      )}
+
       {tag.attributes && (
         <>
           <h2>Attributes</h2>
           <ul className="mb-8 list-disc pl-8">
             {tag.attributes.map((attribute) => (
               <li key={attribute.name}>
-                <code>{attribute.name}</code>:{" "}
+                <code>{attribute.name}</code>
+                {attribute.recommended
+                  ? " (recommended)"
+                  : attribute.required
+                    ? " (required)"
+                    : ""}
+                :{" "}
                 {/* <Code text={attribute.name} language="xml" theme={dracula} />:{" "} */}
                 <Markdown>{attribute.description}</Markdown>
               </li>
@@ -52,19 +68,21 @@ export default function SingleTag({ params }: { params: { slug: string } }) {
         </>
       )}
 
-      {tag.nodeValue && (
-        <>
-          <h2>Node value</h2>
-          <Markdown>{tag.nodeValue}</Markdown>
-        </>
-      )}
       <h2>Details</h2>
       <Markdown>{tag.description.long}</Markdown>
+
+      {tag.notes && <Markdown>{tag.notes}</Markdown>}
 
       <h2>Examples</h2>
       {tag.examples.map((example) => (
         <div key={example.code} className="mb-8">
-          <MyCodeBlock code={example.code} language={example.language} />
+          {example.label && <p>{example.label}:</p>}
+          <MyCodeBlock
+            code={example.code}
+            language={example.language}
+            // lineNumbers={true}
+            lines={example.highlightLines}
+          />
           {/* <CopyBlock
             text={example.code}
             language={example.language}
@@ -75,7 +93,10 @@ export default function SingleTag({ params }: { params: { slug: string } }) {
           /> */}
         </div>
       ))}
-      {tag.notes && <Markdown>{tag.notes}</Markdown>}
+      {/* <div className="flex justify-between">
+        <div>&larr; </div>
+        <div>&rarr;</div>
+      </div> */}
     </>
   );
 }

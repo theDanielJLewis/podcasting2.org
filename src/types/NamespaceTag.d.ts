@@ -1,7 +1,8 @@
 type NamespaceTag = {
   label: string;
   tag: string;
-  popular: true;
+  slug: string;
+  popular?: boolean;
   description: {
     short?: string;
     long: string;
@@ -22,6 +23,7 @@ type NamespaceTag = {
     label?: string;
     language: string;
     code: string;
+    highlightLines?: (string | number)[];
   }[];
   exampleUrl?: string;
   exampleImageUrls?: string[];
