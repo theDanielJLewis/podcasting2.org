@@ -4,15 +4,30 @@ import { SiGithub } from "react-icons/si";
 export function Footer() {
   return (
     <footer className="bg-slate-100 text-slate-600 dark:bg-slate-950 dark:text-slate-400">
-      <div className="container mx-auto flex items-center p-4">
+      <div className="container mx-auto flex p-4 lg:px-8">
         <div>
-          Podcasting2.org created by Daniel J. Lewis and James Cridland. All
-          content is licensed under{" "}
-          <a
+          Podcasting2.org created by{" "}
+          <Link
+            href="https://theaudacitytopodcast.com/"
+            className="transition-all hover:text-slate-300"
+          >
+            Daniel J. Lewis
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="https://podnews.net"
+            className="transition-all hover:text-slate-300"
+          >
+            James Cridland
+          </Link>
+          .
+          <br />
+          All content is licensed under{" "}
+          <Link
             href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
             target="_blank"
             rel="license noopener noreferrer"
-            className="inline-block"
+            className="inline-block transition-all hover:text-slate-300"
           >
             CC BY 4.0
             <img
@@ -25,14 +40,44 @@ export function Footer() {
               src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
               alt="Attribution 4.0 International"
             />
-          </a>
+          </Link>
         </div>
-        <Link
-          href="https://github.com/thedanieljlewis/podcasting2.org"
-          className="ml-auto text-slate-600 dark:text-slate-400"
-        >
-          <SiGithub aria-label="GitHub" />
-        </Link>
+        <div className="ml-auto">
+          <ul>
+            <li>
+              <Link
+                href="/about"
+                className="transition-all hover:text-slate-300"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://podcastindex.org"
+                className="transition-all hover:text-slate-300"
+              >
+                Podcast Index
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://podcastindex.social"
+                className="transition-all hover:text-slate-300"
+              >
+                Mastodon Community
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://github.com/thedanieljlewis/podcasting2.org"
+                className="transition-all hover:text-slate-300"
+              >
+                Contribute on GitHub
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
   );

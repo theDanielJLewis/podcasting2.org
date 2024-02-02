@@ -79,7 +79,7 @@ export default function PodcastNamespacePage() {
       </p>
 
       {podcastNamespaceTags.map((tag) => (
-        <NamespaceTag tag={tag} key={tag.name} />
+        <NamespaceTag tag={tag} key={tag.label} />
       ))}
     </>
   );

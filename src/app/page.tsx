@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col justify-center py-24 lg:py-60">
+      <div className="py-18 flex flex-col justify-center lg:py-36">
         <h1>
           Making podcasting better for audiences, podcasters, and developers.
           <br />

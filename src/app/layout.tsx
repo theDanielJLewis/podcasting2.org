@@ -26,7 +26,7 @@ export default function RootLayout({
       >
         <Header />
         <div className="flex shrink grow overflow-hidden text-slate-800 dark:bg-slate-900 dark:text-slate-100">
-          <main className="container mx-auto p-4">{children}</main>
+          <main className="container mx-auto p-4 lg:px-8">{children}</main>
         </div>
         <Footer />
       </body>

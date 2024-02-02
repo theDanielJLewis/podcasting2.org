@@ -3,7 +3,7 @@ import Link from "next/link";
 export function Header() {
   return (
     <header className="bg-slate-100 text-slate-600 dark:bg-slate-950 dark:text-slate-400">
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 lg:px-8">
         <ul className="flex gap-4">
           <li className="font-bold">
             <Link href="/" className="transition-all hover:text-primary">
@@ -18,6 +18,14 @@ export function Header() {
           <li>
             <Link href="/apps" className="transition-all hover:text-primary">
               Apps
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/resources"
+              className="transition-all hover:text-primary"
+            >
+              Resources
             </Link>
           </li>
           <li>
