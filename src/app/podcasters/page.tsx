@@ -33,10 +33,10 @@ export default function PodcastersPage() {
       <h3>Podcast Namespace benefits</h3>
       <ul className="list-disc pl-4">
         <li>
-          Add and edit interactive chapters <em>without</em>
+          Add and edit interactive chapters - <em>without</em>
           re-uploading your media file
         </li>
-        <li>Earn Bitcoin directly from your audience</li>
+        <li>Earn money directly from your audience</li>
         <li>Engage through comments accessible accross multiple apps</li>
         <li>
           Expose more information about your podcast, like people, location, and
