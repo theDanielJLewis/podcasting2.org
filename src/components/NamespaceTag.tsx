@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { nl2br } from "react-js-nl2br";
@@ -6,6 +7,8 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
+import Markdown from "markdown-to-jsx";
 
 export function NamespaceTag({ tag }: { tag: NamespaceTag }) {
   return (
@@ -19,14 +22,24 @@ export function NamespaceTag({ tag }: { tag: NamespaceTag }) {
         ))}
       </h3>
       <p>{tag.description?.short}</p>
-      <p>
-        <code>{nl2br(tag.examples?.[0].code)}</code>
-      </p>
+      <div className="mb-8">
+        <CopyBlock
+          text={tag.examples[0].code}
+          language={tag.examples[0].language}
+          showLineNumbers={false}
+          wrapLongLines={true}
+          theme={atomOneDark}
+          codeBlock
+        />
+      </div>
+
       <Collapsible>
         <CollapsibleTrigger>
           <h4>Details</h4>
         </CollapsibleTrigger>
-        <CollapsibleContent>{nl2br(tag.description?.long)}</CollapsibleContent>
+        <CollapsibleContent>
+          <Markdown>{tag.description.long}</Markdown>
+        </CollapsibleContent>
       </Collapsible>
     </div>
   );

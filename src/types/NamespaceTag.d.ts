@@ -1,9 +1,9 @@
 type NamespaceTag = {
   label: string;
   tag: string;
-  description?: {
+  description: {
     short?: string;
-    long?: string;
+    long: string;
   };
   parents: string[];
   parentsDescription?: string;
@@ -17,7 +17,7 @@ type NamespaceTag = {
   }[];
   attributesDescription?: string;
   documentationUrl?: string;
-  examples?: {
+  examples: {
     label?: string;
     language: string;
     code: string;
