@@ -1,6 +1,7 @@
 type NamespaceTag = {
   label: string;
   tag: string;
+  popular: true;
   description: {
     short?: string;
     long: string;

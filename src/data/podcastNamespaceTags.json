@@ -3,6 +3,7 @@
     "label": "Transcript",
     "tag": "<podcast:transcript>",
     "slug": "transcript",
+    "popular": true,
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#transcript",
     "description": {
       "short": "captions and transcripts for podcasts",
@@ -11,7 +12,7 @@
 
     "parents": ["<item>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "attributes": [
       {
@@ -71,7 +72,7 @@
     },
     "parents": ["<channel>"],
 
-    "count": "Single",
+    "count": "single",
 
     "nodeValue": "The node value must be `yes` or `no`.",
 
@@ -106,7 +107,7 @@
 
     "parents": ["<channel>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "nodeValue": "This is a free form string supplied by the creator which they expect to be displayed in the app next to the link. Please do not exceed `128 characters` for the node value or it may be truncated by aggregators.",
 
@@ -133,6 +134,7 @@
     "label": "Chapters",
     "tag": "<podcast:chapters>",
     "slug": "chapters",
+    "popular": true,
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#chapters",
     "description": {
       "short": "independently editable chapters",
@@ -141,7 +143,7 @@
 
     "parents": ["<item>"],
 
-    "count": "Single",
+    "count": "single",
 
     "attributes": [
       {
@@ -174,7 +176,7 @@
 
     "parents": ["<item>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "nodeValue": "This is a free form string from the podcast creator to specify a title for the soundbite. If the podcaster does not provide a value for the soundbite title, then leave the value blank, and podcast apps can decide to use the episode title or some other placeholder value in its place. Please do not exceed `128 characters` for the node value or it may be truncated by aggregators.",
 
@@ -215,28 +217,28 @@
     "parents": ["<channel>", "<item>"],
     "parentsDescription": "It is suggested that `<channel>` is always populated, and `<item>` is populated where needed for an individual episode. Where present, people information in `<item>` wholly replaces all information from the `<channel>`.\n\nPublishers are expected to use the `podcast:person` element in the `<channel>` parent to set the _regular_ people involved in the podcast: the detail that would be expected to be seen in an overview of the show.\n\nPublishers are expected to use the `podcast:person` in the `<item>` parent to **replace** all existing information for an individual episode.\n\n#### For example: _Terry and June_\n\nThe fictional podcast _Terry and June_ is normally hosted by Terry Scott and June Whitfield. Within `<channel>`, Terry Scott and June Whitfield are listed as the hosts. A podcast directory, or podcast app, should show Terry Scott and June Whitfield as the hosts of this show.\n\nFor one episode, _Terry and June_ was hosted by Reginald Marsh and June Whitfield (Terry was away). In this case, the `<item>` for this episode should contain Reginald Marsh and June Whitfield as the hosts of this episode. A podcast app, when playing this episode, should show only Reginald Marsh and June Whitfield as the hosts of this episode. Because people information in `<item>` replaces all existing people information in `<channel>`, Terry Scott should not be visible as a host of this episode.\n\n#### For example: _Big Daddy_\n\nThe fictional podcast _Big Daddy Interviews_ is hosted by Big Daddy, a wrestler. Within `<channel>`, Big Daddy is listed as the host. A podcast directory, or podcast app, should show Big Daddy as the host of this show.\n\nFor one episode, _Big Daddy Interviews_ had a guest of Sid James. In this case, the `<item>` for this episode should contain Sid James as a guest, **and** Big Daddy as the host of this episode. Because people information in `<item>` replaces all existing people information in `<channel>`, Big Daddy should be re-stated as the host of this episode.",
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "nodeValue": "This is the full name or alias of the person. This value cannot be blank. Please do not exceed 128 characters for the node value or it may be truncated by aggregators.",
 
     "attributes": [
       {
-        "name": "role:",
+        "name": "role",
         "required": false,
         "description": "Used to identify what role the person serves on the show or episode. This should be a reference to an official role within the Podcast Taxonomy Project list (see below). If `role` is missing then \"host\" is assumed."
       },
       {
-        "name": "group:",
+        "name": "group",
         "required": false,
         "description": "This should be a reference to an official group within the Podcast Taxonomy Project list. If `group` is not present, then \"cast\" is assumed."
       },
       {
-        "name": "img:",
+        "name": "img",
         "required": false,
         "description": "This is the url of a picture or avatar of the person."
       },
       {
-        "name": "href:",
+        "name": "href",
         "required": false,
         "description": "The url to a relevant resource of information about the person, such as a homepage of third-party profile platform. Please see the [example feed](https://github.com/Podcastindex-org/podcast-namespace/blob/main/example.xml) for possible choices of what to use here.\n\nThe `role` and `group` attributes are case-insensitive. So, \"Host\" is the same as \"host\", and \"Cover Art Designer\" is the same as \"cover art designer\".\n\nThe full taxonomy list is [here](https://github.com/Podcastindex-org/podcast-namespace/blob/main/taxonomy.json) as a json file."
       }
@@ -278,19 +280,19 @@
 
     "parents": ["<channel>"],
 
-    "count": "Single",
+    "count": "single",
 
     "nodeValue": "This is a free-form string meant to be a human readable location. It may conform to conventional location verbiage (i.e. \"Austin, TX\"), but it shouldn't be depended on to be parseable in any specific way. This value cannot be blank. Please do not exceed 128 characters for the node value or it may be truncated by aggregators.",
 
     "attributes": [
       {
-        "name": "geo:",
+        "name": "geo",
         "required": false,
         "recommended": true,
         "description": "This is a latitude and longitude given in [\"geo\" notation](https://github.com/Podcastindex-org/podcast-namespace/blob/main/location/location.md#geo-recommended) (i.e. \"geo:30.2672,97.7431\")."
       },
       {
-        "name": "osm:",
+        "name": "osm",
         "required": false,
         "recommended": true,
         "description": "The Open Street Map identifier of this place, given using the OSM notation (i.e. \"R113314\")"
@@ -325,13 +327,13 @@
 
     "parents": ["<item>"],
 
-    "count": "Single",
+    "count": "single",
 
     "nodeValue": "The node value is an integer, and represents the season \"number\". It is required.",
 
     "attributes": [
       {
-        "name": "name:",
+        "name": "name",
         "required": false,
         "description": "This is the \"name\" of the season. If this attribute is present, applications are free to **not** show the season number to the end user, and may use it simply for chronological sorting and grouping purposes.\n\nPlease do not exceed 128 characters for the name attribute."
       }
@@ -370,13 +372,13 @@
 
     "parents": ["<item>"],
 
-    "count": "Single",
+    "count": "single",
 
     "nodeValue": "The node value is a decimal number. It is required.",
 
     "attributes": [
       {
-        "name": "display:",
+        "name": "display",
         "required": false,
         "description": "If this attribute is present, podcast apps and aggregators are encouraged to show its value instead of the purely numerical node value. This attribute is a string."
       }
@@ -416,35 +418,35 @@
 
     "parents": ["<channel>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "nodeValue": "The node value is a string, which is the title of the trailer. It is required. Please do not exceed 128 characters for the node value or it may be truncated by aggregators.",
 
     "attributes": [
       {
-        "name": "url:",
+        "name": "url",
         "required": true,
         "description": "This is a url that points to the audio or video file to be played. This attribute is a string."
       },
       {
-        "name": "pubdate:",
+        "name": "pubdate",
         "required": true,
         "description": "The date the trailer was published. This attribute is an RFC2822 formatted date string."
       },
       {
-        "name": "length:",
+        "name": "length",
         "required": false,
         "recommended": true,
         "description": "The length of the file in bytes. This attribute is a number."
       },
       {
-        "name": "type:",
+        "name": "type",
         "required": false,
         "recommended": true,
         "description": "The mime type of the file. This attribute is a string."
       },
       {
-        "name": "season:",
+        "name": "season",
         "required": false,
         "description": "If this attribute is present it specifies that this trailer is for a particular season number. This attribute is a number."
       }
@@ -475,13 +477,13 @@
 
     "parents": ["<item>"],
 
-    "count": "Single",
+    "count": "single",
 
     "nodeValue": "The node value must be a lower-cased reference to a license \"identifier\" defined in the [SPDX License List](https://spdx.org/licenses/) file if the license being used is a well-known, public license. Or, if it is a custom license, it must be a free form abbreviation of the name of the license as you reference it publicly. Please do not exceed 128 characters for the node value or it may be truncated by aggregators.",
 
     "attributes": [
       {
-        "name": "url:",
+        "name": "url",
         "required": false,
         "description": "This is a url that points to the full, legal language of the license being referenced. This attribute is optional for well-known public licenses. For new, or custom licenses it is required."
       }
@@ -510,54 +512,54 @@
 
     "parents": ["<item>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "nodeValue": "The node value must be one or more `<podcast:source>` elements that each define a uri where the media file can be downloaded or streamed. A single, optional `<podcast:integrity>` element may also be included to allow for file integrity checking.",
 
     "attributes": [
       {
-        "name": "type:",
+        "name": "type",
         "required": true,
         "description": "Mime type of the media asset."
       },
       {
-        "name": "length:",
+        "name": "length",
         "required": false,
         "recommended": true,
         "description": "Length of the file in bytes."
       },
       {
-        "name": "bitrate:",
+        "name": "bitrate",
         "required": false,
         "description": "Average encoding bitrate of the media asset, expressed in bits per second."
       },
       {
-        "name": "height:",
+        "name": "height",
         "required": false,
         "description": "Height of the media asset for video formats."
       },
       {
-        "name": "lang:",
+        "name": "lang",
         "required": false,
         "description": "An [IETF language tag (BCP 47)](https://en.wikipedia.org/wiki/BCP_47) code identifying the language of this media."
       },
       {
-        "name": "title:",
+        "name": "title",
         "required": false,
         "description": "A human-readable string identifying the name of the media asset. Should be limited to 32 characters for UX."
       },
       {
-        "name": "rel:",
+        "name": "rel",
         "required": false,
         "description": "Provides a method of offering and/or grouping together different media elements. If not set, or set to \"default\", the media will be grouped with the enclosure and assumed to be an alternative to the enclosure's encoding/transport. This attribute can and should be the same for items with the same content encoded by different means. Should be limited to 32 characters for UX."
       },
       {
-        "name": "codecs:",
+        "name": "codecs",
         "required": false,
         "description": "An [RFC 6381](https://tools.ietf.org/html/rfc6381) string specifying the codecs available in this media."
       },
       {
-        "name": "default:",
+        "name": "default",
         "required": false,
         "description": "Boolean specifying whether or not the given media is the same as the file from the enclosure element and should be the preferred media element. The primary reason to set this is to offer alternative transports for the enclosure. If not set, this should be assumed to be false."
       }
@@ -584,16 +586,16 @@
 
     "parents": ["<podcast:alternateEnclosure>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "attributes": [
       {
-        "name": "uri:",
+        "name": "uri",
         "required": true,
         "description": "This is the uri where the media file resides."
       },
       {
-        "name": "contentType:",
+        "name": "contentType",
         "required": false,
         "description": "This is a string that declares the mime-type of the file. It is useful if the transport mechanism is different than the file being delivered, as is the case with a torrents."
       }
@@ -615,16 +617,16 @@
 
     "parents": ["<podcast:alternateEnclosure>"],
 
-    "count": "Single",
+    "count": "single",
 
     "attributes": [
       {
-        "name": "type:",
+        "name": "type",
         "required": true,
         "description": "Type of integrity, either \"sri\" or \"pgp-signature\"."
       },
       {
-        "name": "value:",
+        "name": "value",
         "required": true,
         "description": "Value of the sri string or base64 encoded pgp signature."
       }
@@ -648,19 +650,19 @@
 
     "parents": ["<channel>"],
 
-    "count": "Single",
+    "count": "single",
 
     "nodeValue": "The node value is a UUIDv5 string.",
 
     "examples": [
       {
-        "label": "Example GUID for feed url `mp3s.nashownotes.com/pc20rss.xml`:",
+        "label": "Example GUID for feed url `mp3s.nashownotes.com/pc20rss.xml`",
         "language": "xml",
         "code": "<podcast:guid>917393e3-1b1e-5cef-ace4-edaa54e1f810</podcast:guid>"
       },
 
       {
-        "label": "Example GUID for feed url `podnews.net/rss`:",
+        "label": "Example GUID for feed url `podnews.net/rss`",
         "language": "xml",
         "code": "<podcast:guid>9b024349-ccf0-5f69-a609-6b82873eab3c</podcast:guid>"
       }
@@ -677,25 +679,25 @@
       "long": "This element designates the cryptocurrency or payment layer that will be used, the transport method for transacting the payments, and a suggested amount denominated in the given cryptocurrency.\n\nThis element can exist at either the `<channel>` or `<item>` level. When it exists at the `<item>` level, it should be treated as an \"override\" of whatever is defined at the `<channel>` level.\n\nThis is a complex tag, so implementors are HIGHLY encouraged to read the companion [document](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for a complete understanding of how this tag works and what it is capable of."
     },
 
-    "parents": ["<item>"],
+    "parents": ["<channel>", "<item>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "nodeValue": "The node value must be one or more `<podcast:valueRecipient>` elements.",
 
     "attributes": [
       {
-        "name": "type:",
+        "name": "type",
         "required": true,
         "description": "This is the service slug of the cryptocurrency or protocol layer."
       },
       {
-        "name": "method:",
+        "name": "method",
         "required": true,
         "description": "This is the transport mechanism that will be used."
       },
       {
-        "name": "suggested:",
+        "name": "suggested",
         "required": false,
         "description": "This is an optional suggestion on how much cryptocurrency to send with each payment."
       }
@@ -717,7 +719,7 @@
 
     "parents": ["<podcast:value>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "attributes": [
       {
@@ -776,26 +778,26 @@
 
     "parents": ["<channel>"],
 
-    "count": "Single",
+    "count": "single",
 
     "nodeValue": "The node value is a string denoting one of the following possible values:\n\n- `podcast` (default) - Describes a feed for a podcast show. If no `medium` tag is present in the channel, this medium is assumed.\n- `music` - A feed of music organized into an \"album\" with each item a song within the album.\n- `video` - Like a \"podcast\" but used in a more visual experience. Something akin to a dedicated video channel like would be found on YouTube.\n- `film` - Specific types of videos with one item per feed. This is different than a `video` medium because the content is considered to be cinematic; like a movie or documentary.\n- `audiobook` - Specific types of audio with one item per feed, or where items represent chapters within the book.\n- `newsletter` - Describes a feed of curated written articles. Newsletter articles now sometimes have an spoken version audio enclosure attached.\n- `blog` - Describes a feed of informally written articles. Similar to `newsletter` but more informal as in a traditional blog platform style.",
 
     "notes": "### List Mediums\n\nIn addition to the above mediums, each medium also has a counterpart \"list\" variant, where the original medium name is suffixed by the letter \"L\" to indicate that it is a \"List\" of that type of content. For example, `podcast` would become `podcastL`, `music` would become `musicL`, `audiobook` would become `audiobookL`, etc.\n\nThere is also a dedicated list medium for mixed content:\n\n- `mixed` - This list medium type describes a feed of `<podcast:remoteItem>`'s that point to different remote medium types. For instance, a single list feed might point to music, podcast and audiobook items in other feeds. An example would be a personal consumption history feed.\n\nA \"list\" medium feed should not be expected to have regular `<item>`'s,`<podcast:liveItem>`'s, or any future similar new item type. Rather, a \"List\" feed is intended to exclusively contain one or more `<podcast:remoteItem>`'s, allowing one to reference a feed by its `<podcast:guid>` and the guid of an item.",
     "examples": [
       {
-        "label": "Example use for a standard \"podcast\" feed:",
+        "label": "Example use for a standard \"podcast\" feed",
         "language": "xml",
         "code": "<podcast:medium>podcast</podcast:medium>"
       },
 
       {
-        "label": "Example use for a \"music\" feed:",
+        "label": "Example use for a \"music\" feed",
         "language": "xml",
         "code": "<podcast:medium>music</podcast:medium>"
       },
 
       {
-        "label": "Example use for a \"music\" playlist feed:",
+        "label": "Example use for a \"music\" playlist feed",
         "language": "xml",
         "code": "<rss xmlns:podcast=\"https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md\" xmlns:itunes=\"http://www.itunes.com/dtds/podcast-1.0.dtd\" version=\"2.0\"> <channel>\n\n<title>Picking the Hits 2.0!</title>\n<description>All the hits played on the Podcasting 2.0 show.</description>\n<link>https://podcastindex.org</link>\n<language>en-US</language>\n<pubDate>Wed, 07 Jun 2023 04:30:38 GMT</pubDate>\n<image>\n<url>https://example.com/images/pci_avatar-massive.jpg</url>\n</image>\n\n <podcast:guid>3f2a8e4e-263a-51aa-9d3d-0d71f82a1564</podcast:guid>\n <podcast:medium>musicL</podcast:medium>\n <itunes:image>https://example.com/images/pci_avatar-massive.jpg</itunes:image>\n\n <podcast:value type=\"lightning\" method=\"keysend\" suggested=\"0.00000005000\">\n <podcast:valueRecipient name=\"podcaster\" type=\"node\" address=\"036557ea56b3b86f08be31bcd2557cae8021b0e3a9413f0c0e52625c6696972e57\" split=\"99\" />\n <podcast:valueRecipient name=\"hosting company\" type=\"node\" address=\"036557ea56b3b86f08be31bcd2557cae8021b0e3a9413f0c0e52625c6696972e57\" split=\"1\" />\n </podcast:value>\n\n <podcast:remoteItem\n feedGuid=\"ff519475-6e90-5231-91a0-37d092088d88\"\n feedUrl=\"https://media.rss.com/joemartinmusic/feed.xml\"\n itemGuid=\"e75771b1-e8d4-4133-9392-c579822247d9\"\n medium=\"music\"\n/>\n\n<podcast:remoteItem\nfeedGuid=\"47081700-bd65-511f-b535-f545f3cd660c\"\nfeedUrl=\"https://player.wavlake.com/feed/d1ed0ec9-21a8-4eda-b2c9-b17c8019a7e8\"\nitemGuid=\"7b03666e-b323-499d-93a7-ca51ce627ffd\"\nmedium=\"music\"\n/>\n\n<podcast:remoteItem\nfeedGuid=\"483dde8e-7e94-59a7-8eb0-2b0dc64a87bd\"\nfeedUrl=\"https://player.wavlake.com/feed/1dd1bbd8-1084-4fdc-9788-dddaa62fbc6a\"\nitemGuid=\"8501fb64-a6a3-475a-8b10-9c746f0fe579\"\nmedium=\"music\"\n/>\n\n<podcast:remoteItem\nfeedGuid=\"b40ffcf7-2c48-5cfe-8daa-b65d766b2c25\"\nfeedUrl=\"https://www.wavlake.com/feed/92b04241-97f5-4ff7-be11-cf45f70812e7\"\nitemGuid=\"9a48aab8-6da6-4cc1-9951-5b049c333580\"\nmedium=\"music\"\n/>\n</channel>\n\n</rss>"
       }
@@ -813,7 +815,7 @@
 
     "parents": ["<item>"],
 
-    "count": "Single",
+    "count": "single",
 
     "attributes": [
       {
@@ -824,7 +826,7 @@
     ],
     "examples": [
       {
-        "label": "Example of specifying four different image sizes:",
+        "label": "Example of specifying four different image sizes",
         "language": "xml",
         "code": "<podcast:images srcset=\"https://example.com/images/ep1/pci_avatar-massive.jpg 1500w, https://example.com/images/ep1/pci_avatar-middle.jpg 600w, https://example.com/images/ep1/pci_avatar-small.jpg 300w, https://example.com/images/ep1/pci_avatar-tiny.jpg 150w\" />"
       }
@@ -842,7 +844,7 @@
 
     "parents": ["<channel>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "nodeValue": "All tags that are valid as children of a standard `<item>` tag are also valid as children here.\n\nWhen specifying the audio/video source, the [`<podcast:alternateEnclosure>`](#alternate-enclosure) tag is highly encouraged since it gives the broadest coverage of possible stream types and is explicit in it's communication of what transport protocol and media codecs are being used. In addition to [`<podcast:alternateEnclosure>`](#alternate-enclosure), a standard [`<enclosure>`](https://cyber.harvard.edu/rss/rss.html#ltenclosuregtSubelementOfLtitemgt) should also be given as a fallback to support podcast apps that don't yet implement [`<podcast:alternateEnclosure>`](#alternate-enclosure).\n\nRegardless of which enclosure tag is used, feed owners must be conscious of the fact that choosing a non-mainstream streaming protocol/codec will limit the number of apps that can play the content. For that reason, it's highly recommended to use only the two most widely supported protocols (mp3 and mp4/h.264) to ensure compatibility with the broadest number of apps on various platforms. Choosing a streaming format that is outside of this narrow list might exclude many apps from playing your content. As broader adoption of HLS, Opus, etc. becomes apparent, this recommendation will change to include newer formats.\n\nThe [`<podcast:contentLink>`](#content-link) tag is also required to be present, to ensure that listeners have a fallback option in case their chosen app cannot play the given content stream directly. In most instances this will just be a link to an HTML page that can play the live stream. Such a page can reside on the podcaster's own website, a page provided by their hosting company or a third party platform they have chosen to use. Podcasters who live stream to multiple platforms at once can also use the [`<podcast:contentLink>`](#content-link) tag to provide links to those other platforms.\n\nA robust, well-written `<podcast:liveItem>` tag will include all three of: [`<podcast:alternateEnclosure>`](#alternate-enclosure), [`<enclosure>`](https://cyber.harvard.edu/rss/rss.html#ltenclosuregtSubelementOfLtitemgt) and [`<podcast:contentLink>`](#content-link) to ensure the broadest interopability with podcast apps.\n\nThe function of `<guid>` within a live item tag is the same as it is within a regular item. If the `<guid>` of a `<podcast:liveItem>` changes, it MUST be considered a new stream by podcast apps.",
 
@@ -869,15 +871,15 @@
 
     "examples": [
       {
-        "label": "A complete example:",
+        "label": "A complete example",
         "language": "xml",
-        "code": "<podcast:liveItem status=\"live\" start=\"2021-09-26T07:30:00.000-0600\" end=\"2021-09-26T09:30:00.000-0600\">\n<title>Podcasting 2.0 Live Show</title>\n <description>A look into the future of podcasting and how we get to Podcasting 2.0!</description>\n <link>https://example.com/podcast/live</link>\n <guid isPermaLink=\"true\">https://example.com/live</guid>\n <author>John Doe (john@example.com)</author>\n <podcast:images srcset=\"https://example.com/images/live/pci_avatar-massive.jpg 1500w,\n https://example.com/images/live/pci_avatar-middle.jpg 600w,\n https://example.com/images/live/pci_avatar-small.jpg 300w,\n https://example.com/images/live/pci_avatar-tiny.jpg 150w\"\n />\n <podcast:person href=\"https://www.podchaser.com/creators/adam-curry-107ZzmWE5f\"\n img=\"https://example.com/images/adamcurry.jpg\">Adam Curry</podcast:person>\n <podcast:person role=\"guest\" href=\"https://github.com/daveajones/\"\n img=\"https://example.com/images/davejones.jpg\">Dave Jones</podcast:person>\n <podcast:person group=\"visuals\" role=\"cover art designer\"\n href=\"https://example.com/artist/beckysmith\">Becky Smith</podcast:person>\n <podcast:alternateEnclosure type=\"audio/mpeg\" length=\"312\" default=\"true\">\n <podcast:source uri=\"https://example.com/pc20/livestream\" />\n </podcast:alternateEnclosure>\n <enclosure url=\"https://example.com/pc20/livestream?format=.mp3\" type=\"audio/mpeg\" length=\"312\" />\n <podcast:contentLink href=\"https://youtube.com/pc20/livestream\">YouTube!</podcast:contentLink>\n <podcast:contentLink href=\"https://twitch.com/pc20/livestream\">Twitch!</podcast:contentLink>\n <podcast:contentLink href=\"https://example.com/html/livestream\">Listen Live!</podcast:contentLink>\n</podcast:liveItem>"
+        "code": "<podcast:liveItem status=\"live\"\n  start=\"2021-09-26T07:30:00.000-0600\"\n  end=\"2021-09-26T09:30:00.000-0600\"\n>\n  <title>Podcasting 2.0 Live Show</title>\n  <description>\n    A look into the future of podcasting and how we get to Podcasting 2.0!\n  </description>\n  <link>https://example.com/podcast/live</link>\n  <guid isPermaLink=\"true\">https://example.com/live</guid>\n  <author>John Doe (john@example.com)</author>\n  <podcast:images srcset=\"https://example.com/images/live/pci_avatar-massive.jpg 1500w,\n    https://example.com/images/live/pci_avatar-middle.jpg 600w,\n    https://example.com/images/live/pci_avatar-small.jpg 300w,\n    https://example.com/images/live/pci_avatar-tiny.jpg 150w\"\n  />\n  <podcast:person href=\"https://www.podchaser.com/creators/adam-curry-107ZzmWE5f\"\n    img=\"https://example.com/images/adamcurry.jpg\">Adam Curry</podcast:person>\n  <podcast:person role=\"guest\" href=\"https://github.com/daveajones/\"\n    img=\"https://example.com/images/davejones.jpg\">Dave Jones</podcast:person>\n  <podcast:person group=\"visuals\" role=\"cover art designer\"\n    href=\"https://example.com/artist/beckysmith\">Becky Smith</podcast:person>\n  <podcast:alternateEnclosure type=\"audio/mpeg\" length=\"312\" default=\"true\">\n    <podcast:source uri=\"https://example.com/pc20/livestream\" />\n  </podcast:alternateEnclosure>\n  <enclosure url=\"https://example.com/pc20/livestream?format=.mp3\" type=\"audio/mpeg\" length=\"312\" />\n  <podcast:contentLink href=\"https://youtube.com/pc20/livestream\">YouTube!</podcast:contentLink>\n  <podcast:contentLink href=\"https://twitch.com/pc20/livestream\">Twitch!</podcast:contentLink>\n  <podcast:contentLink href=\"https://example.com/html/livestream\">Listen Live!</podcast:contentLink>\n</podcast:liveItem>"
       },
 
       {
-        "label": "A bare bones example:",
+        "label": "A bare bones example",
         "language": "xml",
-        "code": "<podcast:liveItem status=\"live\" start=\"2021-09-26T07:30:00.000-0600\" end=\"2021-09-26T09:30:00.000-0600\"> <title>Podcasting 2.0 Live Stream</title>\n<guid>e32b4890-983b-4ce5-8b46-f2d6bc1d8819</guid>\n<enclosure url=\"https://example.com/pc20/livestream?format=.mp3\" type=\"audio/mpeg\" length=\"312\" />\n<podcast:contentLink href=\"https://example.com/html/livestream\">Listen Live!</podcast:contentLink>\n</podcast:liveItem>"
+        "code": "<podcast:liveItem status=\"live\" start=\"2021-09-26T07:30:00.000-0600\" end=\"2021-09-26T09:30:00.000-0600\">\n  <title>Podcasting 2.0 Live Stream</title>\n  <guid>e32b4890-983b-4ce5-8b46-f2d6bc1d8819</guid>\n  <enclosure url=\"https://example.com/pc20/livestream?format=.mp3\" type=\"audio/mpeg\" length=\"312\" />\n  <podcast:contentLink href=\"https://example.com/html/livestream\">Listen Live!</podcast:contentLink>\n</podcast:liveItem>"
       }
     ]
   },
@@ -891,7 +893,7 @@
 
     "parents": ["<podcast:liveItem>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "nodeValue": "The node value is a free form string meant to explain to the user where this content link points and/or the nature of it's purpose.",
 
@@ -926,7 +928,7 @@
 
     "parents": ["<item>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "attributes": [
       {
@@ -959,19 +961,19 @@
 
     "examples": [
       {
-        "label": "Example (simple):",
+        "label": "Example (simple)",
         "language": "xml",
         "code": "<podcast:socialInteract uri=\"https://podcastindex.social/web/@dave/108013847520053258\" protocol=\"activitypub\" accountId=\"@dave\"/>"
       },
 
       {
-        "label": "Example (complex):",
+        "label": "Example (complex)",
         "language": "xml",
         "code": "<podcast:socialInteract priority=\"1\"\nuri=\"https://podcastindex.social/web/@dave/108013847520053258\"\nprotocol=\"activitypub\"\naccountId=\"@dave\"\naccountUrl=\"https://podcastindex.social/web/@dave\"\n/>\n<podcast:socialInteract\npriority=\"2\"\nuri=\"https://twitter.com/PodcastindexOrg/status/1507120226361647115\"\nprotocol=\"twitter\"\naccountId=\"@podcastindexorg\"\naccountUrl=\"https://twitter.com/PodcastindexOrg\"\n/>"
       },
 
       {
-        "label": "Example (disabled):",
+        "label": "Example (disabled)",
         "language": "xml",
         "code": "<podcast:socialInteract protocol=\"disabled\" />"
       }
@@ -991,7 +993,7 @@
 
     "parents": ["<channel>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "attributes": [
       {
@@ -1034,7 +1036,7 @@
 
     "parents": ["<item>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "attributes": [
       {
@@ -1075,7 +1077,7 @@
 
     "parents": ["<podcast:valueTimeSplit>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "attributes": [
       {
@@ -1120,6 +1122,7 @@
     "label": "Podroll",
     "tag": "<podcast:podroll>",
     "slug": "podroll",
+    "popular": true,
     "documentationUrl": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#podroll",
     "description": {
       "long": "This element allows for a podcaster to include references to one or more podcasts in it's `<channel>` as a way of \"recommending\" other podcasts to their listener."
@@ -1127,7 +1130,7 @@
 
     "parents": ["<channel>"],
 
-    "count": "Single",
+    "count": "single",
 
     "nodeValue": "The node value must be one or more `<podcast:remoteItem>` elements.",
 
@@ -1149,7 +1152,7 @@
 
     "parents": ["<channel>"],
 
-    "count": "Single",
+    "count": "single",
 
     "nodeValue": "The node value is a free-form string, which might be displayed alongside other information about the podcast. Please do not exceed 128 characters for the node value or it may be truncated by aggregators.",
 
@@ -1173,31 +1176,31 @@
     ],
     "examples": [
       {
-        "label": "Recreating most of Apple Podcasts Connect’s “Update Frequency” values is easily achieved:",
+        "label": "Recreating most of Apple Podcasts Connect’s “Update Frequency” values is easily achieved",
         "language": "xml",
         "code": "<podcast:updateFrequency rrule=\"FREQ=DAILY\">Daily</podcast:updateFrequency>\n\n<podcast:updateFrequency rrule=\"FREQ=WEEKLY\">Weekly</podcast:updateFrequency>\n\n<podcast:updateFrequency rrule=\"FREQ=WEEKLY;INTERVAL=2\">Biweekly</podcast:updateFrequency>\n\n<podcast:updateFrequency rrule=\"FREQ=MONTHLY\">Monthly</podcast:updateFrequency>\n\n<podcast:updateFrequency rrule=\"FREQ=MONTHLY;INTERVAL=2\">Bimonthly</podcast:updateFrequency>\n\n<podcast:updateFrequency rrule=\"FREQ=MONTHLY\">Monthly</podcast:updateFrequency>\n\n<podcast:updateFrequency rrule=\"FREQ=YEARLY\">Yearly</podcast:updateFrequency>"
       },
 
       {
-        "label": "However, greater precision can be easily communicated:",
+        "label": "However, greater precision can be easily communicated",
         "language": "xml",
         "code": "<podcast:updateFrequency rrule=\"FREQ=DAILY;INTERVAL=1;BYDAY=MO,TU,WE,TH,FR\">Every weekday</podcast:updateFrequency>\n\n<podcast:updateFrequency rrule=\"FREQ=WEEKLY;BYDAY=MO,WE\">Every Monday and Wednesday</podcast:updateFrequency>\n\n<podcast:updateFrequency rrule=\"FREQ=WEEKLY;BYDAY=FR;BYMONTHDAY=13\">Every friday the 13th</podcast:updateFrequency>\n\n<podcast:updateFrequency rrule=\"FREQ=YEARLY;BYDAY=+4TH;BYMONTH=11\">\nEvery year on American Thanksgiving\n</podcast:updateFrequency>"
       },
 
       {
-        "label": "Limited-run podcasts can indicate when they’ll go on hiatus by setting an UNTIL date or a COUNT:",
+        "label": "Limited-run podcasts can indicate when they’ll go on hiatus by setting an UNTIL date or a COUNT",
         "language": "xml",
         "code": "<podcast:updateFrequency rrule=\"FREQ=WEEKLY;INTERVAL=2;BYDAY=MO;COUNT=10\" dtstart=\"2023-08-28T00:00:00.000Z\">\n Every other Monday for 10 episodes starting on Aug 28, 2023\n</podcast:updateFrequency>\n\n<podcast:updateFrequency rrule=\"FREQ=WEEKLY;UNTIL=2023-12-31T00:00:00.000Z;BYDAY=MO\">\nEvery Monday until Dec 31, 2023\n</podcast:updateFrequency>"
       },
 
       {
-        "label": "Podcasts currently on hiatus can indicate their intention to resume production by setting a DTSTART value in the future:",
+        "label": "Podcasts currently on hiatus can indicate their intention to resume production by setting a DTSTART value in the future",
         "language": "xml",
         "code": "<podcast:updateFrequency dtstart=\"2025-01-01T00:00:00.000Z\" rrule=\"FREQ=WEEKLY\"> Weekly, starting in 2025</podcast:updateFrequency>"
       },
 
       {
-        "label": "Complete podcasts with no intention to release further episodes:",
+        "label": "Complete podcasts with no intention to release further episodes",
         "language": "xml",
         "code": "<podcast:updateFrequency complete=\"true\">That’s all folks!</podcast:updateFrequency>"
       }
@@ -1214,7 +1217,7 @@
 
     "parents": ["<channel>"],
 
-    "count": "Single",
+    "count": "single",
     "examples": [
       {
         "language": "xml",
@@ -1234,7 +1237,7 @@
 
     "parents": ["<podcast:value>"],
 
-    "count": "Multiple",
+    "count": "multiple",
 
     "nodeValue": "A single `<podcast:remoteItem>` element OR one or more `<podcast:valueRecipient>` elements.",
 
