@@ -22,7 +22,7 @@ export default async function ResourcesPage() {
           </li>
           <li>
             <Link href="https://blubrry.com/support/podcasting-2-0-introduction/">
-              Read Blubrry's Podcasting 2.0 guide
+              Read Blubrry&rsquo;s Podcasting 2.0 guide
             </Link>
           </li>
         </ul>
