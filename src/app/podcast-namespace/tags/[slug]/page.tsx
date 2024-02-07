@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import podcastNamespaceTags from "@/data/podcastNamespaceTags.json";
+import { podcastNamespaceTags } from "@/data/podcastNamespaceTags";
 import Markdown from "markdown-to-jsx";
 import { notFound } from "next/navigation";
 import { MyCodeBlock } from "@/components/ui/MyCodeBlock";

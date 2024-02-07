@@ -8,6 +8,7 @@ type NamespaceTag = {
     long: string;
   };
   parents: string[];
+  namespace: string;
   parentsDescription?: string;
   count: string;
   nodeValue?: string;

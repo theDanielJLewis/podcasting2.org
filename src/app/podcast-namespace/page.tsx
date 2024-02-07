@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import podcastNamespaceTags from "@/data/podcastNamespaceTags.json";
+import { podcastNamespaceTags } from "@/data/podcastNamespaceTags";
 import Link from "next/link";
 import { NamespaceTag } from "@/components/NamespaceTag";
 import _ from "lodash";
