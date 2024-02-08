@@ -9,19 +9,28 @@ export default async function ResourcesPage() {
       <div>
         <ul className="list-disc pl-4">
           <li>
-            <Link href="https://podcastindex.org/podcast/920666">
+            <Link
+              href="https://podcastindex.org/podcast/920666"
+              className="text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500"
+            >
               Listen to Podcasting 2.0 with Adam Curry, Dave Jones, and
               ocassional guests
             </Link>
           </li>
           <li>
-            <Link href="https://futureofpodcasting.net">
+            <Link
+              href="https://futureofpodcasting.net"
+              className="text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500"
+            >
               Listen to The Future of Podcasting with Dave Jackson and Daniel J.
               Lewis
             </Link>
           </li>
           <li>
-            <Link href="https://blubrry.com/support/podcasting-2-0-introduction/">
+            <Link
+              href="https://blubrry.com/support/podcasting-2-0-introduction/"
+              className="text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500"
+            >
               Read Blubrry&rsquo;s Podcasting 2.0 guide
             </Link>
           </li>

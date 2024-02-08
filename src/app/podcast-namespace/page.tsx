@@ -64,8 +64,7 @@ export default function PodcastNamespacePage() {
         <a href="https://podcastindex.org/apps?appTypes=hosting">
           podcast hosting companies
         </a>{" "}
-        and{" "}
-        <a href="https://podcastindex.org/apps?appTypes=app">podcast apps</a>.
+        and <Link href="/apps">podcast apps</Link>.
       </p>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

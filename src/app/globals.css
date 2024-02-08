@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-main a {
-  @apply text-blue-400 transition-all hover:text-blue-500;
+p a {
+  @apply text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500;
 }
 
 p {

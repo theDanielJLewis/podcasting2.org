@@ -26,7 +26,7 @@ export default function RootLayout({
       >
         <Header />
         <div className="flex shrink grow overflow-hidden text-slate-800 dark:bg-slate-900 dark:text-slate-100">
-          <main className="container mx-auto bg-gradient-to-br from-blue-950/50 to-transparent p-4 lg:px-8 ">
+          <main className="container mx-auto bg-gradient-to-br from-blue-50 to-transparent p-4 lg:px-8 dark:from-blue-950/50 ">
             {children}
           </main>
         </div>

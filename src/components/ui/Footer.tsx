@@ -9,14 +9,14 @@ export function Footer() {
           Podcasting2.org created by{" "}
           <Link
             href="https://theaudacitytopodcast.com/"
-            className="transition-all hover:text-slate-300"
+            className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
           >
             Daniel J. Lewis
           </Link>{" "}
           and{" "}
           <Link
             href="https://podnews.net"
-            className="transition-all hover:text-slate-300"
+            className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
           >
             James Cridland
           </Link>
@@ -27,7 +27,7 @@ export function Footer() {
             href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
             target="_blank"
             rel="license noopener noreferrer"
-            className="inline-block transition-all hover:text-slate-300"
+            className="inline-block text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
           >
             CC BY 4.0
             <img
@@ -47,7 +47,7 @@ export function Footer() {
             <li>
               <Link
                 href="/about"
-                className="transition-all hover:text-slate-300"
+                className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
               >
                 About
               </Link>
@@ -55,7 +55,7 @@ export function Footer() {
             <li>
               <Link
                 href="https://podcastindex.org"
-                className="transition-all hover:text-slate-300"
+                className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
               >
                 Podcast Index
               </Link>
@@ -63,7 +63,7 @@ export function Footer() {
             <li>
               <Link
                 href="https://podcastindex.social"
-                className="transition-all hover:text-slate-300"
+                className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
               >
                 Mastodon Community
               </Link>
@@ -71,7 +71,7 @@ export function Footer() {
             <li>
               <Link
                 href="https://github.com/thedanieljlewis/podcasting2.org"
-                className="transition-all hover:text-slate-300"
+                className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
               >
                 Contribute on GitHub
               </Link>
