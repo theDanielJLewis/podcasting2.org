@@ -4,7 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/ui/Footer";
 import { Header } from "@/components/ui/Header";
 
-const openSans = Open_Sans({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Podcasting 2.0",

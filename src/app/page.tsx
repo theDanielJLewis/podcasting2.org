@@ -14,10 +14,10 @@ export default function Home() {
     <>
       <div className="py-18 flex flex-col justify-center lg:py-36">
         <h1>
-          Making podcasting better for audiences, podcasters, and developers.
+          <span className="font-bold">Podcasting 2.0</span>
           <br />
           <br />
-          <span className="font-bold">This is Podcasting 2.0!</span>
+          Making podcasting better for audiences, podcasters, and developers
         </h1>
       </div>
       <div>
