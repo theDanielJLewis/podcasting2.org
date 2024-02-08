@@ -32,7 +32,6 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { PodcastIndexApps } from "@/types/PodcastIndexApps";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
 
@@ -43,7 +42,6 @@ export default function Apps({ apps }: { apps: PodcastIndexApps[] }) {
   apps = apps.sort(
     (a, b) => b.supportedElements.length - a.supportedElements.length,
   );
-  apps = apps.filter((app) => app.appType.includes("podcast player"));
   const platforms = _.uniq(apps.map((app) => app.platforms).flat());
   const [appsList, setAppsList] = useState(apps);
 
@@ -62,7 +60,7 @@ export default function Apps({ apps }: { apps: PodcastIndexApps[] }) {
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Pick your platform" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent position="item-aligned">
             {platforms.map((platform: any) => (
               <SelectItem value={platform} key={platform}>
                 {platform}
@@ -70,6 +68,15 @@ export default function Apps({ apps }: { apps: PodcastIndexApps[] }) {
             ))}
           </SelectContent>
         </Select>
+        <Button
+          onClick={() => {
+            setAppsList(apps);
+          }}
+          size={"sm"}
+        >
+          Reset filter
+        </Button>
+        <div className="ml-auto">(Sorted by most features)</div>
       </div>
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4">
         {appsList.map((app) => (

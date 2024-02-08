@@ -3,7 +3,7 @@ type SupportedElement = {
   elementUrl: string;
 };
 
-export type PodcastIndexApps = {
+type PodcastIndexApps = {
   appName: string;
   appType: string[];
   appUrl: string;

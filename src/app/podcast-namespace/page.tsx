@@ -61,9 +61,9 @@ export default function PodcastNamespacePage() {
       <p>
         Individual tags from the new podcast namespace are now supported by a
         growing number of{" "}
-        <a href="https://podcastindex.org/apps?appTypes=hosting">
-          podcast hosting companies
-        </a>{" "}
+        <Link href="/publishing-tools">
+          podcast publishing tools and hosting providers
+        </Link>{" "}
         and <Link href="/apps">podcast apps</Link>.
       </p>
 
