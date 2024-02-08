@@ -15,12 +15,11 @@ export function Footer() {
           </Link>{" "}
           and{" "}
           <Link
-            href="https://podnews.net"
+            href="https://james.cridland.net/"
             className="transition-all hover:text-slate-300"
           >
             James Cridland
           </Link>
-          .
           <br />
           All content is licensed under{" "}
           <Link
