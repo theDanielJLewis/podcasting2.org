@@ -29,14 +29,18 @@ export function Footer() {
             className="inline-block text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
           >
             CC BY 4.0
-            <img
+            <Image
+              width="12"
+              height="12"
               className="ml-1 inline-block h-3 align-baseline"
-              src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+              src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
               alt="Creative Commons"
             />
-            <img
+            <Image
+              width="12"
+              height="12"
               className="ml-1 inline-block h-3 align-baseline"
-              src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+              src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
               alt="Attribution 4.0 International"
             />
           </Link>
