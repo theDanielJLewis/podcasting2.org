@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Podcasting 2.0 for developers",
+  title: "About Podcasting 2.0",
   // description: 'Podcasting 2.0 is for podcasters!',
 };
 

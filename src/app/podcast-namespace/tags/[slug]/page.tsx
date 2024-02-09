@@ -3,6 +3,24 @@ import { podcastNamespaceTags } from "@/data/podcastNamespaceTags";
 import Markdown from "markdown-to-jsx";
 import { notFound } from "next/navigation";
 import { MyCodeBlock } from "@/components/ui/MyCodeBlock";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const tag: NamespaceTag | undefined = podcastNamespaceTags.find(
+    (tag) => tag.slug.toLowerCase() === params.slug.toLowerCase(),
+  );
+  if (!tag) {
+    return notFound();
+  }
+
+  return {
+    title: `${tag.tag} - Podcast Namespace - Podcasting 2.0`,
+  };
+}
+
 export default function SingleTag({ params }: { params: { slug: string } }) {
   const tag: NamespaceTag | undefined = podcastNamespaceTags.find(
     (tag) => tag.slug.toLowerCase() === params.slug.toLowerCase(),

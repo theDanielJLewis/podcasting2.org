@@ -2,8 +2,9 @@ import Apps from "@/components/Apps";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Podcasting 2.0 for audiences",
-  // description: 'Podcasting 2.0 is for podcasters!',
+  title: "Podcast Hosting and Tools - Podcasting 2.0",
+  description:
+    "Podcasting hosting providers and publishing tools that support Podcasting 2.0.",
 };
 
 export default async function PublishingToolsPage() {

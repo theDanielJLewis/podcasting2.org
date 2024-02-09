@@ -2,7 +2,7 @@ import Apps from "@/components/Apps";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Podcasting 2.0 for audiences",
+  title: "Podcast Apps - Podcasting 2.0",
   // description: 'Podcasting 2.0 is for podcasters!',
 };
 

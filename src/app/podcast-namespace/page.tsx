@@ -5,7 +5,7 @@ import { NamespaceTag } from "@/components/NamespaceTag";
 import _ from "lodash";
 
 export const metadata: Metadata = {
-  title: "Podcast Namespace",
+  title: "Podcast Namespace - Podcasting 2.0",
   // description: 'Podcasting 2.0 is for podcasters!',
 };
 

@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Podcasting 2.0 Resources",
+  // description: 'Podcasting 2.0 is for podcasters!',
+};
 
 export default async function ResourcesPage() {
   return (
