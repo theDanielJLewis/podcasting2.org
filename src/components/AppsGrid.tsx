@@ -35,7 +35,7 @@ import {
 import { Badge } from "./ui/badge";
 import Link from "next/link";
 
-export default function Apps({ apps }: { apps: PodcastIndexApps[] }) {
+export function AppsGrid({ apps }: { apps: PodcastIndexApps[] }) {
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -52,7 +52,6 @@ export default function Apps({ apps }: { apps: PodcastIndexApps[] }) {
 
   return (
     <>
-      {" "}
       <div className="flex items-center gap-4 pb-4">
         <Select
           onValueChange={(v) => filterApps({ field: "platforms", value: v })}

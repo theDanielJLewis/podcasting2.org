@@ -1,5 +1,6 @@
-import Apps from "@/components/Apps";
 import { Metadata } from "next";
+import { getApps } from "@/data/apps";
+import { AppsGrid } from "@/components/AppsGrid";
 
 export const metadata: Metadata = {
   title: "Podcast Hosting and Tools - Podcasting 2.0",
@@ -8,8 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function PublishingToolsPage() {
-  const response = await fetch("https://podcastindex.org/api/apps");
-  let apps: PodcastIndexApps[] = await response.json();
+  let apps = await getApps();
   apps = apps.filter((app) => app.appType.includes("hosting"));
 
   return (
@@ -21,7 +21,7 @@ export default async function PublishingToolsPage() {
           publishing or hosting tool.
         </span>
       </div>
-      <Apps apps={apps} />
+      <AppsGrid apps={apps} />
     </>
   );
 }

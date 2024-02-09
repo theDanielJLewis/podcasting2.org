@@ -1,5 +1,6 @@
-import Apps from "@/components/Apps";
 import { Metadata } from "next";
+import { getApps } from "@/data/apps";
+import { AppsGrid } from "@/components/AppsGrid";
 
 export const metadata: Metadata = {
   title: "Podcast Apps - Podcasting 2.0",
@@ -7,8 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AppsPage() {
-  const response = await fetch("https://podcastindex.org/api/apps");
-  let apps: PodcastIndexApps[] = await response.json();
+  let apps = await getApps();
   apps = apps.filter((app) => app.appType.includes("podcast player"));
 
   return (
@@ -21,7 +21,7 @@ export default async function AppsPage() {
           more!
         </span>
       </div>
-      <Apps apps={apps} />
+      <AppsGrid apps={apps} />
     </>
   );
 }
