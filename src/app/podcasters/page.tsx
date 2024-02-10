@@ -64,15 +64,12 @@ export default function PodcastersPage() {
         </li>
         <li>
           Prepare your podcast to receive streaming Bitcoin/Satoshis and
-          Boostagrams through Value 4 Value.{" "}
-          <a href="http://adam.curry.com/html/HowtoreceiveBitcoini-BrxM2PDPNJ7Zzbz7G28xk4H0D658fH.html">
-            Here&rsquo;s a guide
-          </a>
-          .
+          Boostagrams through &ldquo;Value 4 Value.&rdquo;{" "}
+          <a href="https://value4value.info/">Here&rsquo;s a guide</a>.
         </li>
         <li>
-          Encourage your audience to get a better podcast app from
-          <Link href="http://podcastapps.com">PodcastApps.com</Link>.
+          Encourage your audience to{" "}
+          <Link href="/apps">get a better podcast app</Link>.
         </li>
         <li>
           <a href="https://podcastindex.social/invite/hfcQYbjq">
