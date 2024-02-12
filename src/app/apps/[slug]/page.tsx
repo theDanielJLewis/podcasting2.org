@@ -74,7 +74,7 @@ export default async function SingleApp({
             </Badge>
           ))}
         </p>
-        <Link href={app.appUrl}>
+        <Link href={app.appUrl} target="_blank">
           <Button>Visit website</Button>
         </Link>
       </div>

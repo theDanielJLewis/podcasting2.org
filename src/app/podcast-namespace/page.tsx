@@ -23,7 +23,7 @@ export default function PodcastNamespacePage() {
 
       <p>
         Since the{" "}
-        <a href="https://blogs.harvard.edu/lydondev/2003/07/09/spoken-word-a-few-good-bloggers/">
+        <a href="https://blogs.harvard.edu/lydondev/2003/07/09/spoken-word-a-few-good-bloggers/"  target="_blank">
           first podcast
         </a>{" "}
         in 2003, podcasting has been evolving.
@@ -34,7 +34,7 @@ export default function PodcastNamespacePage() {
         simple syndication&rdquo;) can be extended with a
         &ldquo;namespace&rdquo;, a set of new tags that enable new features.
         Apple added{" "}
-        <a href="https://podcasters.apple.com/support/823-podcast-requirements">
+        <a href="https://podcasters.apple.com/support/823-podcast-requirements"  target="_blank">
           their own iTunes podcast namespace in 2005
         </a>
         , which allowed podcasters to specify things like podcast artwork,
@@ -42,7 +42,7 @@ export default function PodcastNamespacePage() {
         but in 2020, a new, collaborative, podcast namespace was first worked on
         by a wide number of interested people, aided and encouraged by Adam
         Curry and Dave Jones from{" "}
-        <a href="https://podcastindex.org/">The Podcast Index</a>.
+        <a href="https://podcastindex.org/"  target="_blank">The Podcast Index</a>.
       </p>
 
       <p>

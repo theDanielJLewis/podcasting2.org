@@ -17,6 +17,7 @@ export default async function ResourcesPage() {
           <li>
             <Link
               href="https://podcastindex.org/podcast/920666"
+              target="_blank"
               className="text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500"
             >
               Listen to Podcasting 2.0 with Adam Curry, Dave Jones, and
@@ -26,6 +27,7 @@ export default async function ResourcesPage() {
           <li>
             <Link
               href="https://futureofpodcasting.net"
+              target="_blank"
               className="text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500"
             >
               Listen to The Future of Podcasting with Dave Jackson and Daniel J.
@@ -35,6 +37,7 @@ export default async function ResourcesPage() {
           <li>
             <Link
               href="https://blubrry.com/support/podcasting-2-0-introduction/"
+              target="_blank"
               className="text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500"
             >
               Read Blubrry&rsquo;s Podcasting 2.0 guide

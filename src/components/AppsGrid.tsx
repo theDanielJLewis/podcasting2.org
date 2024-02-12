@@ -137,7 +137,7 @@ export function AppsGrid({ apps }: { apps: PodcastIndexApps[] }) {
                     </DialogHeader>
                   </div>
                   <DialogFooter className="flex sm:justify-center">
-                    <Link href={app.appUrl}>
+                    <Link href={app.appUrl} target="_blank">
                       <Button>Visit website</Button>
                     </Link>
                     <DialogClose>
@@ -203,7 +203,7 @@ export function AppsGrid({ apps }: { apps: PodcastIndexApps[] }) {
                     </DrawerHeader>
                   </div>
                   <DrawerFooter>
-                    <Link href={app.appUrl}>
+                    <Link href={app.appUrl} target="_blank">
                       <Button className="w-full">Visit website</Button>
                     </Link>
                     <DrawerClose>

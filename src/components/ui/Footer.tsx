@@ -9,6 +9,7 @@ export function Footer() {
           Podcasting2.org created by{" "}
           <Link
             href="https://theaudacitytopodcast.com/"
+            target="_blank"
             className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
           >
             Daniel J. Lewis
@@ -16,6 +17,7 @@ export function Footer() {
           and{" "}
           <Link
             href="https://james.cridland.net/"
+            target="_blank"
             className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
           >
             James Cridland
@@ -58,6 +60,7 @@ export function Footer() {
             <li>
               <Link
                 href="https://podcastindex.org"
+                target="_blank"
                 className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
               >
                 Podcast Index
@@ -66,6 +69,7 @@ export function Footer() {
             <li>
               <Link
                 href="https://podcastindex.social"
+                target="_blank"
                 className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
               >
                 Mastodon Community
@@ -74,6 +78,7 @@ export function Footer() {
             <li>
               <Link
                 href="https://github.com/thedanieljlewis/podcasting2.org"
+                target="_blank"
                 className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
               >
                 Contribute on GitHub

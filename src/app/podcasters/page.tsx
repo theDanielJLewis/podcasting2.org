@@ -51,7 +51,7 @@ export default function PodcastersPage() {
       <ol className="list-decimal pl-8">
         <li>
           Ensure your podcast is in the Podcast Index, and{" "}
-          <Link href="https://podcastindex.org/add">
+          <Link href="https://podcastindex.org/add" target="_blank">
             add your podcast if it&rsquo;s not included
           </Link>
           .
@@ -65,14 +65,17 @@ export default function PodcastersPage() {
         <li>
           Prepare your podcast to receive streaming Bitcoin/Satoshis and
           Boostagrams through &ldquo;Value 4 Value.&rdquo;{" "}
-          <a href="https://value4value.info/">Here&rsquo;s a guide</a>.
+          <a href="https://value4value.info/" target="_blank">
+            Here&rsquo;s a guide
+          </a>
+          .
         </li>
         <li>
           Encourage your audience to{" "}
           <Link href="/apps">get a better podcast app</Link>.
         </li>
         <li>
-          <a href="https://podcastindex.social/invite/hfcQYbjq">
+          <a href="https://podcastindex.social/invite/hfcQYbjq" target="_blank">
             Participate in PodcastIndex.social
           </a>{" "}
           to share your ideas and feedback.
