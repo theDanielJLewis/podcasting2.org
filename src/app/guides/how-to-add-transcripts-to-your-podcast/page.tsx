@@ -12,6 +12,7 @@ import { MyCode } from "@/components/ui/MyCode";
 import { HeroHeader } from "@/components/ui/HeroHeader";
 import { guides } from "@/data/guides";
 import { ItemNav } from "@/components/ItemNav";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "How to Add Transcripts to Your Podcast - Podcasting 2.0",
@@ -29,6 +30,9 @@ export default function TranscriptsGuide() {
       <ItemNav current={currentGuide} items={guides} />
       <HeroHeader>
         <h1>How to Add Transcripts to Your Podcast</h1>
+        <span>
+          Powered by <MyCode text={tag.tag} language="xml" />
+        </span>
       </HeroHeader>
 
       <div className="mb-8">
@@ -67,6 +71,10 @@ export default function TranscriptsGuide() {
           </li>
         </ol>
 
+        <Link href={`/podcast-namespace/tags/${tag.slug}`}>
+          <Button>Read the technical details</Button>
+        </Link>
+
         <h2>Tools for generating transcripts</h2>
         <ul>
           <li>
@@ -91,6 +99,7 @@ export default function TranscriptsGuide() {
           </li>
         </ul>
       </div>
+      <ItemNav current={currentGuide} items={guides} />
     </>
   );
 }

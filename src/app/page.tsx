@@ -154,24 +154,19 @@ export default function Home() {
           <ol className="mb-8 list-decimal pl-8">
             <li>
               Start implementing the Podcasting 2.0 features in your own
-              podcast.
+              podcast. <Link href="/guides">Visit our guides for help</Link>.
             </li>
             <li>
-              Encourage your audience to try a better podcast app from{" "}
+              Encourage your audience to{" "}
               <Link
                 href="/apps"
                 className="text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500"
               >
-                our list at Podcasting2.org/apps
+                try a better podcast app from Podcasting2.org/apps
               </Link>
               .
             </li>
           </ol>
-          <p>
-            <Link href="/get-involved">
-              <Button>Learn how to get involved</Button>
-            </Link>
-          </p>
         </div>
       </div>
     </>

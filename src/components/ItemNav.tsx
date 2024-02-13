@@ -1,13 +1,22 @@
+import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-export function ItemNav({ current, items }: { current: any; items: any[] }) {
+export function ItemNav({
+  current,
+  items,
+  className,
+}: {
+  current: any;
+  items: any[];
+  className?: string;
+}) {
   const currentIndex = items.findIndex((item) => item === current);
   const prevItem = items[currentIndex - 1];
   const nextItem = items[currentIndex + 1];
 
   return (
-    <div className="flex justify-between">
+    <div className={cn("flex justify-between", className)}>
       <div>
         {prevItem && (
           <Link

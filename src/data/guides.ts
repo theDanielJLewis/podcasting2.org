@@ -14,4 +14,12 @@ export const guides: Guide[] = [
 
     href: "/guides/how-to-add-super-chapters-to-your-podcast",
   },
+  {
+    title: "How to Add Podcast Recommendations with Podroll",
+    label: "Podcast recommendations",
+    tagSlug: "podroll",
+    category: "Podcasters",
+
+    href: "/guides/how-to-add-podcast-recommendations-with-podroll",
+  },
 ];
