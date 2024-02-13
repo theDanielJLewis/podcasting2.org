@@ -1,7 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import Markdown from "markdown-to-jsx";
 import { notFound } from "next/navigation";
-import { MyCodeBlock } from "@/components/ui/MyCodeBlock";
 import { getApps } from "@/data/apps";
 import Image from "next/image";
 import Link from "next/link";

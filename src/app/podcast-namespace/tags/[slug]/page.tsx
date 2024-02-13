@@ -3,6 +3,9 @@ import { podcastNamespaceTags } from "@/data/podcastNamespaceTags";
 import Markdown from "markdown-to-jsx";
 import { notFound } from "next/navigation";
 import { MyCodeBlock } from "@/components/ui/MyCodeBlock";
+import { HeroHeader } from "@/components/ui/HeroHeader";
+import { MyCode } from "@/components/ui/MyCode";
+import { ItemNav } from "@/components/ItemNav";
 
 export async function generateMetadata({
   params,
@@ -31,17 +34,21 @@ export default function SingleTag({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <div className="flex flex-col justify-center py-16 text-xl lg:py-36">
+      <ItemNav current={tag} items={podcastNamespaceTags} />
+      <HeroHeader>
         <h1>{tag.label}</h1>
+        <span className="mb-4">
+          <MyCode text={tag.tag} language="xml" />
+        </span>
         <span>{tag.description.short}</span>
-      </div>
+      </HeroHeader>
 
       <div className="mb-8">
         {tag.parents.length === 1 ? "Parent" : "Parents"}
         {": "}
         {tag.parents.map((parent) => (
           <Badge variant="secondary" className="m-0.5" key={parent}>
-            <code>{parent}</code>
+            <MyCode text={parent} language="xml" />
           </Badge>
         ))}
         {tag.parentsDescription && (
@@ -96,25 +103,14 @@ export default function SingleTag({ params }: { params: { slug: string } }) {
         <div key={example.code} className="mb-8">
           {example.label && <p>{example.label}:</p>}
           <MyCodeBlock
-            code={example.code}
-            language={example.language}
-            // lineNumbers={true}
-            lines={example.highlightLines}
-          />
-          {/* <CopyBlock
             text={example.code}
             language={example.language}
-            showLineNumbers={false}
-            // wrapLongLines={true}
-            theme={dracula}
-            codeBlock
-          /> */}
+            showLineNumbers={example.highlightLines ? true : false}
+            highlight={example.highlightLines}
+          />
         </div>
       ))}
-      {/* <div className="flex justify-between">
-        <div>&larr; </div>
-        <div>&rarr;</div>
-      </div> */}
+      <ItemNav current={tag} items={podcastNamespaceTags} />
     </>
   );
 }

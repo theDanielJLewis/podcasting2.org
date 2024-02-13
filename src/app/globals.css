@@ -10,6 +10,11 @@ main ol {
   @apply mb-8 list-decimal pl-8;
 }
 
+main ol li,
+main ul li {
+  @apply mb-2;
+}
+
 main ul {
   @apply mb-8 list-disc pl-8;
 }
@@ -32,6 +37,10 @@ h3 {
 
 h4 {
   @apply text-lg font-bold;
+}
+
+code span:not(.linenumber) {
+  user-select: auto !important;
 }
 
 @layer base {

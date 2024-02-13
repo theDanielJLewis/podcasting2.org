@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 export const podcastNamespaceTags: NamespaceTag[] = [
   {
     label: "Transcript",
@@ -11,22 +13,7 @@ export const podcastNamespaceTags: NamespaceTag[] = [
       short: "Timestamped captions and transcripts",
       long: `This tag is used to link to a transcript or closed captions file. Multiple tags can be present for multiple transcript formats.
 
-Detailed file format information and example files are [here](../transcripts/transcripts.md).`,
-    },
-    guide: {
-      title: "How to add transcripts to your podcast",
-      content: `Podcasting 2.0 transcripts require two parts: a transcript file (one per language for each episode) and the \`<podcast:transcript>\` tag in the episode in your RSS feed.
-
-1. **Create and edit a transcript file for your podcast episode(s)**. SRT or VTT are the best file formats for this. These are easiest to produce with a transcription service or AI-powered app. (See below for tools.)
-2. **Upload the transcript file** to your podcast-hosting provider or a file-hosting service (preferrably a CDN). Make sure the file is publicly accessible.
-3. (Skip this step if your podcast-hosting provider does this for you.) **Add the URL for your transcript file** to your episode's transcript field, or in the \`<podcast:transcript>\` tag in your RSS feed. ([Learn more about the Transcript tag.](/podcast-namespace/tags/transcript))
-
-## Tools for generating transcripts
-
-- [Descript](https://www.descript.com/)
-- [Otter](https://otter.ai/)
-- [MacWhisper](https://macwhisper.com/)
-- [CastMagic](https://castmagic.io/)`,
+Detailed file format information and example files are [here](https://github.com/Podcastindex-org/podcast-namespace/blob/main/transcripts/transcripts.md).`,
     },
 
     parents: ["<item>"],
@@ -89,81 +76,6 @@ Detailed file format information and example files are [here](../transcripts/tra
   type="application/x-subrip"
   rel="captions"
 />`,
-      },
-    ],
-  },
-  {
-    label: "Locked",
-    tag: "<podcast:locked>",
-    slug: "locked",
-    namespace: "podcast",
-    documentationUrl:
-      "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#locked",
-    description: {
-      short: "Require permission to migrate a feed",
-      long: "This tag may be set to `yes` or `no`. The purpose is to tell other podcast hosting platforms whether they are allowed to import this feed. A value of `yes` means that any attempt to import this feed into a new platform should be rejected.",
-    },
-    parents: ["<channel>"],
-
-    count: "single",
-
-    nodeValue: "The node value must be `yes` or `no`.",
-
-    attributes: [
-      {
-        name: "owner",
-        required: false,
-        description:
-          "The owner attribute is an email address that can be used to verify ownership of this feed during move and import operations. This could be a public email or a virtual email address at the hosting provider that redirects to the owner's true email address.",
-      },
-    ],
-    examples: [
-      {
-        language: "xml",
-        code: "<podcast:locked>yes</podcast:locked>",
-      },
-
-      {
-        language: "xml",
-        code: '<podcast:locked owner="email@example.com">no</podcast:locked>',
-      },
-    ],
-  },
-  {
-    label: "Funding",
-    tag: "<podcast:funding>",
-    slug: "funding",
-    namespace: "podcast",
-    documentationUrl:
-      "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding",
-    description: {
-      short: "Links to financially support a show",
-      long: "This tag lists possible donation/funding links for the podcast. The content of the tag is the recommended string to be used with the link.",
-    },
-
-    parents: ["<channel>"],
-
-    count: "multiple",
-
-    nodeValue:
-      "This is a free form string supplied by the creator which they expect to be displayed in the app next to the link. Please do not exceed `128 characters` for the node value or it may be truncated by aggregators.",
-
-    attributes: [
-      {
-        name: "url",
-        required: true,
-        description: "The URL to be followed to fund the podcast.",
-      },
-    ],
-    examples: [
-      {
-        language: "xml",
-        code: '<podcast:funding url="https://www.example.com/donations">Support the show!</podcast:funding>',
-      },
-
-      {
-        language: "xml",
-        code: '<podcast:funding url="https://www.example.com/members">Become a member!</podcast:funding>',
       },
     ],
   },
@@ -257,6 +169,113 @@ Benefits with this approach are that chapters do not require altering audio file
       },
     ],
   },
+  {
+    label: "Podroll",
+    tag: "<podcast:podroll>",
+    slug: "podroll",
+    namespace: "podcast",
+    popular: true,
+    documentationUrl:
+      "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#podroll",
+    description: {
+      short: "Recommend other podcasts",
+      long: `This element allows for a podcaster to include references to one or more podcasts in it\'s \`<channel>\` as a way of "recommending" other podcasts to their listener.`,
+    },
+
+    parents: ["<channel>"],
+
+    count: "single",
+
+    nodeValue:
+      "The node value must be one or more `<podcast:remoteItem>` elements.",
+
+    examples: [
+      {
+        language: "xml",
+        code: `<podcast:podroll>
+  <podcast:remoteItem feedGuid="29cdca4a-32d8-56ba-b48b-09a011c5daa9" />
+  <podcast:remoteItem feedGuid="396d9ae0-da7e-5557-b894-b606231fa3ea" />
+  <podcast:remoteItem feedGuid="917393e3-1b1e-5cef-ace4-edaa54e1f810" />
+</podcast:podroll>`,
+      },
+    ],
+  },
+  {
+    label: "Locked",
+    tag: "<podcast:locked>",
+    slug: "locked",
+    namespace: "podcast",
+    documentationUrl:
+      "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#locked",
+    description: {
+      short: "Require permission to migrate a feed",
+      long: "This tag may be set to `yes` or `no`. The purpose is to tell other podcast hosting platforms whether they are allowed to import this feed. A value of `yes` means that any attempt to import this feed into a new platform should be rejected.",
+    },
+    parents: ["<channel>"],
+
+    count: "single",
+
+    nodeValue: "The node value must be `yes` or `no`.",
+
+    attributes: [
+      {
+        name: "owner",
+        required: false,
+        description:
+          "The owner attribute is an email address that can be used to verify ownership of this feed during move and import operations. This could be a public email or a virtual email address at the hosting provider that redirects to the owner's true email address.",
+      },
+    ],
+    examples: [
+      {
+        language: "xml",
+        code: "<podcast:locked>yes</podcast:locked>",
+      },
+
+      {
+        language: "xml",
+        code: '<podcast:locked owner="email@example.com">no</podcast:locked>',
+      },
+    ],
+  },
+  {
+    label: "Funding",
+    tag: "<podcast:funding>",
+    slug: "funding",
+    namespace: "podcast",
+    documentationUrl:
+      "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#funding",
+    description: {
+      short: "Links to financially support a show",
+      long: "This tag lists possible donation/funding links for the podcast. The content of the tag is the recommended string to be used with the link.",
+    },
+
+    parents: ["<channel>"],
+
+    count: "multiple",
+
+    nodeValue:
+      "This is a free form string supplied by the creator which they expect to be displayed in the app next to the link. Please do not exceed `128 characters` for the node value or it may be truncated by aggregators.",
+
+    attributes: [
+      {
+        name: "url",
+        required: true,
+        description: "The URL to be followed to fund the podcast.",
+      },
+    ],
+    examples: [
+      {
+        language: "xml",
+        code: '<podcast:funding url="https://www.example.com/donations">Support the show!</podcast:funding>',
+      },
+
+      {
+        language: "xml",
+        code: '<podcast:funding url="https://www.example.com/members">Become a member!</podcast:funding>',
+      },
+    ],
+  },
+
   {
     label: "Soundbite",
     tag: "<podcast:soundbite>",
@@ -839,7 +858,7 @@ If there is more than one trailer tag present in the channel, the most recent on
   <podcast:source uri="https://example.com/file-720.torrent" contentType="application/x-bittorrent" />
   <podcast:source uri="http://example.onion/file-720.mp4" />
 </podcast:alternateEnclosure>`,
-        highlightLines: ["2:5"],
+        highlightLines: "2-5",
       },
     ],
   },
@@ -877,7 +896,7 @@ If there is more than one trailer tag present in the channel, the most recent on
   <podcast:source uri="ipfs://QmX33FYehk6ckGQ6g1D9D3FqZPix5JpKstKQKbaS8quUFb" />
   <podcast:integrity type="sri" value="sha384-ExVqijgYHm15PqQqdXfW95x+Rs6C+d6E/ICxyQOeFevnxNLR/wtJNrNYTjIysUBo" />
 </podcast:alternateEnclosure>`,
-        highlightLines: [4],
+        highlightLines: "4",
       },
     ],
   },
@@ -1654,37 +1673,7 @@ Using the \`feedGuid\` attribute is the preferred way to address a remote feed s
       },
     ],
   },
-  {
-    label: "Podroll",
-    tag: "<podcast:podroll>",
-    slug: "podroll",
-    namespace: "podcast",
-    popular: true,
-    documentationUrl:
-      "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#podroll",
-    description: {
-      short: "Recommend other podcasts",
-      long: `This element allows for a podcaster to include references to one or more podcasts in it\'s \`<channel>\` as a way of "recommending" other podcasts to their listener.`,
-    },
 
-    parents: ["<channel>"],
-
-    count: "single",
-
-    nodeValue:
-      "The node value must be one or more `<podcast:remoteItem>` elements.",
-
-    examples: [
-      {
-        language: "xml",
-        code: `<podcast:podroll>
-  <podcast:remoteItem feedGuid="29cdca4a-32d8-56ba-b48b-09a011c5daa9" />
-  <podcast:remoteItem feedGuid="396d9ae0-da7e-5557-b894-b606231fa3ea" />
-  <podcast:remoteItem feedGuid="917393e3-1b1e-5cef-ace4-edaa54e1f810" />
-</podcast:podroll>`,
-      },
-    ],
-  },
   {
     label: "Update Frequency",
     tag: "<podcast:updateFrequency>",
@@ -1907,7 +1896,7 @@ Fees from the default \`<podcast:valueRecipient>\` tags should remain to be calc
   
   </channel>
 </rss>`,
-        highlightLines: ["19:26"],
+        highlightLines: "19-26",
       },
 
       {
@@ -1952,8 +1941,10 @@ Fees from the default \`<podcast:valueRecipient>\` tags should remain to be calc
 
   </channel>
 </rss>`,
-        highlightLines: ["19:34"],
+        highlightLines: "19-34",
       },
     ],
   },
 ];
+
+export const podcastNamespaceTag = _.keyBy(podcastNamespaceTags, "slug");

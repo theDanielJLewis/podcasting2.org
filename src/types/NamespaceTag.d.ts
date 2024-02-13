@@ -28,7 +28,7 @@ type NamespaceTag = {
     label?: string;
     language: string;
     code: string;
-    highlightLines?: (string | number)[];
+    highlightLines?: string;
   }[];
   exampleUrl?: string;
   exampleImageUrls?: string[];
