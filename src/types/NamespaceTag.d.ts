@@ -7,6 +7,10 @@ type NamespaceTag = {
     short?: string;
     long: string;
   };
+  guide?: {
+    title: string;
+    content: string;
+  };
   parents: string[];
   namespace: string;
   parentsDescription?: string;

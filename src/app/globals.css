@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-p a {
+main a {
   @apply text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500;
+}
+
+main ol {
+  @apply mb-8 list-decimal pl-8;
+}
+
+main ul {
+  @apply mb-8 list-disc pl-8;
 }
 
 p {

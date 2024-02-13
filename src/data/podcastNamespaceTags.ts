@@ -13,6 +13,21 @@ export const podcastNamespaceTags: NamespaceTag[] = [
 
 Detailed file format information and example files are [here](../transcripts/transcripts.md).`,
     },
+    guide: {
+      title: "How to add transcripts to your podcast",
+      content: `Podcasting 2.0 transcripts require two parts: a transcript file (one per language for each episode) and the \`<podcast:transcript>\` tag in the episode in your RSS feed.
+
+1. **Create and edit a transcript file for your podcast episode(s)**. SRT or VTT are the best file formats for this. These are easiest to produce with a transcription service or AI-powered app. (See below for tools.)
+2. **Upload the transcript file** to your podcast-hosting provider or a file-hosting service (preferrably a CDN). Make sure the file is publicly accessible.
+3. (Skip this step if your podcast-hosting provider does this for you.) **Add the URL for your transcript file** to your episode's transcript field, or in the \`<podcast:transcript>\` tag in your RSS feed. ([Learn more about the Transcript tag.](/podcast-namespace/tags/transcript))
+
+## Tools for generating transcripts
+
+- [Descript](https://www.descript.com/)
+- [Otter](https://otter.ai/)
+- [MacWhisper](https://macwhisper.com/)
+- [CastMagic](https://castmagic.io/)`,
+    },
 
     parents: ["<item>"],
 
