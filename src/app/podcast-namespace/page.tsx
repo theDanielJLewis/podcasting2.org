@@ -3,6 +3,7 @@ import { podcastNamespaceTags } from "@/data/podcastNamespaceTags";
 import Link from "next/link";
 import { NamespaceTag } from "@/components/NamespaceTag";
 import _ from "lodash";
+import { HeroHeader } from "@/components/ui/HeroHeader";
 
 export const metadata: Metadata = {
   title: "Podcast Namespace - Podcasting 2.0",
@@ -13,17 +14,20 @@ export default function PodcastNamespacePage() {
   const tags = _.sortBy(podcastNamespaceTags, "popular");
   return (
     <>
-      <div className="flex flex-col justify-center py-16 text-xl lg:py-36">
+      <HeroHeader>
         <h1 className="text-4xl">Podcast Namespace</h1>
         <code>
           &lt;rss version=&quot;2.0&quot;
           xmlns:podcast=&quot;https://podcastindex.org/namespace/1.0&quot;&gt;
         </code>
-      </div>
+      </HeroHeader>
 
       <p>
         Since the{" "}
-        <a href="https://blogs.harvard.edu/lydondev/2003/07/09/spoken-word-a-few-good-bloggers/"  target="_blank">
+        <a
+          href="https://blogs.harvard.edu/lydondev/2003/07/09/spoken-word-a-few-good-bloggers/"
+          target="_blank"
+        >
           first podcast
         </a>{" "}
         in 2003, podcasting has been evolving.
@@ -34,7 +38,10 @@ export default function PodcastNamespacePage() {
         simple syndication&rdquo;) can be extended with a
         &ldquo;namespace&rdquo;, a set of new tags that enable new features.
         Apple added{" "}
-        <a href="https://podcasters.apple.com/support/823-podcast-requirements"  target="_blank">
+        <a
+          href="https://podcasters.apple.com/support/823-podcast-requirements"
+          target="_blank"
+        >
           their own iTunes podcast namespace in 2005
         </a>
         , which allowed podcasters to specify things like podcast artwork,
@@ -42,7 +49,10 @@ export default function PodcastNamespacePage() {
         but in 2020, a new, collaborative, podcast namespace was first worked on
         by a wide number of interested people, aided and encouraged by Adam
         Curry and Dave Jones from{" "}
-        <a href="https://podcastindex.org/"  target="_blank">The Podcast Index</a>.
+        <a href="https://podcastindex.org/" target="_blank">
+          The Podcast Index
+        </a>
+        .
       </p>
 
       <p>

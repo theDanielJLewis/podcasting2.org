@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getApps } from "@/data/apps";
 import { AppsGrid } from "@/components/AppsGrid";
+import { HeroHeader } from "@/components/ui/HeroHeader";
 
 export const metadata: Metadata = {
   title: "Podcast Hosting and Tools - Podcasting 2.0",
@@ -14,13 +15,13 @@ export default async function PublishingToolsPage() {
 
   return (
     <>
-      <div className="flex flex-col justify-center py-16 text-xl lg:py-36">
+      <HeroHeader>
         <h1>Upgrade your podcast with Podcasting 2.0 services!</h1>
         <span>
           The best way to use Podcasting 2.0 features is with a modern
           publishing or hosting tool.
         </span>
-      </div>
+      </HeroHeader>
       <AppsGrid apps={apps} />
     </>
   );

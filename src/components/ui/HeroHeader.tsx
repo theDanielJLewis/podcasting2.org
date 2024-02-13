@@ -10,7 +10,7 @@ export function HeroHeader({
   return (
     <div
       className={cn(
-        "flex h-40 flex-col justify-center text-xl lg:h-80",
+        "flex flex-col justify-center py-8 text-xl lg:h-80",
         className,
       )}
     >

@@ -1,3 +1,4 @@
+import { HeroHeader } from "@/components/ui/HeroHeader";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -9,9 +10,9 @@ export const metadata: Metadata = {
 export default async function ResourcesPage() {
   return (
     <>
-      <div className="py-18 flex flex-col justify-center lg:py-36">
+      <HeroHeader>
         <h1>Resources for learning more about Podcasting 2.0</h1>
-      </div>
+      </HeroHeader>
       <div>
         <ul className="list-disc pl-4">
           <li>

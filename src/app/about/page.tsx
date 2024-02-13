@@ -1,3 +1,4 @@
+import { HeroHeader } from "@/components/ui/HeroHeader";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,9 +9,9 @@ export const metadata: Metadata = {
 export default function DevelopersPage() {
   return (
     <>
-      <div className="flex flex-col justify-center py-16 lg:py-36">
+      <HeroHeader>
         <h1>Why we need Podcasting 2.0</h1>
-      </div>
+      </HeroHeader>
       <div className="text-2xl leading-normal">
         <p>
           The mission of Podcasting 2.0 and the Podcast Index is to preserve,

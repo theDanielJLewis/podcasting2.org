@@ -1,3 +1,4 @@
+import { HeroHeader } from "@/components/ui/HeroHeader";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -9,14 +10,14 @@ export const metadata: Metadata = {
 export default function PodcastersPage() {
   return (
     <>
-      <div className="flex flex-col justify-center py-16 text-xl lg:py-36">
+      <HeroHeader>
         <h1>Podcasting 2.0 is for podcasters!</h1>
         <span>
           We believe podcasts deserve an open, independent podcasting ecosystem.
           We created Podcasting 2.0 to preserve, protect, and <em>extend</em>{" "}
           that ecosystem.
         </span>
-      </div>
+      </HeroHeader>
       <h2>Upgrade to the Podcast Namespace</h2>
       <p>
         Really Simple Syndication (RSS) is the foundation for open podcasting.
