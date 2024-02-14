@@ -14,10 +14,9 @@ import Link from "next/link";
 import { HeroHeader } from "@/components/ui/HeroHeader";
 
 export const metadata: Metadata = {
-  title:
-    "Podcasting 2.0 - Making podcasts better for audiences, podcasters, and developers",
+  title: "Podcasting 2.0 - Making podcasts better for everyone!",
   description:
-    "Learn about the podcast innovations and features of Podcasting 2.0, and how to upgrade your podcast for modern benefits.",
+    "Learn about the podcast innovations and features of Podcasting 2.0 for audiences, podcasters, and developers; and how to upgrade your podcast for modern benefits.",
 };
 
 export default function Home() {
