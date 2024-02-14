@@ -10,7 +10,7 @@ export function MyCopyBlock(props: CopyBlockProps) {
 
   useEffect(() => {
     setTheme(isDarkMode ? atomOneDark : atomOneLight);
-  });
+  }, [isDarkMode]);
 
   return (
     <CopyBlock

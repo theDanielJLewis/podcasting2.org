@@ -10,7 +10,7 @@ export function MyCode(props: CodeProps) {
 
   useEffect(() => {
     setTheme(isDarkMode ? atomOneDark : atomOneLight);
-  });
+  }, [isDarkMode]);
 
   return (
     <Code {...props} theme={theme} customStyle={{ borderRadius: "0.25rem" }} />

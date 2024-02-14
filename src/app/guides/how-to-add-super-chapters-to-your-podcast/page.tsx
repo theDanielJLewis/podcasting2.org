@@ -62,11 +62,8 @@ export default function ChaptersGuide() {
             <strong>Add the URL for your metadata file with chapters</strong> to
             your episode&rsquo;s chapters field, or in the{" "}
             <MyCode text="<podcast:chapters>" language="xml" /> tag in your RSS
-            feed. (
-            <Link href="/podcast-namespace/tags/chapters">
-              Learn more about the Chapters tag.
-            </Link>
-            ) Skip this step if your podcast-hosting provider does this for you.
+            feed. (Skip this step if your podcast-hosting provider does this for
+            you.)
           </li>
           <li>
             <strong>Publish your episode!</strong>

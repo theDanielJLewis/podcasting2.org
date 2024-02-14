@@ -60,11 +60,8 @@ export default function TranscriptsGuide() {
             <strong>Add the URL for your transcript file</strong> to your
             episode&rsquo;s transcript field, or in the{" "}
             <MyCode text="<podcast:transcript>" language="xml" /> tag in your
-            RSS feed. (
-            <Link href="/podcast-namespace/tags/transcript">
-              Learn more about the Transcript tag.
-            </Link>
-            ) Skip this step if your podcast-hosting provider does this for you.
+            RSS feed. (Skip this step if your podcast-hosting provider does this
+            for you.)
           </li>
           <li>
             <strong>Publish your episode!</strong>

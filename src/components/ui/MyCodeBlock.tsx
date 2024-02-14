@@ -11,7 +11,7 @@ export function MyCodeBlock(props: CodeBlockProps) {
 
   useEffect(() => {
     setTheme(isDarkMode ? atomOneDark : atomOneLight);
-  });
+  }, [isDarkMode]);
 
   return (
     <CodeBlock

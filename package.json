@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start -p 5000",
     "lint": "next lint",
     "pm2-start": "pm2 start 'pnpm start' --name 'app'"
@@ -23,6 +24,7 @@
     "lucide-react": "^0.330.0",
     "markdown-to-jsx": "^7.4.1",
     "next": "14.1.0",
+    "next-sitemap": "^4.2.3",
     "posthog-js": "^1.105.8",
     "posthog-node": "^3.6.2",
     "prism-react-renderer": "^2.3.1",

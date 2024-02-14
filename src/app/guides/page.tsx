@@ -1,5 +1,6 @@
 import { HeroHeader } from "@/components/ui/HeroHeader";
 import { guides } from "@/data/guides";
+import { ExternalLink } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -34,6 +35,10 @@ export default function GuidesPage() {
               Listen to Podcasting 2.0 with Adam Curry, Dave Jones, and
               ocassional guests
             </Link>
+            <ExternalLink
+              className="ml-1 inline-flex align-baseline"
+              size={14}
+            />
           </li>
           <li>
             <Link
@@ -44,6 +49,10 @@ export default function GuidesPage() {
               Listen to The Future of Podcasting with Dave Jackson and Daniel J.
               Lewis
             </Link>
+            <ExternalLink
+              className="ml-1 inline-flex align-baseline"
+              size={14}
+            />
           </li>
           <li>
             <Link
@@ -53,6 +62,10 @@ export default function GuidesPage() {
             >
               Read Blubrry&rsquo;s Podcasting 2.0 guide
             </Link>
+            <ExternalLink
+              className="ml-1 inline-flex align-baseline"
+              size={14}
+            />
           </li>
         </ul>
       </div>
