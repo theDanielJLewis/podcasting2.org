@@ -12,7 +12,8 @@ export async function generateMetadata({
   const apps = await getApps();
   const app: PodcastIndexApps | undefined = apps.find(
     (app: PodcastIndexApps) =>
-      app.appName.toLowerCase().replace(" ", "") === params.slug.toLowerCase(),
+      app.appName.toLowerCase().replaceAll(" ", "") ===
+      params.slug.toLowerCase(),
   );
   if (!app) {
     return notFound();
@@ -52,29 +53,32 @@ export default async function SingleApp({
         </div>
       </div>
       <div>
-        <p>
+        <div className="mb-8">
           Available on:{" "}
           {app.platforms.map((platform) => (
             <Badge variant="secondary" className="m-0.5" key={platform}>
               {platform}
             </Badge>
           ))}
-        </p>
-        <p>
-          Supported features:{" "}
+        </div>
+        <div className="mb-8">
+          <div className="mb-2">Supported features:</div>
           {app.supportedElements.map((element) => (
-            <Badge
-              variant="secondary"
-              className="m-0.5"
+            <Link
+              href={`/podcast-namespace/tags/${element.elementName.toLowerCase().replaceAll(" ", "")}`}
               key={element.elementName}
             >
-              {element.elementName}
-            </Badge>
+              <Badge className="m-0.5" key={element.elementName}>
+                {element.elementName}
+              </Badge>
+            </Link>
           ))}
-        </p>
-        <Link href={app.appUrl} target="_blank">
-          <Button>Visit website</Button>
-        </Link>
+        </div>
+        <div>
+          <Link href={app.appUrl} target="_blank">
+            <Button>Visit website</Button>
+          </Link>
+        </div>
       </div>
     </>
   );

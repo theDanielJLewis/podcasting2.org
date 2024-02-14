@@ -6,6 +6,9 @@ import { MyCodeBlock } from "@/components/ui/MyCodeBlock";
 import { HeroHeader } from "@/components/ui/HeroHeader";
 import { MyCode } from "@/components/ui/MyCode";
 import { ItemNav } from "@/components/ItemNav";
+import { getApps } from "@/data/apps";
+import Image from "next/image";
+import Link from "next/link";
 
 export async function generateMetadata({
   params,
@@ -25,13 +28,23 @@ export async function generateMetadata({
   };
 }
 
-export default function SingleTag({ params }: { params: { slug: string } }) {
+export default async function SingleTag({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const tag: NamespaceTag | undefined = podcastNamespaceTags.find(
     (tag) => tag.slug.toLowerCase() === params.slug.toLowerCase(),
   );
   if (!tag) {
     return notFound();
   }
+
+  const supportedApps = (await getApps()).filter((app) =>
+    app.supportedElements.some(
+      (element) => element.elementName.toLowerCase() === tag.slug,
+    ),
+  );
 
   return (
     <>
@@ -111,6 +124,29 @@ export default function SingleTag({ params }: { params: { slug: string } }) {
           />
         </div>
       ))}
+
+      <h2>Support</h2>
+      <div className="mb-8 grid grid-cols-2 gap-4 text-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+        {supportedApps.map((app) => (
+          <Link
+            href={`/apps/${app.appName.toLowerCase().replace(" ", "")}`}
+            key={app.appName}
+            className="flex items-center gap-2 rounded-md p-2 text-muted-foreground transition-all hover:bg-muted"
+          >
+            <div className="w-1/4">
+              <Image
+                src={`https://podcastindex.org/api/images/${app.appIconUrl}`}
+                alt={app.appName}
+                width={48}
+                height={48}
+                className="rounded-md"
+              />
+            </div>
+            <div className="w-3/4">{app.appName}</div>
+          </Link>
+        ))}
+      </div>
+
       <ItemNav current={tag} items={podcastNamespaceTags} />
     </>
   );

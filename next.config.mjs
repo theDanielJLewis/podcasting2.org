@@ -16,6 +16,45 @@ const nextConfig = {
       },
     ],
   },
+  redirects: async () => {
+    return [
+      {
+        source: "/podcast-namespace/tags",
+        destination: "/podcast-namespace",
+        permanent: false,
+      },
+      {
+        source: "/podcast-namespace/tags/boostagrams",
+        destination: "/podcast-namespace/tags/value",
+        permanent: false,
+      },
+      {
+        source: "/podcast-namespace/tags/live",
+        destination: "/podcast-namespace/tags/liveitem",
+        permanent: false,
+      },
+      {
+        source: "/podcast-namespace/tags/liveboosts",
+        destination: "/podcast-namespace/tags/value",
+        permanent: false,
+      },
+      {
+        source: "/podcast-namespace/tags/satstreaming",
+        destination: "/podcast-namespace/tags/value",
+        permanent: false,
+      },
+      {
+        source: "/podcast-namespace/tags/video",
+        destination: "/podcast-namespace/tags/medium",
+        permanent: false,
+      },
+      {
+        source: "/podcast-namespace/tags/walletswitching",
+        destination: "/podcast-namespace/tags/valuetimesplit",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

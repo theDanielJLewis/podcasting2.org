@@ -124,13 +124,17 @@ export function AppsGrid({ apps }: { apps: PodcastIndexApps[] }) {
                         <p>
                           Supported features:{" "}
                           {app.supportedElements.map((element) => (
-                            <Badge
-                              variant="secondary"
-                              className="m-0.5"
+                            <Link
                               key={element.elementName}
+                              href={`/podcast-namespace/tags/${element.elementName.toLowerCase().replaceAll(" ", "")}`}
                             >
-                              {element.elementName}
-                            </Badge>
+                              <Badge
+                                className="m-0.5"
+                                key={element.elementName}
+                              >
+                                {element.elementName}
+                              </Badge>
+                            </Link>
                           ))}
                         </p>
                       </DialogDescription>
@@ -190,14 +194,18 @@ export function AppsGrid({ apps }: { apps: PodcastIndexApps[] }) {
                         <p>
                           Supported features:{" "}
                           {app.supportedElements.map((element) => (
-                            <Badge
-                              variant="secondary"
-                              className="m-0.5"
+                            <Link
                               key={element.elementName}
+                              href={`/podcast-namespace/tags/${element.elementName.toLowerCase().replaceAll(" ", "")}`}
                             >
-                              {element.elementName}
-                            </Badge>
-                          ))}{" "}
+                              <Badge
+                                className="m-0.5"
+                                key={element.elementName}
+                              >
+                                {element.elementName}
+                              </Badge>
+                            </Link>
+                          ))}
                         </p>
                       </DrawerDescription>
                     </DrawerHeader>
