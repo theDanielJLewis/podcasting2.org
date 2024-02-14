@@ -7,7 +7,8 @@ import { HeroHeader } from "@/components/ui/HeroHeader";
 
 export const metadata: Metadata = {
   title: "Podcast Namespace - Podcasting 2.0",
-  // description: 'Podcasting 2.0 is for podcasters!',
+  description:
+    "Upgrade your podcast RSS feed to Podcasting 2.0 with the Podcast Namespace.",
 };
 
 export default function PodcastNamespacePage() {

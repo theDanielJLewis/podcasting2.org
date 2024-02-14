@@ -6,8 +6,11 @@ import { podcastNamespaceTag } from "@/data/podcastNamespaceTags";
 import { guides } from "@/data/guides";
 import { ItemNav } from "@/components/ItemNav";
 import { Button } from "@/components/ui/button";
+
 export const metadata: Metadata = {
-  title: "How to Add Super Chapters to Your Podcast - Podcasting 2.0",
+  title: "How to Add Podcast Recommendations with Podroll - Podcasting 2.0",
+  description:
+    "Learn how to recommend other podcasts through your own with the Podcasting 2.0 Podroll tag.",
 };
 
 export default function ChaptersGuide() {

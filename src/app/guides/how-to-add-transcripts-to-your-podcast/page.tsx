@@ -16,6 +16,8 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "How to Add Transcripts to Your Podcast - Podcasting 2.0",
+  description:
+    "Learn how to add Podcasting 2.0 transcripts to your podcast episodes for better accessibility and SEO.",
 };
 
 export default function TranscriptsGuide() {

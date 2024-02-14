@@ -6,6 +6,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Podcasting 2.0 Guides and Resources",
+  description:
+    "Helping you to use Podcasting 2.0 in your podcast and with your publishing tool or podcast-hosting provider.",
 };
 
 export default function GuidesPage() {

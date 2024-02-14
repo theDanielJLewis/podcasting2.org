@@ -21,6 +21,7 @@ export async function generateMetadata({
 
   return {
     title: `${tag.tag} - Podcast Namespace - Podcasting 2.0`,
+    description: tag.description.short,
   };
 }
 

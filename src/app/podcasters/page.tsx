@@ -4,7 +4,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Podcasting 2.0 for podcasters",
-  // description: 'Podcasting 2.0 is for podcasters!',
+  description:
+    "Learn why podcasters should care about Podcasting 2.0 and how to get started.",
 };
 
 export default function PodcastersPage() {
