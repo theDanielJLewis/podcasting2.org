@@ -32,7 +32,7 @@ export default async function SingleApp({
   const apps = await getApps();
   const app: PodcastIndexApps | undefined = apps.find(
     (app: PodcastIndexApps) =>
-      app.appName.toLowerCase().replace(" ", "") === params.slug.toLowerCase(),
+      app.appName.toLowerCase().replaceAll(" ", "") === params.slug.toLowerCase(),
   );
   if (!app) {
     return notFound();
