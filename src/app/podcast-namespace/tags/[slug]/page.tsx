@@ -7,8 +7,7 @@ import { HeroHeader } from "@/components/ui/HeroHeader";
 import { MyCode } from "@/components/ui/MyCode";
 import { ItemNav } from "@/components/ItemNav";
 import { getApps } from "@/data/apps";
-import Image from "next/image";
-import Link from "next/link";
+import AppsGridSmall from "@/components/AppsGridSmall";
 
 export async function generateMetadata({
   params,
@@ -51,6 +50,12 @@ export default async function SingleTag({
   );
   const supportedPublishingTools = supportedApps.filter((app) =>
     app.appType.includes("hosting"),
+  );
+
+  const supportedOtherApps = supportedApps.filter(
+    (app) =>
+      !app.appType.includes("hosting") &&
+      !app.appType.includes("podcast player"),
   );
 
   return (
@@ -132,62 +137,44 @@ export default async function SingleTag({
         </div>
       ))}
 
-      <h2>Supported podcast apps</h2>
+      <h2>Platform support</h2>
+      <p>
+        This data is provided by{" "}
+        <a
+          href="https://github.com/Podcastindex-org/web-ui/blob/master/server/data/apps.json"
+          target="_blank"
+        >
+          Podcast Index and can be edited on GitHub.
+        </a>
+      </p>
+      <h3>Podcast apps</h3>
       {supportedPodcastPlayers.length === 0 ? (
         <p>
-          No podcast apps support <MyCode text={tag.tag} language="xml" /> at
-          this time.
-        </p>
-      ) : (
-        <div className="mb-8 grid grid-cols-2 gap-4 text-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {supportedPodcastPlayers.map((app) => (
-            <Link
-              href={`/apps/${app.appName.toLowerCase().replace(" ", "")}`}
-              key={app.appName}
-              className="flex items-center gap-2 rounded-md p-2 text-muted-foreground transition-all hover:bg-muted"
-            >
-              <div className="w-1/4">
-                <Image
-                  src={`https://podcastindex.org/api/images/${app.appIconUrl}`}
-                  alt={app.appName}
-                  width={48}
-                  height={48}
-                  className="rounded-md"
-                />
-              </div>
-              <div className="w-3/4">{app.appName}</div>
-            </Link>
-          ))}
-        </div>
-      )}
-
-      <h2>Supported publishing tools / hosting providers</h2>
-      {supportedPublishingTools.length === 0 ? (
-        <p>
-          No publishing/hosting tools support{" "}
+          No podcast apps are known to support{" "}
           <MyCode text={tag.tag} language="xml" /> at this time.
         </p>
       ) : (
-        <div className="mb-8 grid grid-cols-2 gap-4 text-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {supportedPublishingTools.map((app) => (
-            <Link
-              href={`/apps/${app.appName.toLowerCase().replace(" ", "")}`}
-              key={app.appName}
-              className="flex items-center gap-2 rounded-md p-2 text-muted-foreground transition-all hover:bg-muted"
-            >
-              <div className="w-1/4">
-                <Image
-                  src={`https://podcastindex.org/api/images/${app.appIconUrl}`}
-                  alt={app.appName}
-                  width={48}
-                  height={48}
-                  className="rounded-md"
-                />
-              </div>
-              <div className="w-3/4">{app.appName}</div>
-            </Link>
-          ))}
-        </div>
+        <AppsGridSmall apps={supportedPodcastPlayers} />
+      )}
+
+      <h3>Publishing/hosting tools</h3>
+      {supportedPublishingTools.length === 0 ? (
+        <p>
+          No publishing/hosting tools are known to support{" "}
+          <MyCode text={tag.tag} language="xml" /> at this time.
+        </p>
+      ) : (
+        <AppsGridSmall apps={supportedPublishingTools} />
+      )}
+
+      <h3>Other apps and platforms</h3>
+      {supportedOtherApps.length === 0 ? (
+        <p>
+          No other apps or platforms are known to support{" "}
+          <MyCode text={tag.tag} language="xml" /> at this time.
+        </p>
+      ) : (
+        <AppsGridSmall apps={supportedOtherApps} />
       )}
 
       <ItemNav current={tag} items={podcastNamespaceTags} />
