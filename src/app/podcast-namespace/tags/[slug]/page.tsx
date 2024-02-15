@@ -46,6 +46,13 @@ export default async function SingleTag({
     ),
   );
 
+  const supportedPodcastPlayers = supportedApps.filter((app) =>
+    app.appType.includes("podcast player"),
+  );
+  const supportedPublishingTools = supportedApps.filter((app) =>
+    app.appType.includes("hosting"),
+  );
+
   return (
     <>
       <ItemNav current={tag} items={podcastNamespaceTags} />
@@ -125,27 +132,63 @@ export default async function SingleTag({
         </div>
       ))}
 
-      <h2>Support</h2>
-      <div className="mb-8 grid grid-cols-2 gap-4 text-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-        {supportedApps.map((app) => (
-          <Link
-            href={`/apps/${app.appName.toLowerCase().replace(" ", "")}`}
-            key={app.appName}
-            className="flex items-center gap-2 rounded-md p-2 text-muted-foreground transition-all hover:bg-muted"
-          >
-            <div className="w-1/4">
-              <Image
-                src={`https://podcastindex.org/api/images/${app.appIconUrl}`}
-                alt={app.appName}
-                width={48}
-                height={48}
-                className="rounded-md"
-              />
-            </div>
-            <div className="w-3/4">{app.appName}</div>
-          </Link>
-        ))}
-      </div>
+      <h2>Supported podcast apps</h2>
+      {supportedPodcastPlayers.length === 0 ? (
+        <p>
+          No podcast apps support <MyCode text={tag.tag} language="xml" /> at
+          this time.
+        </p>
+      ) : (
+        <div className="mb-8 grid grid-cols-2 gap-4 text-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {supportedPodcastPlayers.map((app) => (
+            <Link
+              href={`/apps/${app.appName.toLowerCase().replace(" ", "")}`}
+              key={app.appName}
+              className="flex items-center gap-2 rounded-md p-2 text-muted-foreground transition-all hover:bg-muted"
+            >
+              <div className="w-1/4">
+                <Image
+                  src={`https://podcastindex.org/api/images/${app.appIconUrl}`}
+                  alt={app.appName}
+                  width={48}
+                  height={48}
+                  className="rounded-md"
+                />
+              </div>
+              <div className="w-3/4">{app.appName}</div>
+            </Link>
+          ))}
+        </div>
+      )}
+
+      <h2>Supported publishing tools / hosting providers</h2>
+      {supportedPublishingTools.length === 0 ? (
+        <p>
+          No publishing/hosting tools support{" "}
+          <MyCode text={tag.tag} language="xml" /> at this time.
+        </p>
+      ) : (
+        <div className="mb-8 grid grid-cols-2 gap-4 text-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {supportedPublishingTools.map((app) => (
+            <Link
+              href={`/apps/${app.appName.toLowerCase().replace(" ", "")}`}
+              key={app.appName}
+              className="flex items-center gap-2 rounded-md p-2 text-muted-foreground transition-all hover:bg-muted"
+            >
+              <div className="w-1/4">
+                <Image
+                  src={`https://podcastindex.org/api/images/${app.appIconUrl}`}
+                  alt={app.appName}
+                  width={48}
+                  height={48}
+                  className="rounded-md"
+                />
+              </div>
+              <div className="w-3/4">{app.appName}</div>
+            </Link>
+          ))}
+        </div>
+      )}
 
       <ItemNav current={tag} items={podcastNamespaceTags} />
     </>

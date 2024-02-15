@@ -19,7 +19,13 @@ export const guides: Guide[] = [
     label: "Podcast recommendations",
     tagSlug: "podroll",
     category: "Podcasters",
-
     href: "/guides/how-to-add-podcast-recommendations-with-podroll",
+  },
+  {
+    title: "How to Use the Podcast TXT tag",
+    label: "TXT tag",
+    tagSlug: "txt",
+    category: "Podcasters",
+    href: "/guides/how-to-use-the-txt-tag",
   },
 ];
