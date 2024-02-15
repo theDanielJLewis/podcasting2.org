@@ -41,7 +41,9 @@ export default async function SingleTag({
 
   const supportedApps = (await getApps()).filter((app) =>
     app.supportedElements.some(
-      (element) => element.elementName.toLowerCase() === tag.slug,
+      (element) =>
+        element.elementName.toLowerCase().replaceAll(" ", "") ===
+        tag.slug.toLowerCase(),
     ),
   );
 

@@ -15,32 +15,26 @@ export const podcastNamespaceTags: NamespaceTag[] = [
 
 Detailed file format information and example files are [here](https://github.com/Podcastindex-org/podcast-namespace/blob/main/transcripts/transcripts.md).`,
     },
-
     parents: ["<item>"],
-
     count: "multiple",
-
     attributes: [
       {
         name: "url",
         required: true,
         description: "URL of the podcast transcript.",
       },
-
       {
         name: "type",
         required: true,
         description:
           "Mime type of the file such as `text/plain`, `text/html`, `text/vtt`, `application/json`, `application/x-subrip`",
       },
-
       {
         name: "language",
         required: false,
         description:
           "The language of the linked transcript. If there is no language attribute given, the linked file is assumed to be the same language that is specified by the RSS `<language>` element.",
       },
-
       {
         name: "rel",
         required: false,
@@ -53,12 +47,10 @@ Detailed file format information and example files are [here](https://github.com
         language: "xml",
         code: '<podcast:transcript url="https://example.com/episode1/transcript.html" type="text/html" />',
       },
-
       {
         language: "xml",
         code: '<podcast:transcript url="https://example.com/episode1/transcript.vtt" type="text/vtt" />',
       },
-
       {
         language: "xml",
         code: `<podcast:transcript
@@ -68,7 +60,6 @@ Detailed file format information and example files are [here](https://github.com
   rel="captions"
 />`,
       },
-
       {
         language: "xml",
         code: `<podcast:transcript
@@ -93,11 +84,8 @@ Detailed file format information and example files are [here](https://github.com
 
 Benefits with this approach are that chapters do not require altering audio files, and the chapters can be edited after publishing, since they are a separate file that can be requested on playback (or cached with download). JSON chapter information also allows chapters to be displayed by a wider range of playback tools, including web browsers (which typically have no access to ID3 tags), thus greatly simplifying chapter support; and images can be retrieved on playback, rather than bloating the filesize of the audio. The data held is compatible with normal ID3 tags, thus requiring no additional work for the publisher.`,
     },
-
     parents: ["<item>"],
-
     count: "single",
-
     attributes: [
       {
         name: "url",
@@ -181,14 +169,10 @@ Benefits with this approach are that chapters do not require altering audio file
       short: "Recommend other podcasts",
       long: `This element allows for a podcaster to include references to one or more podcasts in it\'s \`<channel>\` as a way of "recommending" other podcasts to their listener.`,
     },
-
     parents: ["<channel>"],
-
     count: "single",
-
     nodeValue:
       "The node value must be one or more `<podcast:remoteItem>` elements.",
-
     examples: [
       {
         language: "xml",
@@ -212,11 +196,8 @@ Benefits with this approach are that chapters do not require altering audio file
       long: "This tag may be set to `yes` or `no`. The purpose is to tell other podcast hosting platforms whether they are allowed to import this feed. A value of `yes` means that any attempt to import this feed into a new platform should be rejected.",
     },
     parents: ["<channel>"],
-
     count: "single",
-
     nodeValue: "The node value must be `yes` or `no`.",
-
     attributes: [
       {
         name: "owner",
@@ -230,7 +211,6 @@ Benefits with this approach are that chapters do not require altering audio file
         language: "xml",
         code: "<podcast:locked>yes</podcast:locked>",
       },
-
       {
         language: "xml",
         code: '<podcast:locked owner="email@example.com">no</podcast:locked>',
@@ -248,14 +228,10 @@ Benefits with this approach are that chapters do not require altering audio file
       short: "Links to financially support a show",
       long: "This tag lists possible donation/funding links for the podcast. The content of the tag is the recommended string to be used with the link.",
     },
-
     parents: ["<channel>"],
-
     count: "multiple",
-
     nodeValue:
       "This is a free form string supplied by the creator which they expect to be displayed in the app next to the link. Please do not exceed `128 characters` for the node value or it may be truncated by aggregators.",
-
     attributes: [
       {
         name: "url",
@@ -268,14 +244,12 @@ Benefits with this approach are that chapters do not require altering audio file
         language: "xml",
         code: '<podcast:funding url="https://www.example.com/donations">Support the show!</podcast:funding>',
       },
-
       {
         language: "xml",
         code: '<podcast:funding url="https://www.example.com/members">Become a member!</podcast:funding>',
       },
     ],
   },
-
   {
     label: "Soundbite",
     tag: "<podcast:soundbite>",
@@ -287,14 +261,10 @@ Benefits with this approach are that chapters do not require altering audio file
       short: "Suggested clips for sharing and promotion",
       long: "Points to one or more soundbites within a podcast episode. The intended use includes episodes previews, discoverability, audiogram generation, episode highlights, etc. It should be assumed that the audio/video source of the soundbite is the audio/video given in the item's [`<enclosure>`](https://cyber.harvard.edu/rss/rss.html#ltenclosuregtSubelementOfLtitemgt) element.",
     },
-
     parents: ["<item>"],
-
     count: "multiple",
-
     nodeValue:
       "This is a free form string from the podcast creator to specify a title for the soundbite. If the podcaster does not provide a value for the soundbite title, then leave the value blank, and podcast apps can decide to use the episode title or some other placeholder value in its place. Please do not exceed `128 characters` for the node value or it may be truncated by aggregators.",
-
     attributes: [
       {
         name: "startTime",
@@ -313,7 +283,6 @@ Benefits with this approach are that chapters do not require altering audio file
         language: "xml",
         code: '<podcast:soundbite startTime="73.0" duration="60.0" />',
       },
-
       {
         language: "xml",
         code: `<podcast:soundbite startTime="1234.5" duration="42.25">
@@ -333,7 +302,6 @@ Benefits with this approach are that chapters do not require altering audio file
       short: "Credits for hosts and guests",
       long: "This element specifies a person of interest to the podcast. It is primarily intended to identify people like hosts, co-hosts and guests. Although, it is flexible enough to allow fuller credits to be given using the roles and groups that are listed in the [Podcast Taxonomy Project](https://podcasttaxonomy.com/)",
     },
-
     parents: ["<channel>", "<item>"],
     parentsDescription: `It is suggested that \`<channel>\` is always populated, and \`<item>\` is populated where needed for an individual episode. Where present, people information in \`<item>\` wholly replaces all information from the \`<channel>\`.
 
@@ -352,12 +320,9 @@ For one episode, _Terry and June_ was hosted by Reginald Marsh and June Whitfiel
 The fictional podcast _Big Daddy Interviews_ is hosted by Big Daddy, a wrestler. Within \`<channel>\`, Big Daddy is listed as the host. A podcast directory, or podcast app, should show Big Daddy as the host of this show.
 
 For one episode, _Big Daddy Interviews_ had a guest of Sid James. In this case, the \`<item>\` for this episode should contain Sid James as a guest, **and** Big Daddy as the host of this episode. Because people information in \`<item>\` replaces all existing people information in \`<channel>\`, Big Daddy should be re-stated as the host of this episode.`,
-
     count: "multiple",
-
     nodeValue:
       "This is the full name or alias of the person. This value cannot be blank. Please do not exceed 128 characters for the node value or it may be truncated by aggregators.",
-
     attributes: [
       {
         name: "role",
@@ -393,7 +358,6 @@ The full taxonomy list is [here](https://github.com/Podcastindex-org/podcast-nam
   John Smith
 </podcast:person>`,
       },
-
       {
         language: "xml",
         code: `<podcast:person role="guest" href="https://www.imdb.com/name/nm0427852888/" img="http://example.com/images/janedoe.jpg">
@@ -412,7 +376,6 @@ The full taxonomy list is [here](https://github.com/Podcastindex-org/podcast-nam
   Alice Brown
 </podcast:person>`,
       },
-
       {
         language: "xml",
         code: `<podcast:person group="visuals" role="Cover Art Designer" href="https://example.com/artist/beckysmith">
@@ -432,11 +395,8 @@ The full taxonomy list is [here](https://github.com/Podcastindex-org/podcast-nam
       short: "Where is this podcast about?",
       long: 'This tag is intended to describe the location of editorial focus for a podcast\'s content (i.e. "what place is this podcast about?"). The tag has many use cases and is one of the more complex ones. You are **highly encouraged** to read the full [implementation document](https://github.com/Podcastindex-org/podcast-namespace/blob/main/location/location.md) before starting to code for it.',
     },
-
     parents: ["<channel>"],
-
     count: "single",
-
     nodeValue:
       'This is a free-form string meant to be a human readable location. It may conform to conventional location verbiage (i.e. "Austin, TX"), but it shouldn\'t be depended on to be parseable in any specific way. This value cannot be blank. Please do not exceed 128 characters for the node value or it may be truncated by aggregators.',
 
@@ -461,12 +421,10 @@ The full taxonomy list is [here](https://github.com/Podcastindex-org/podcast-nam
         language: "xml",
         code: '<podcast:location geo="geo:30.2672,97.7431" osm="R113314">Austin, TX</podcast:location>',
       },
-
       {
         language: "xml",
         code: '<podcast:location geo="geo:33.51601,-86.81455" osm="R6930627">Birmingham Civil Rights Museum</podcast:location>',
       },
-
       {
         language: "xml",
         code: '<podcast:location geo="geo:-27.86159,153.3169" osm="W43678282">Dreamworld (Queensland)</podcast:location>',
@@ -484,11 +442,8 @@ The full taxonomy list is [here](https://github.com/Podcastindex-org/podcast-nam
       short: "Named or numbered seasons/series",
       long: 'This element allows for identifying which episodes in a podcast are part of a particular "season", with an optional season name attached.',
     },
-
     parents: ["<item>"],
-
     count: "single",
-
     nodeValue:
       'The node value is an integer, and represents the season "number". It is required.',
 
@@ -506,17 +461,14 @@ Please do not exceed 128 characters for the name attribute.`,
         language: "xml",
         code: "<podcast:season>5</podcast:season>",
       },
-
       {
         language: "xml",
         code: '<podcast:season name="Race for the Whitehouse 2020">3</podcast:season>',
       },
-
       {
         language: "xml",
         code: '<podcast:season name="Egyptology: The 19th Century">1</podcast:season>',
       },
-
       {
         language: "xml",
         code: '<podcast:season name="The Yearling - Chapter 3">3</podcast:season>',
@@ -534,13 +486,9 @@ Please do not exceed 128 characters for the name attribute.`,
       short: "Episode numbers and names",
       long: 'This element exists largely for compatibility with the `season` tag. But, it also allows for a similar idea to what "name" functions as in that element.',
     },
-
     parents: ["<item>"],
-
     count: "single",
-
     nodeValue: "The node value is a decimal number. It is required.",
-
     attributes: [
       {
         name: "display",
@@ -557,17 +505,14 @@ Please do not exceed 32 characters for the display attribute.`,
         language: "xml",
         code: "<podcast:episode>3</podcast:episode>",
       },
-
       {
         language: "xml",
         code: "<podcast:episode>315.5</podcast:episode>",
       },
-
       {
         language: "xml",
         code: '<podcast:episode display="Ch.3">204</podcast:episode>',
       },
-
       {
         language: "xml",
         code: '<podcast:episode display="Day 5">9</podcast:episode>',
@@ -587,14 +532,10 @@ Please do not exceed 32 characters for the display attribute.`,
 
 If there is more than one trailer tag present in the channel, the most recent one (according to its \`pubdate\`) should be chosen as the preview by default within podcast apps.`,
     },
-
     parents: ["<channel>"],
-
     count: "multiple",
-
     nodeValue:
       "The node value is a string, which is the title of the trailer. It is required. Please do not exceed 128 characters for the node value or it may be truncated by aggregators.",
-
     attributes: [
       {
         name: "url",
@@ -628,7 +569,6 @@ If there is more than one trailer tag present in the channel, the most recent on
           "If this attribute is present it specifies that this trailer is for a particular season number. This attribute is a number.",
       },
     ],
-
     attributesDescription:
       'If the the `season` attribute is present, it must be a number that matches the format of the `<podcast:season>` tag. So, for a podcast that has 3 published seasons, a new `<podcast:trailer season="4">` tag can be put in the channel to later be matched up with a `<podcast:season>4<podcast:season>` tag when it is published within a new `<item>`.',
     examples: [
@@ -643,7 +583,6 @@ If there is more than one trailer tag present in the channel, the most recent on
   Coming April 1st, 2021
 </podcast:trailer>`,
       },
-
       {
         language: "xml",
         code: `<podcast:trailer
@@ -673,11 +612,8 @@ If there is more than one trailer tag present in the channel, the most recent on
       short: "Indicate the show's license",
       long: "This element defines a license that is applied to the audio/video content of a single episode, or the audio/video of the podcast as a whole. Custom licenses must always include a url attribute. Implementors are encouraged to read the license tag companion [document](https://github.com/Podcastindex-org/podcast-namespace/blob/main/proposal-docs/license/license.md) for a more complete picture of what this tag is intended to accomplish.",
     },
-
     parents: ["<item>"],
-
     count: "single",
-
     nodeValue:
       'The node value must be a lower-cased reference to a license "identifier" defined in the [SPDX License List](https://spdx.org/licenses/) file if the license being used is a well-known, public license. Or, if it is a custom license, it must be a free form abbreviation of the name of the license as you reference it publicly. Please do not exceed 128 characters for the node value or it may be truncated by aggregators.',
 
@@ -694,7 +630,6 @@ If there is more than one trailer tag present in the channel, the most recent on
         language: "xml",
         code: "<podcast:license>cc-by-4.0</podcast:license>",
       },
-
       {
         language: "xml",
         code: `<podcast:license url="https://example.org/mypodcastlicense/full.pdf">
@@ -716,14 +651,10 @@ If there is more than one trailer tag present in the channel, the most recent on
 
  This is a complex tag, so implementors are highly encouraged to read the companion [document](https://github.com/Podcastindex-org/podcast-namespace/blob/main/proposal-docs/alternateEnclosure/alternateEnclosure.md) for a fuller understanding of how this tag works and what it is capable of.`,
     },
-
     parents: ["<item>"],
-
     count: "multiple",
-
     nodeValue:
       "The node value must be one or more `<podcast:source>` elements that each define a uri where the media file can be downloaded or streamed. A single, optional `<podcast:integrity>` element may also be included to allow for file integrity checking.",
-
     attributes: [
       {
         name: "type",
@@ -803,7 +734,6 @@ If there is more than one trailer tag present in the channel, the most recent on
   <podcast:source uri="ipfs://someRandomLowBitrateOpusFile" />
 </podcast:alternateEnclosure>`,
       },
-
       {
         language: "xml",
         code: `<podcast:alternateEnclosure type="audio/mpeg" length="2490970" bitrate="160707.74">
@@ -831,11 +761,8 @@ If there is more than one trailer tag present in the channel, the most recent on
       short: "A source for an alternate enclosure",
       long: "This element defines a URI location for a `<podcast:alternateEnclosure>` media file. It is meant to be used as a child of the `<podcast:alternateEnclosure>` element. At least one `<podcast:source>` element must be present within every `<podcast:alternateEnclosure>` element.",
     },
-
     parents: ["<podcast:alternateEnclosure>"],
-
     count: "multiple",
-
     attributes: [
       {
         name: "uri",
@@ -871,11 +798,8 @@ If there is more than one trailer tag present in the channel, the most recent on
       short: "A method of verifying integrity of the media",
       long: "This element defines a method of verifying integrity of the media given either an [SRI-compliant integrity string](https://www.w3.org/TR/SRI/) (preferred) or a base64 encoded PGP signature. This element is optional within a `<podcast:alternateEnclosure>` element. It allows to ensure that the file has not been tampered with.",
     },
-
     parents: ["<podcast:alternateEnclosure>"],
-
     count: "single",
-
     attributes: [
       {
         name: "type",
@@ -922,20 +846,15 @@ Using this pattern, podcasts can maintain a consistent identity across the open 
 - Be aware that Amazon Music also uses separate UUIDv5 identifiers within their podcast directory, which are calculated differently and unrelated to this specification.
 - The following regular expression (regex) will match a GUID \`[0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}\``,
     },
-
     parents: ["<channel>"],
-
     count: "single",
-
     nodeValue: "The node value is a UUIDv5 string.",
-
     examples: [
       {
         label: "Example GUID for feed url `mp3s.nashownotes.com/pc20rss.xml`",
         language: "xml",
         code: "<podcast:guid>917393e3-1b1e-5cef-ace4-edaa54e1f810</podcast:guid>",
       },
-
       {
         label: "Example GUID for feed url `podnews.net/rss`",
         language: "xml",
@@ -973,14 +892,10 @@ This element can exist at either the \`<channel>\` or \`<item>\` level. When it 
 
 This is a complex tag, so implementors are HIGHLY encouraged to read the companion [document](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for a complete understanding of how this tag works and what it is capable of.`,
     },
-
     parents: ["<channel>", "<item>"],
-
     count: "multiple",
-
     nodeValue:
       "The node value must be one or more `<podcast:valueRecipient>` elements.",
-
     attributes: [
       {
         name: "type",
@@ -1022,11 +937,8 @@ There is no limit on how many \`valueRecipient\` elements can be present in a gi
 
 This is a complex tag, so implementors are HIGHLY encouraged to read the companion [document](https://github.com/Podcastindex-org/podcast-namespace/blob/main/value/value.md) for a complete understanding of how this tag works and what it is capable of.`,
     },
-
     parents: ["<podcast:value>"],
-
     count: "multiple",
-
     attributes: [
       {
         name: "name",
@@ -1117,11 +1029,8 @@ This is a complex tag, so implementors are HIGHLY encouraged to read the compani
 
 Accepted medium names are curated within a list maintained by the community as new mediums are discovered over time. Newly proposed mediums should require some level of justification to be added to this list. One may argue and/or prove use of a new medium even for only one application, should it prove different enough from existing mediums to have meaning.`,
     },
-
     parents: ["<channel>"],
-
     count: "single",
-
     nodeValue: `The node value is a string denoting one of the following possible values:
 
  \`podcast\` (default) - Describes a feed for a podcast show. If no \`medium\` tag is present in the channel, this medium is assumed.
@@ -1137,7 +1046,6 @@ Accepted medium names are curated within a list maintained by the community as n
 \`newsletter\` - Describes a feed of curated written articles. Newsletter articles now sometimes have an spoken version audio enclosure attached.
 
 \`blog\` - Describes a feed of informally written articles. Similar to \`newsletter\` but more informal as in a traditional blog platform style.`,
-
     notes: `### List Mediums
 
 In addition to the above mediums, each medium also has a counterpart "list" variant, where the original medium name is suffixed by the letter "L" to indicate that it is a "List" of that type of content. For example, \`podcast\` would become \`podcastL\`, \`music\` would become \`musicL\`, \`audiobook\` would become \`audiobookL\`, etc.
@@ -1153,13 +1061,11 @@ A "list" medium feed should not be expected to have regular \`<item>\`\'s,\`<pod
         language: "xml",
         code: "<podcast:medium>podcast</podcast:medium>",
       },
-
       {
         label: 'Example use for a "music" feed',
         language: "xml",
         code: "<podcast:medium>music</podcast:medium>",
       },
-
       {
         label: 'Example use for a "music" playlist feed',
         language: "xml",
@@ -1232,11 +1138,8 @@ A "list" medium feed should not be expected to have regular \`<item>\`\'s,\`<pod
       short: "Multiple image resources for the podcast",
       long: "This tag, when present, allows for specifying many different image sizes in a compact way at either the episode or channel level. The syntax is borrowed from the HTML5 [srcset](https://html.spec.whatwg.org/multipage/images.html#srcset-attributes) syntax. It allows for describing multiple image sources with width and pixel hints directly in the attribute. Although the HTML5 `srcset` attribute allows relative urls, absolute urls are required in this tag - since the feed url may not represent an appropriate base url for relativization.",
     },
-
     parents: ["<item>"],
-
     count: "single",
-
     attributes: [
       {
         name: "srcset",
@@ -1271,11 +1174,8 @@ A "list" medium feed should not be expected to have regular \`<item>\`\'s,\`<pod
 
 This tag will also make use of the [podping](https://podping.cloud) notification network. A podping notification SHOULD be sent out by the host when the live stream starts, to let apps know.`,
     },
-
     parents: ["<channel>"],
-
     count: "multiple",
-
     nodeValue: `All tags that are valid as children of a standard \`<item>\` tag are also valid as children here.
 
 When specifying the audio/video source, the [\`<podcast:alternateEnclosure>\`](#alternate-enclosure) tag is highly encouraged since it gives the broadest coverage of possible stream types and is explicit in it's communication of what transport protocol and media codecs are being used. In addition to [\`<podcast:alternateEnclosure>\`](#alternate-enclosure), a standard [\`<enclosure>\`](https://cyber.harvard.edu/rss/rss.html#ltenclosuregtSubelementOfLtitemgt) should also be given as a fallback to support podcast apps that don't yet implement [\`<podcast:alternateEnclosure>\`](#alternate-enclosure).
@@ -1287,7 +1187,6 @@ The [\`<podcast:contentLink>\`](#content-link) tag is also required to be presen
 A robust, well-written \`<podcast:liveItem>\` tag will include all three of: [\`<podcast:alternateEnclosure>\`](#alternate-enclosure), [\`<enclosure>\`](https://cyber.harvard.edu/rss/rss.html#ltenclosuregtSubelementOfLtitemgt) and [\`<podcast:contentLink>\`](#content-link) to ensure the broadest interopability with podcast apps.
 
 The function of \`<guid>\` within a live item tag is the same as it is within a regular item. If the \`<guid>\` of a \`<podcast:liveItem>\` changes, it MUST be considered a new stream by podcast apps.`,
-
     attributes: [
       {
         name: "status",
@@ -1309,9 +1208,7 @@ The function of \`<guid>\` within a live item tag is the same as it is within a 
           "A string representing an ISO8601 timestamp that denotes the time when the stream is intended to end.",
       },
     ],
-
     attributesDescription: `The \`start\` and \`end\` attributes denote when the live stream "should" start and end. But, real life dictates that those times might not be adhered to. Apps are therefore encouraged not to rely solely on those times as anything more than an approximation. The canonical way to know if a stream has started is with the \`status\` attribute. If \`status\` is "live" then the stream has started.`,
-
     examples: [
       {
         label: "A complete example",
@@ -1347,7 +1244,6 @@ The function of \`<guid>\` within a live item tag is the same as it is within a 
   <podcast:contentLink href="https://example.com/html/livestream">Listen Live!</podcast:contentLink>
 </podcast:liveItem>`,
       },
-
       {
         label: "A bare bones example",
         language: "xml",
@@ -1373,14 +1269,10 @@ For instance, perhaps a podcast feed specifies a \`<podcast:liveItem>\` to deliv
 
 Currently this tag is only indicated for use in the \`<podcast:liveItem>\` tag. In the future, its use will be expanded.`,
     },
-
     parents: ["<podcast:liveItem>"],
-
     count: "multiple",
-
     nodeValue:
       "The node value is a free form string meant to explain to the user where this content link points and/or the nature of it's purpose.",
-
     attributes: [
       {
         name: "href",
@@ -1396,7 +1288,6 @@ Currently this tag is only indicated for use in the \`<podcast:liveItem>\` tag. 
   Live on YouTube!
 </podcast:contentLink>`,
       },
-
       {
         language: "xml",
         code: `<podcast:contentLink href="https://twitter.com/statuses/somepost">
@@ -1420,11 +1311,8 @@ If multiple \`socialInteract\` tags are given for an \`<item>\`, the \`priority\
 
 This tag can also be used as a signal to platforms and apps that the podcaster does not want public comments shown alongside this episode. For this purpose a \`protocol\` value of "disabled" can be specified, with no other attributes or node value present.`,
     },
-
     parents: ["<item>"],
-
     count: "multiple",
-
     attributes: [
       {
         name: "uri",
@@ -1457,7 +1345,6 @@ This tag can also be used as a signal to platforms and apps that the podcaster d
           "When multiple socialInteract tags are present, this integer gives order of priority. A lower number means higher priority.",
       },
     ],
-
     examples: [
       {
         label: "Example (simple)",
@@ -1468,7 +1355,6 @@ This tag can also be used as a signal to platforms and apps that the podcaster d
   accountId="@dave"
 />`,
       },
-
       {
         label: "Example (complex)",
         language: "xml",
@@ -1486,14 +1372,12 @@ This tag can also be used as a signal to platforms and apps that the podcaster d
   accountUrl="https://twitter.com/PodcastindexOrg"
 />`,
       },
-
       {
         label: "Example (disabled)",
         language: "xml",
         code: `<podcast:socialInteract protocol="disabled" />`,
       },
     ],
-
     notes:
       "For **activitypub**, Mastodon or Pleroma's posting API returns a URI (a fully-formed URL with a GUID in it), and a URL (the HTML page where the comment lives). While both of these are acceptable values for the `uri` field referenced in the `socialInteract` specification, we'd recommend using the URI value.",
   },
@@ -1516,11 +1400,8 @@ In plain language, the sequence of discovery an ingesting platform should use is
 2. Does \`<podcast:block id="[myslug]">yes</podcast:block>\` exist in this feed? Do not ingest.
 3. Does \`<podcast:block>yes</podcast:block>\` exist in this feed? Do not ingest.`,
     },
-
     parents: ["<channel>"],
-
     count: "multiple",
-
     attributes: [
       {
         name: "id",
@@ -1529,9 +1410,7 @@ In plain language, the sequence of discovery an ingesting platform should use is
           "A single entry from the [service slug list](https://github.com/Podcastindex-org/podcast-namespace/blob/main/serviceslugs.txt).",
       },
     ],
-
     nodeValue: "The node value must be `yes` or `no`.",
-
     examples: [
       {
         label: "Block everything",
@@ -1543,7 +1422,6 @@ In plain language, the sequence of discovery an ingesting platform should use is
         language: "xml",
         code: "<podcast:block>no</podcast:block>",
       },
-
       {
         label: "Block only Google and Amazon",
         language: "xml",
@@ -1570,11 +1448,8 @@ In plain language, the sequence of discovery an ingesting platform should use is
       short: "Freeform text, like a DNS TXT record",
       long: `This element holds free-form text and is modeled after the DNS "[TXT](https://en.wikipedia.org/wiki/TXT_record)" record. It\'s meant to allow for usages that might be niche or otherwise not rise to the level of needing a dedicated tag. Just like TXT records in DNS allowed for new things like [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework#Implementation) to evolve, this tag can allow novel techniques to be created and sandboxed without a formalization process.`,
     },
-
     parents: ["<item>"],
-
     count: "multiple",
-
     attributes: [
       {
         name: "purpose",
@@ -1587,21 +1462,17 @@ In plain language, the sequence of discovery an ingesting platform should use is
 The following are a list of strings known to be in common use. This list is in no way exhaustive. As new purposes come into common use, this list will be updated by the community to reflect that.
 
 - \`verify\` - The node value is expected to contain a string that is given by a third party platform to a podcaster in order to prove that they are the owner of the feed and are in control of it. This is meant to replace the need for emails to exist in feeds. See example section below.`,
-
     nodeValue:
       " This is a free form string. Please do not exceed `4000 characters` for the node value or it may be truncated by aggregators.",
-
     examples: [
       {
         language: "xml",
         code: "<podcast:txt>naj3eEZaWVVY9a38uhX8FekACyhtqP4JN</podcast:txt>",
       },
-
       {
         language: "xml",
         code: '<podcast:txt purpose="verify">S6lpp-7ZCn8-dZfGc-OoyaG</podcast:txt>',
       },
-
       {
         language: "xml",
         code: '<podcast:txt purpose="release">2022-10-26T04:45:30.742Z</podcast:txt>',
@@ -1621,11 +1492,8 @@ The following are a list of strings known to be in common use. This list is in n
 
 Using the \`feedGuid\` attribute is the preferred way to address a remote feed since, but there are times when an app may not have access to a list of resolvable \`<podcast:guid>\`'s. In that case, it can be beneficial to include the \`feedUrl\` attribute for those cases as a fallback. If both are present and the app is capable the \`feedGuid\` should be resolved and used.`,
     },
-
     parents: ["<podcast:valueTimeSplit>"],
-
     count: "multiple",
-
     attributes: [
       {
         name: "feedGuid",
@@ -1656,12 +1524,10 @@ Using the \`feedGuid\` attribute is the preferred way to address a remote feed s
         language: "xml",
         code: '<podcast:remoteItem feedGuid="917393e3-1b1e-5cef-ace4-edaa54e1f810" />',
       },
-
       {
         language: "xml",
         code: '<podcast:remoteItem feedGuid="917393e3-1b1e-5cef-ace4-edaa54e1f810"itemGuid="asdf089j0-ep240-20230510"/>',
       },
-
       {
         language: "xml",
         code: `<podcast:remoteItem
@@ -1673,7 +1539,6 @@ Using the \`feedGuid\` attribute is the preferred way to address a remote feed s
       },
     ],
   },
-
   {
     label: "Update Frequency",
     tag: "<podcast:updateFrequency>",
@@ -1685,14 +1550,10 @@ Using the \`feedGuid\` attribute is the preferred way to address a remote feed s
       short: "Intended release schedule",
       long: "This element allows a podcaster to express their intended release schedule as structured data and text.",
     },
-
     parents: ["<channel>"],
-
     count: "single",
-
     nodeValue:
       "The node value is a free-form string, which might be displayed alongside other information about the podcast. Please do not exceed 128 characters for the node value or it may be truncated by aggregators.",
-
     attributes: [
       {
         name: "complete",
@@ -1733,7 +1594,6 @@ Using the \`feedGuid\` attribute is the preferred way to address a remote feed s
 
 <podcast:updateFrequency rrule="FREQ=YEARLY">Yearly</podcast:updateFrequency>`,
       },
-
       {
         label: "However, greater precision can be easily communicated",
         language: "xml",
@@ -1753,7 +1613,6 @@ Using the \`feedGuid\` attribute is the preferred way to address a remote feed s
   Every year on American Thanksgiving
 </podcast:updateFrequency>`,
       },
-
       {
         label:
           "Limited-run podcasts can indicate when they’ll go on hiatus by setting an UNTIL date or a COUNT",
@@ -1766,7 +1625,6 @@ Using the \`feedGuid\` attribute is the preferred way to address a remote feed s
   Every Monday until Dec 31, 2023
 </podcast:updateFrequency>`,
       },
-
       {
         label:
           "Podcasts currently on hiatus can indicate their intention to resume production by setting a DTSTART value in the future",
@@ -1775,7 +1633,6 @@ Using the \`feedGuid\` attribute is the preferred way to address a remote feed s
   Weekly, starting in 2025
 </podcast:updateFrequency>`,
       },
-
       {
         label:
           "Complete podcasts with no intention to release further episodes",
@@ -1795,9 +1652,7 @@ Using the \`feedGuid\` attribute is the preferred way to address a remote feed s
       short: "Indicate the podcast uses Podping",
       long: "This element allows feed owners to signal to aggregators that the feed sends out [`Podping`](https://github.com/Podcastindex-org/podping) notifications when changes are made to it, reducing the need for frequent speculative feed polling.",
     },
-
     parents: ["<channel>"],
-
     count: "single",
     examples: [
       {
@@ -1813,7 +1668,6 @@ Using the \`feedGuid\` attribute is the preferred way to address a remote feed s
     namespace: "podcast",
     documentationUrl:
       "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#value-time-split",
-
     description: {
       short: "Time-based wallet-switching for streaming micropayments",
       long: `This element allows different value splits for a certain period of time. It is a combination of the concept of \`<podcast:soundbite>\` and \`<podcast:remoteItem>\` where a start time and a duration is supplied with alternative value recipients. The alternative value recipients are not required to be remote, as the recipients may not have an RSS feed/item of their own to reference.
@@ -1826,14 +1680,10 @@ If the remote value block contains any \`<podcast:valueTimeSplit>\` tags, they s
 
 Fees from the default \`<podcast:valueRecipient>\` tags should remain to be calculated before anything is taken out from \`<podcast:valueTimeSplit>\`.`,
     },
-
     parents: ["<podcast:value>"],
-
     count: "multiple",
-
     nodeValue:
       "A single `<podcast:remoteItem>` element OR one or more `<podcast:valueRecipient>` elements.",
-
     attributes: [
       {
         name: "startTime",
@@ -1860,7 +1710,6 @@ Fees from the default \`<podcast:valueRecipient>\` tags should remain to be calc
           "The percentage of the payment the remote recipients will receive if a `<podcast:remoteItem>` is present. If not defined, defaults to 100. If the value is less than 0, 0 is assumed. If the value is greater than 100, 100 is assumed.",
       },
     ],
-
     examples: [
       {
         label: "Remote Item",
@@ -1898,7 +1747,6 @@ Fees from the default \`<podcast:valueRecipient>\` tags should remain to be calc
 </rss>`,
         highlightLines: "19-26",
       },
-
       {
         label: "Locally Specified",
         language: "xml",

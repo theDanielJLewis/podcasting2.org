@@ -20,6 +20,7 @@ type NamespaceTag = {
     name: string;
     required: boolean;
     recommended?: boolean;
+    values?: string[];
     description: string;
   }[];
   attributesDescription?: string;
