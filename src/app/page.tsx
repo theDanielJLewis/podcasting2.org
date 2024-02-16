@@ -100,20 +100,21 @@ export default function Home() {
             podcasting better for everyone.
           </p>
           <p>
-            Since RSS (&ldquo;really simple syndication&rdquo;) is the core
-            technology that makes podcasting possible, Podcasting 2.0 extends
-            this standard with new RSS tags to enable new features.
+            Podcasting 2.0 extends the RSS standard - the core technology that makes podcasting
+            possible - to add new features. None of these features break any existing podcast feeds
+            or podcast players, but, where supported, they enable podcasters to do more things,
+            and enhance the experience for the audience.
           </p>
           <p>
-            Some of these new features (like the{" "}
-            <code>&lt;podcast:podroll&gt;</code> tag for recommending other
-            podcasts) can be added to podcast feeds simply by adding the
+            Some of these new features, like <Link href="/podcast-namespace/tags/podroll">recommendations
+            for other podcasts your audience might like</Link>,
+            can be added to podcast feeds simply by adding the
             appropriate RSS tags. Many publishing tools and hosting providers
             make this as simple as filling in additional field.
           </p>
           <p>
-            Other features (like using <code>&lt;podcast:value&gt;</code> to
-            accept &ldquo;boostagrams&rdquo; and streaming payments) require
+            Other features, like <Link href="/podcast-namespace/tags/value">accepting messages and payments from
+            your audience as they listen</Link>, require
             additional tools and a few more initial steps.
           </p>
         </div>
