@@ -26,12 +26,10 @@ export default function MarketingPage() {
 
       <p>
         <div dangerouslySetInnerHTML={{__html: '<audio controls src="https://podcasting2.org/audio/cundill-promo.mp3"></audio>'}} />
-      Male Voice: <a href="https://www.mattcundillvoice.com/">Matt Cundill</a>
         <p>
 
       <p>
         <div dangerouslySetInnerHTML={{__html: '<audio controls src="https://podcasting2.org/audio/ivision-promo.mp3"></audio>'}} />
-      Female Voice: <a href="https://www.ivisonvoice.com/">Mary Anne Ivision</a>
         <p>
 
       <h2>Or use your power as a podcaster</h2>
