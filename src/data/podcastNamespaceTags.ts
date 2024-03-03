@@ -49,7 +49,7 @@ Detailed file format information and example files are [here](https://github.com
       },
       {
         language: "xml",
-        code: '<podcast:transcript url="https://example.com/episode1/transcript.vtt" type="text/vtt" />',
+        code: '<podcast:transcript url="https://example.com/episode1/transcript.vtt" type="text/vtt" rel="captions" />',
       },
       {
         language: "xml",
