@@ -140,15 +140,6 @@ export default async function SingleTag({
       ))}
 
       <h2>Platform support</h2>
-      <p>
-        This data is provided by{" "}
-        <a
-          href="https://github.com/Podcastindex-org/web-ui/blob/master/server/data/apps.json"
-          target="_blank"
-        >
-          Podcast Index and can be edited on GitHub.
-        </a>
-      </p>
       <h3>Podcast apps</h3>
       {supportedPodcastPlayers.length === 0 ? (
         <p>
@@ -179,6 +170,16 @@ export default async function SingleTag({
         <AppsGridSmall apps={supportedOtherApps} />
       )}
 
+        <p><small>
+        This data is provided by Podcast Index.{" "}
+        <a
+          href="https://github.com/Podcastindex-org/web-ui/blob/master/server/data/apps.json"
+          target="_blank"
+        >
+           edit it on GitHub
+        </a></small>
+      </p>
+      
       <ItemNav current={tag} items={podcastNamespaceTags} />
     </>
   );
