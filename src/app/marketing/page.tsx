@@ -22,10 +22,10 @@ export default function MarketingPage() {
         Please feel free to use these IDs in your show.
         If you have room to credit the voice talent,
         please do so in the show notes or the show credits.
-        You can also thank them with a boost to <pre>mattcundill@getalby.com</pre></p>
+        You can also thank them with a boost to mattcundill@getalby.com</p>
 
       <p>
-<div dangerouslySetInnerHTML={{__html: 'First &middot; Second'}}></div>
+<div dangerouslySetInnerHTML={{__html: '<audio controls src="https://podcasting2.org/audio/cundill-promo.mp3"></audio>'}}></div>
       </p>
 
       <h2>Or use your power as a podcaster</h2>
