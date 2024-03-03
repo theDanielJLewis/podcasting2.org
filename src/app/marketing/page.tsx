@@ -26,7 +26,7 @@ export default function MarketingPage() {
 
       <p>
 Some jingles here shortly
-        <p>
+      </p>
 
       <h2>Or use your power as a podcaster</h2>
       <ol className="list-decimal pl-8">
