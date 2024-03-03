@@ -25,11 +25,7 @@ export default function MarketingPage() {
         You can also thank them with a boost to <pre>mattcundill@getalby.com</pre></p>
 
       <p>
-        <div dangerouslySetInnerHTML={{__html: '<audio controls src="https://podcasting2.org/audio/cundill-promo.mp3"></audio>'}} />
-        <p>
-
-      <p>
-        <div dangerouslySetInnerHTML={{__html: '<audio controls src="https://podcasting2.org/audio/ivision-promo.mp3"></audio>'}} />
+Some jingles here shortly
         <p>
 
       <h2>Or use your power as a podcaster</h2>
