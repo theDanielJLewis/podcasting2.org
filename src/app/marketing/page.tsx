@@ -25,7 +25,7 @@ export default function MarketingPage() {
         You can also thank them with a boost to <pre>mattcundill@getalby.com</pre></p>
 
       <p>
-Some jingles here shortly
+<div dangerouslySetInnerHTML={{__html: 'First &middot; Second'}}></div>
       </p>
 
       <h2>Or use your power as a podcaster</h2>
