@@ -19,31 +19,25 @@ export default function MarketingPage() {
       </HeroHeader>
       <h2>Audio trailers and IDs</h2>
       <p>
-        Please feel free to use these ID’s in your show.
+        Please feel free to use these IDs in your show.
         If you have room to credit the voice talent,
         please do so in the show notes or the show credits.
         You can also thank them with a boost to <pre>mattcundill@getalby.com</pre></p>
+      
   <p><audio controls src="https://podcasting2.org/audio/cundill-promo.mp3"></audio><br>
   Male Voice: <a href="https://www.mattcundillvoice.com/">Matt Cundill</a><p>
 
     <p><audio controls src="https://podcasting2.org/audio/ivison-promo.mp3"></audio><br>
   Female Voice: <a href="https://www.ivisonvoice.com/">Mary Anne Ivision</a><p>
 
-      <p>
-        Podcasting 2.0 changes that by finally bringing fresh innovation to
-        podcasting&rsquo;s core technology of RSS. We do this through the
-        Podcast Namespace: a new standard for RSS feeds that bring multiple
-        benefits for audiences, podcasters, and developers.
-      </p>
-
-      <h2>And...</h2>
+      <h2>Or use your power as a podcaster</h2>
       <ol className="list-decimal pl-8">
         <li>
           Encourage your audience to{" "}
           <Link href="/apps">get a better podcast app</Link>
         </li>
        <li>
-          Or, pick a podcast app you like, and promote it! Its developer will thank you.
+          Pick a podcast app you like, and promote it! Its developer will thank you.
         </li>
       </ol>
     </>
