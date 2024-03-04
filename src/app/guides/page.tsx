@@ -35,7 +35,7 @@ export default function GuidesPage() {
               className="text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500"
             >
               Listen to Podcasting 2.0 with Adam Curry, Dave Jones, and
-              ocassional guests
+              occasional guests
             </Link>
             <ExternalLink
               className="ml-1 inline-flex align-baseline"
