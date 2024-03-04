@@ -74,7 +74,11 @@ export default function PodcastersPage() {
         </li>
         <li>
           Encourage your audience to{" "}
-          <Link href="/apps">get a better podcast app</Link>.
+          <Link href="/apps">get a better podcast app</Link> - or promote the one you like best.
+        </li>
+        <li>
+          Run some{" "}
+          <Link href="/marketing">idents about Podcasting 2.0</Link> in your show.
         </li>
         <li>
           <a href="https://podcastindex.social/invite/hfcQYbjq" target="_blank">
