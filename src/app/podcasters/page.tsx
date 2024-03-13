@@ -14,26 +14,28 @@ export default function PodcastersPage() {
       <HeroHeader>
         <h1>Podcasting 2.0 is for podcasters!</h1>
         <span>
-          We believe podcasts deserve an open, independent podcasting ecosystem.
-          We created Podcasting 2.0 to preserve, protect, and <em>extend</em>{" "}
+          Podcasts deserve an open, independent podcasting ecosystem. 
+          Podcasting 2.0 was created to preserve, protect, and <em>extend</em>
           that ecosystem.
         </span>
       </HeroHeader>
       <h2>Upgrade to the Podcast Namespace</h2>
       <p>
-        Really Simple Syndication (RSS) is the foundation for open podcasting.
-        But podcast feeds have lacked innovation for years, due in large part to
-        leaving it in the hands of large corporatations to innovate&mdash;and
-        regularly being disappointed.
+        Every good podcast starts with an RSS feed - the foundation for open podcasting.
+        But, open podcast feeds have lacked innovation for years: much of the innovation
+        that podcasting has seen recently has been from large corporations building new
+        tools for their enclosed ecosystems - which don&rsquo;t benefit open podcasting, and
+        make it harder for podcasters to get the best for their listeners on all platforms.
       </p>
       <p>
         Podcasting 2.0 changes that by finally bringing fresh innovation to
-        podcasting&rsquo;s core technology of RSS. We do this through the
-        Podcast Namespace: a new standard for RSS feeds that bring multiple
-        benefits for audiences, podcasters, and developers.
+        podcasting&rsquo;s core technology of RSS. RSS has always been able to be extended
+        to add new features; and through a new "namespace" - a set of standard features for
+        RSS - we can bring multiple benefits for audiences, podcasters, and developers.
       </p>
       <h3>Podcast Namespace benefits</h3>
       <ul className="list-disc pl-8">
+        <li>Add transcripts that the creator controls, adding accessibility for all</li>
         <li>
           Add and edit interactive chapters—<em>without</em> re-uploading your
           media file
