@@ -15,7 +15,7 @@ export default function PodcastersPage() {
         <h1>Podcasting 2.0 is for podcasters!</h1>
         <span>
           Podcasts deserve an open, independent podcasting ecosystem. 
-          Podcasting 2.0 was created to preserve, protect, and <em>extend</em>
+          Podcasting 2.0 was created to preserve, protect, and extend
           that ecosystem.
         </span>
       </HeroHeader>
@@ -30,7 +30,7 @@ export default function PodcastersPage() {
       <p>
         Podcasting 2.0 changes that by finally bringing fresh innovation to
         podcasting&rsquo;s core technology of RSS. RSS has always been able to be extended
-        to add new features; and through a new "namespace" - a set of standard features for
+        to add new features; and through a new namespace - a set of standard features for
         RSS - we can bring multiple benefits for audiences, podcasters, and developers.
       </p>
       <h3>Podcast Namespace benefits</h3>
