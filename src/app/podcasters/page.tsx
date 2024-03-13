@@ -24,13 +24,13 @@ export default function PodcastersPage() {
         Every good podcast starts with an RSS feed - the foundation for open podcasting.
         But, open podcast feeds have lacked innovation for years: much of the innovation
         that podcasting has seen recently has been from large corporations building new
-        tools for their enclosed ecosystems - which don’t benefit open podcasting, and
+        tools for their enclosed ecosystems - which don&rsquo;t benefit open podcasting, and
         make it harder for podcasters to get the best for their listeners on all platforms.
       </p>
       <p>
         Podcasting 2.0 changes that by finally bringing fresh innovation to
         podcasting&rsquo;s core technology of RSS. RSS has always been able to be extended
-        to add new features; and through a new “namespace” - a set of standard features for
+        to add new features; and through a new "namespace" - a set of standard features for
         RSS - we can bring multiple benefits for audiences, podcasters, and developers.
       </p>
       <h3>Podcast Namespace benefits</h3>
@@ -41,7 +41,7 @@ export default function PodcastersPage() {
           media file
         </li>
         <li>Earn money directly from your audience</li>
-        <li>Engage through comments accessible accross multiple apps</li>
+        <li>Engage through comments accessible across multiple apps</li>
         <li>
           Expose more information about your podcast, like people, location, and
           more
