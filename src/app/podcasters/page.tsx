@@ -95,8 +95,8 @@ export default function PodcastersPage() {
       </ol>
       <h2>Who&rsquo;s in already?</h2>
     <p>A ton of podcasts are using these features already. Millions of podcast episodes already have transcripts.
-      More than half a million episodes are using super-chapters. 
-      <a href="https://livewire.io/podcast-index-stats-visualized/" target="_blank">See the statistics from Livewire</a> 
+      More than half a million episodes are using super-chapters.{" "}
+      <a href="https://livewire.io/podcast-index-stats-visualized/" target="_blank">See the statistics from Livewire</a>{" "}
       and <a href="https://griddlecakes.com/nstrends/">dig into the trends</a>.</p>
     </>
   );
