@@ -43,8 +43,8 @@ export default function TranscriptsGuide() {
           <ul>
           <li>I published an episode half an hour ago and it still isn&rsquo;t in the BlahBlah podcast app!</li>
           <li>Why isn't my podcast in apps that use the Podcast Index?</li>
-          <li>Our RSS feed is being <a href="https://podnews.net/about/rss-stats">hit so many times</a> it's slowing our website down to a crawl!</li>
-          <li>I'm sure some of the stats <a href="https://livewire.io/podcast-hosts-by-episode-share/">in the Livewire list</a>
+          <li>Our RSS feed is being <a href="https://podnews.net/about/rss-stats">hit so many times</a> it&rsquo;s slowing our website down to a crawl!</li>
+          <li>I&rsquo;m sure some of the stats <a href="https://livewire.io/podcast-hosts-by-episode-share/">in the Livewire list</a>
             don't include all our episodes...</li>
           </ul>          
         </p>
@@ -57,10 +57,11 @@ export default function TranscriptsGuide() {
         </p>
         <p>
           Under the hood, Podping writes to a publicly-available database, fixing problems with existing notification
-          services like websub, which require always-on servers and resubscriptions.
+          services like websub, which require always-on servers and resubscriptions. (Technically, it&rsquo;s known as
+	  a blockchain, but don&rsquo;t worry, it&rsquo;s nothing to do with so-called crypto-currency).
         </p>
         <p>
-          It's already in use by podcast hosts like Buzzsprout, Spreaker, Transistor, Captivate, and many more.
+          It&rsquo;s already in use by podcast hosts like Buzzsprout, Spreaker, Transistor, Captivate, and many more.
           You can <a href="https://podping.watch/">watch Podping live here</a>.
         </p>
 
@@ -80,7 +81,7 @@ export default function TranscriptsGuide() {
               language="txt"
             />
           </li>
-          <li>Optionally, add this to your RSS feed to mark the fact you use Podping, so your systems won't be polled every few minutes.
+          <li>Optionally, add this to your RSS feed to mark the fact you use Podping, so your systems won&rsquo;t be polled every few minutes.
             <MyCode
               text="<podcast:podping usesPodping=\"true\"/>"
               language="xml"
@@ -95,7 +96,7 @@ export default function TranscriptsGuide() {
 
         <h2>Code samples</h2>
 
-<P>Here is a PHP function that would notify Podping. Call it when you've finished regenerating the RSS feed.</P>
+<P>Here is a PHP function that would notify Podping. Call it when you&rsquo;ve finished regenerating the RSS feed.</P>
         
         <pre><code class="language-php">
         function podpingNotify($url = NULL) {
