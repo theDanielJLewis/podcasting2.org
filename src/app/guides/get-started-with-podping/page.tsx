@@ -94,36 +94,6 @@ export default function TranscriptsGuide() {
         across the world to ensure they work quickly and performantly.
         </p>
 
-        <h2>Code samples</h2>
-
-<P>Here is a PHP function that would notify Podping. Call it when you&rsquo;ve finished regenerating the RSS feed.</P>
-        
-        <pre><code class="language-php">
-        function podpingNotify($url = NULL) {
-	// Set your data here
-	$ua='YourPodcastUserAgent/0.1 +https://example.com';
-	$authKey='yourbearerkey';
-
-	// Check the params
-	if(empty($url) || stripos($url, 'http') !== 0) {
-		error_log("podpingNotify(): The url was blank or corrupt.");
-		return false;
-	}
-
-	//Off we go
-	$context = stream_context_create(array(
-		'http'=>array(
-			'user_agent'=>$ua,
-			'header'=>'Authorization: '.$authKey
-		)
-	));
-	$query = http_build_query(array('url'=>$url));
-	$response = file_get_contents('https://podping.cloud/?'.$query, false, $context);
-  error_log("podpingNotify(): Success for ".$url);
-	return($response);
-}
-        </code></pre>
-
 <h2>Further reading</h2>
 
       <p><a href="https://podcasting20.substack.com/p/podping">Read a technical overview of Podping</a>.</p>
