@@ -65,7 +65,7 @@ export default function TranscriptsGuide() {
           You can <a href="https://podping.watch/">watch Podping live here</a>.
         </p>
 
-        <h2>It's super-easy to use. Here's how.</H2>
+        <h2>It&rsquo;s super-easy to use. Here&rsquo;s how.</H2>
         
         <ol>
           <li>
@@ -81,12 +81,7 @@ export default function TranscriptsGuide() {
               language="txt"
             />
           </li>
-          <li>Optionally, add this to your RSS feed to mark the fact you use Podping, so your systems won&rsquo;t be polled every few minutes.
-            <MyCode
-              text="<podcast:podping usesPodping=\"true\"/>"
-              language="xml"
-            />
-          </li>
+
           </ol>
 
         <p>
