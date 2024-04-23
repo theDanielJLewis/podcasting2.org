@@ -21,7 +21,7 @@ import {
 
 import { Menu } from "lucide-react";
 import { MainNav } from "../MainNav";
-import { Podcasting20 } from "../icons/podcasting20";
+import { Podcasting20 } from "../icons/Podcasting20";
 
 export function Header() {
   return (
