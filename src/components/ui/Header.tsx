@@ -21,13 +21,17 @@ import {
 
 import { Menu } from "lucide-react";
 import { MainNav } from "../MainNav";
-import { cn } from "@/lib/utils";
+import { Podcasting20 } from "../icons/podcasting20";
 
 export function Header() {
   return (
     <header className="bg-slate-100 text-slate-600 dark:bg-slate-950 dark:text-slate-400">
       <div className="container mx-auto flex gap-4 p-4 lg:px-8">
-        <Link href="/" className="font-bold transition-all hover:text-primary">
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-bold transition-all hover:text-primary"
+        >
+          <Podcasting20 className="size-6" />
           Podcasting 2.0
         </Link>
         <MainNav className="ml-auto hidden md:flex" />

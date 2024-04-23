@@ -22,12 +22,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <HeroHeader className="lg:h-96">
-        <h1>
-          <span className="font-bold">Podcasting 2.0</span>
-          <br />
-          <br />
-          Making podcasting better for audiences, podcasters, and developers
+      <HeroHeader className="">
+        <h1 className="text-4xl">
+          Podcasting 2.0 is making podcasting better for audiences, podcasters,
+          and developers
         </h1>
       </HeroHeader>
       <div className="mb-16 grid gap-8 md:grid-cols-3">
@@ -100,22 +98,27 @@ export default function Home() {
             podcasting better for everyone.
           </p>
           <p>
-            Podcasting 2.0 extends the RSS standard - the core technology that makes podcasting
-            possible - to add new features. None of these features break any existing podcast feeds
-            or podcast players, but, where supported, they enable podcasters to do more things,
-            and enhance the experience for the audience.
+            Podcasting 2.0 extends the RSS standard - the core technology that
+            makes podcasting possible - to add new features. None of these
+            features break any existing podcast feeds or podcast players, but,
+            where supported, they enable podcasters to do more things, and
+            enhance the experience for the audience.
           </p>
           <p>
-            Some of these new features, like <Link href="/podcast-namespace/tags/podroll">recommendations
-            for other podcasts your audience might like</Link>,
-            can be added to podcast feeds simply by adding the
-            appropriate RSS tags. Many publishing tools and hosting providers
-            make this as simple as filling in additional field.
+            Some of these new features, like{" "}
+            <Link href="/podcast-namespace/tags/podroll">
+              recommendations for other podcasts your audience might like
+            </Link>
+            , can be added to podcast feeds simply by adding the appropriate RSS
+            tags. Many publishing tools and hosting providers make this as
+            simple as filling in additional field.
           </p>
           <p>
-            Other features, like <Link href="/podcast-namespace/tags/value">accepting messages and payments from
-            your audience as they listen</Link>, require
-            additional tools and a few more initial steps.
+            Other features, like{" "}
+            <Link href="/podcast-namespace/tags/value">
+              accepting messages and payments from your audience as they listen
+            </Link>
+            , require additional tools and a few more initial steps.
           </p>
         </div>
       </div>

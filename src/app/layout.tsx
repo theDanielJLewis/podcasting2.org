@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/ui/Footer";
 import { Header } from "@/components/ui/Header";
 import { PHProvider, PostHogPageview } from "@/components/PHProvider";
 import { Suspense } from "react";
 
-const openSans = Open_Sans({ subsets: ["latin"], display: "swap" });
+const poppins = Poppins({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Podcasting 2.0",
@@ -27,7 +31,7 @@ export default function RootLayout({
         <body
           suppressHydrationWarning={true}
           className={
-            openSans.className + " flex min-h-screen flex-col transition-colors"
+            poppins.className + " flex min-h-screen flex-col transition-colors"
           }
         >
           <Header />
