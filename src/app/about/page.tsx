@@ -1,3 +1,4 @@
+import { Article } from "@/components/ui/Article";
 import { HeroHeader } from "@/components/ui/HeroHeader";
 import { Metadata } from "next";
 
@@ -12,7 +13,7 @@ export default function DevelopersPage() {
       <HeroHeader>
         <h1>Why we need Podcasting 2.0</h1>
       </HeroHeader>
-      <div className="text-2xl leading-normal">
+      <Article className="text-2xl leading-normal">
         <p>
           The mission of Podcasting 2.0 and the Podcast Index is to preserve,
           protect, and extend the open, independent podcasting ecosystem.
@@ -27,7 +28,7 @@ export default function DevelopersPage() {
           Together, we will grow podcasting to a platform of value-exchange that
           includes developers with podcasters and audiences.
         </p>
-      </div>
+      </Article>
     </>
   );
 }
