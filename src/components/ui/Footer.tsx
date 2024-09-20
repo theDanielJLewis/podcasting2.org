@@ -13,14 +13,6 @@ export function Footer() {
             className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
           >
             Daniel J. Lewis
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="https://james.cridland.net/"
-            target="_blank"
-            className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
-          >
-            James Cridland
           </Link>
           <br />
           All content is licensed under{" "}
