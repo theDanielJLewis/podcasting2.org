@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 
 const withNextra = nextra({
   // ... Other Nextra config options
+  contentDirBasePath: '/docs' // Or even nested e.g. `/docs/advanced`
+
 });
 
 const nextConfig: NextConfig = {

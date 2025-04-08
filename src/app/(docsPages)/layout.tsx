@@ -8,8 +8,8 @@ import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import { cn } from "@/lib/utils";
+import "../globals.css";
 import "nextra-theme-docs/style.css";
-import "./globals.css";
 
 const poppins = Poppins({
   weight: ["400", "600"],
@@ -25,11 +25,11 @@ export const metadata: Metadata = {
 const banner = <Banner storageKey="some-key">Nextra 4.0 is released 🎉</Banner>;
 const navbar = (
   <Navbar
-    logo={<b>Nextra</b>}
+    logo={<b>Podcasting 2.0</b>}
     // ... Your additional navbar options
   />
 );
-const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>;
+const footer = <Footer>Maintained by Daniel J. Lewis.</Footer>;
 
 export default async function RootLayout({
   children,
@@ -57,14 +57,19 @@ export default async function RootLayout({
       <PHProvider>
         <body>
           <Layout
-            banner={banner}
+            // banner={banner}
             navbar={navbar}
             pageMap={await getPageMap()}
             docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
             footer={footer}
             // ... Your additional layout options
           >
+                {/* <div className="flex shrink grow overflow-hidden bg-gradient-to-br from-blue-50 to-transparent text-slate-800 dark:bg-slate-900 dark:from-blue-950/50 dark:text-slate-100">
+    <main className="container mx-auto  p-4 lg:px-8"> */}
+
             {children}
+            {/* </main>
+            </div> */}
           </Layout>
         </body>
       </PHProvider>
