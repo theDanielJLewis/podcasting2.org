@@ -9,11 +9,12 @@ import { ItemNav } from "@/components/ItemNav";
 import { getApps } from "@/data/apps";
 import AppsGridSmall from "@/components/AppsGridSmall";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const tag: NamespaceTag | undefined = podcastNamespaceTags.find(
     (tag) => tag.slug.toLowerCase() === params.slug.toLowerCase(),
   );
@@ -27,11 +28,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function SingleTag({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function SingleTag(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const tag: NamespaceTag | undefined = podcastNamespaceTags.find(
     (tag) => tag.slug.toLowerCase() === params.slug.toLowerCase(),
   );

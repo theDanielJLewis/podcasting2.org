@@ -4,11 +4,12 @@ import { getApps } from "@/data/apps";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const apps = await getApps();
   const app: PodcastIndexApps | undefined = apps.find(
     (app: PodcastIndexApps) =>
@@ -24,11 +25,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function SingleApp({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function SingleApp(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const apps = await getApps();
   const app: PodcastIndexApps | undefined = apps.find(
     (app: PodcastIndexApps) =>
