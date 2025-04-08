@@ -1,5 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import nextra from "nextra";
+import type { NextConfig } from "next";
+
+const withNextra = nextra({
+  // ... Other Nextra config options
+});
+
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
@@ -57,4 +63,7 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextra({
+  // ... Other Next.js config options
+  ...nextConfig,
+});
