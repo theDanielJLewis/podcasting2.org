@@ -20,9 +20,6 @@ export default {
     title: "Podcasting Tools",
     display: "hidden",
   },
-  "podcast-namespace": {
-    display: "hidden",
-  },
   docs: {
     title: "Documentation",
     display: "children",
