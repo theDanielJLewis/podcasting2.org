@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 };
 
 const banner = <Banner storageKey="some-key">Nextra 4.0 is released 🎉</Banner>;
+
 const navbar = (
   <Navbar
     logo={
@@ -37,7 +38,7 @@ const navbar = (
     // ... Your additional navbar options
   />
 );
-const footer = <Footer>Maintained by Daniel J. Lewis.</Footer>;
+const footer = <Footer>Website built by Daniel J. Lewis.</Footer>;
 
 export default async function RootLayout({
   children,
@@ -51,7 +52,7 @@ export default async function RootLayout({
       // Required to be set
       dir="ltr"
       // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
-      suppressHydrationWarning
+      // suppressHydrationWarning
       className={cn(poppins.className, "transition-colors")}
     >
       <Head
