@@ -82,7 +82,7 @@ export function AppsGridLgItems({ apps }: { apps: PodcastIndexApps[] }) {
           <div key={app.appName}>
             {isDesktop ? (
               <Dialog>
-                <DialogTrigger>
+                <DialogTrigger className="cursor-pointer">
                   <Image
                     src={
                       "https://podcastindex.org/api/images/" + app.appIconUrl
@@ -152,7 +152,7 @@ export function AppsGridLgItems({ apps }: { apps: PodcastIndexApps[] }) {
               </Dialog>
             ) : (
               <Drawer>
-                <DrawerTrigger>
+                <DrawerTrigger className="cursor-pointer">
                   <Image
                     src={
                       "https://podcastindex.org/api/images/" + app.appIconUrl
