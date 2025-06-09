@@ -25,9 +25,14 @@ const nextConfig: NextConfig = {
   },
   redirects: async () => {
     return [
+      // {
+      //   source: "/podcast-namespace/tags",
+      //   destination: "/podcast-namespace",
+      //   permanent: false,
+      // },
       {
-        source: "/podcast-namespace/tags",
-        destination: "/podcast-namespace",
+        source: "/guides",
+        destination: "/docs/guides",
         permanent: false,
       },
       {
@@ -63,7 +68,7 @@ const nextConfig: NextConfig = {
       {
         source: "/podcast-namespace/:path*",
         destination: "/docs/podcast-namespace/:path*",
-        permanent: false,
+        permanent: true,
       },
       {
         source: "/live",
