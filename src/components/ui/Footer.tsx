@@ -51,6 +51,14 @@ export function Footer() {
           </li>
           <li>
             <Link
+              href="https://live.standards.site/podcasting20"
+              className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"
+            >
+              Branding Guidelines
+            </Link>
+          </li>
+          <li>
+            <Link
               href="https://podcastindex.org"
               target="_blank"
               className="text-slate-950 transition-all hover:underline dark:text-slate-300 dark:hover:text-slate-300"

@@ -10,7 +10,7 @@ import { getPageMap } from "nextra/page-map";
 import { getPageMap as getTestPageMap } from "./docs/podcast-namespace/[[...mdxPath]]/page";
 import { cn } from "@/lib/utils";
 import "./globals.css";
-import "nextra-theme-docs/style.css";
+// import "nextra-theme-docs/style.css";
 import { Podcasting20 } from "@/components/icons/Podcasting20";
 
 const poppins = Poppins({

@@ -1,4 +1,6 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@import "nextra-theme-docs/style.css";
 
 @theme {
   --color-border: hsl(var(--border));
@@ -109,7 +111,7 @@
   }
 
   h2 {
-    @apply mb-4 mt-8 text-2xl;
+    @apply mt-8 mb-4 text-2xl;
   }
 
   h3 {
