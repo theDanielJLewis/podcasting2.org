@@ -1,52 +1,147 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-main a {
-  @apply text-amber-600 transition-all hover:text-amber-700 hover:underline dark:text-amber-400 dark:hover:text-amber-500;
+@theme inline {
+  --color-red-50: hsl(0, 100%, 97%);
+  --color-red-100: hsl(0, 100%, 92%);
+  --color-red-200: hsl(0, 100%, 82%);
+  --color-red-300: hsl(0, 100%, 72%);
+  --color-red-500: hsl(0, 100%, 62%);
+  --color-red-600: hsl(0, 100%, 52%);
+  --color-red-700: hsl(0, 100%, 42%); /* primary */
+  --color-red-800: hsl(0, 100%, 32%);
+  --color-red-800: hsl(0, 100%, 22%);
+  --color-red-900: hsl(0, 100%, 12%);
+  --color-red-950: hsl(0, 100%, 7%);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --x-color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 }
 
-main ol {
-  @apply mb-8 list-decimal pl-8;
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
 }
 
-main ol li,
-main ul li {
-  @apply mb-2;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-main ul {
-  @apply mb-8 list-disc pl-8;
-}
+@layer utilities {
+  main a {
+    @apply text-primary dark:text-primary transition-all hover:text-red-400 hover:underline dark:hover:text-red-700;
+  }
 
-p {
-  @apply mb-6;
-}
+  main ol {
+    @apply mb-8 list-decimal pl-8;
+  }
 
-h1 {
-  @apply mb-4 text-4xl;
-}
+  main ol li,
+  main ul li {
+    @apply mb-2;
+  }
 
-h2 {
-  @apply mb-4 mt-8 text-2xl;
-}
+  main ul {
+    @apply mb-8 list-disc pl-8;
+  }
 
-h3 {
-  @apply my-4 text-xl;
-}
+  p {
+    @apply mb-6;
+  }
 
-h4 {
-  @apply text-lg font-bold;
-}
+  h1 {
+    @apply mb-4 text-4xl;
+  }
 
-code span:not(.linenumber) {
-  user-select: auto !important;
+  h2 {
+    @apply mt-8 mb-4 text-2xl;
+  }
+
+  h3 {
+    @apply my-4 text-xl;
+  }
+
+  h4 {
+    @apply text-lg font-bold;
+  }
+
+  code span:not(.linenumber) {
+    user-select: auto !important;
+  }
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: var(--color-neutral-50);
+    --foreground: var(--color-neutral-900);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -54,8 +149,8 @@ code span:not(.linenumber) {
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: var(--color-red-700);
+    --primary-foreground: var(--color-red-50);
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -77,8 +172,8 @@ code span:not(.linenumber) {
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: var(--color-neutral-900);
+    --foreground: var(--color-neutral-100);
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -86,8 +181,8 @@ code span:not(.linenumber) {
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--color-red-500);
+    --primary-foreground: var(--color-red-50);
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;

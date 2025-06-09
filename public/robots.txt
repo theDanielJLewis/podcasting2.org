@@ -7,5 +7,3 @@ Host: https://podcasting2.org
 
 # Sitemaps
 Sitemap: https://podcasting2.org/sitemap.xml
-Sitemap: https://podcasting2.org/server-sitemap-index.xml
-Sitemap: https://podcasting2.org/server-sitemap.xml
