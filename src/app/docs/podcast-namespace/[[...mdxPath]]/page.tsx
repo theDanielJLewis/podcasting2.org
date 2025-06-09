@@ -172,7 +172,9 @@ export default async function Page(props: PageProps) {
             tags={metadata.title.toLowerCase()}
             size="sm"
           />
-          <h2>Publishing tools supporting {metadata.title.toLowerCase()}</h2>
+          <h2>
+            Publishing/hosting tools supporting {metadata.title.toLowerCase()}
+          </h2>
           <AppsGrid
             types="hosting"
             tags={metadata.title.toLowerCase()}
