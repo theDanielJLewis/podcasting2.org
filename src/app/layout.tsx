@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
+import { getPageMap as getTestPageMap } from "./(docsPages)/docs/podcast-namespace/[[...slug]]/page";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import "nextra-theme-docs/style.css";
@@ -45,6 +46,13 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Build pageMap asynchronously
+  const [basePageMap, testPageMap] = await Promise.all([
+    getPageMap(),
+    getTestPageMap(),
+  ]);
+  const pageMap = [...basePageMap, testPageMap];
+
   return (
     <html
       // Not required, but good for SEO
@@ -68,7 +76,7 @@ export default async function RootLayout({
           <Layout
             // banner={banner}
             navbar={navbar}
-            pageMap={await getPageMap()}
+            pageMap={pageMap}
             docsRepositoryBase="https://github.com/thedanieljlewis/podcasting2.org/"
             footer={footer}
             // ... Your additional layout options
