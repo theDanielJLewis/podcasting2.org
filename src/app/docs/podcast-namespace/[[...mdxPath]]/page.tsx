@@ -9,7 +9,7 @@ import {
 } from "nextra/page-map";
 import { importPage } from "nextra/pages";
 import { useMDXComponents as getMDXComponents } from "../../../../../mdx-components";
-import { AppsGridSmall } from "@/components/AppsGridSmall";
+import { AppsGrid } from "@/components/AppsGrid";
 
 //raw.githubusercontent.com/Podcastindex-org/podcast-namespace/refs/heads/main/docs/1.0.md
 //raw.githubusercontent.com/theDanielJLewis/podcast-namespace/refs/heads/main/docs/other-recommendations.md
@@ -160,22 +160,29 @@ export default async function Page(props: PageProps) {
   const data = await response.text();
   const rawJs = await compileMdx(data, { filePath });
   const { default: MDXContent, toc, metadata } = evaluate(rawJs, components);
-  console.log(metadata);
 
   return (
     <Wrapper toc={toc} metadata={metadata}>
       <MDXContent />
       {metadata.filePath.includes("tags") && (
         <>
-          <h2>Podcast apps supporting this tag</h2>
-          <AppsGridSmall
-            appType="podcast player"
+          <h2>Podcast apps supporting {metadata.title.toLowerCase()}</h2>
+          <AppsGrid
+            types="podcast player"
             tags={metadata.title.toLowerCase()}
+            size="sm"
           />
-          <h2>Publishing tools supporting this tag</h2>
-          <AppsGridSmall
-            appType="hosting"
+          <h2>Publishing tools supporting {metadata.title.toLowerCase()}</h2>
+          <AppsGrid
+            types="hosting"
             tags={metadata.title.toLowerCase()}
+            size="sm"
+          />
+          <h2>Miscellaneous support for {metadata.title.toLowerCase()}</h2>
+          <AppsGrid
+            notTypes={["hosting", "podcast player"]}
+            tags={metadata.title.toLowerCase()}
+            size="sm"
           />
         </>
       )}

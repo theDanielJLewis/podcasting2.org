@@ -2,7 +2,7 @@ import { GitHubIcon } from "nextra/icons";
 import type { MetaRecord } from "nextra";
 
 const meta: MetaRecord = {
-  index: { title: "Home", display: "hidden", type: "page" },
+  index: { title: "My Homepage", display: "hidden", type: "page" },
   documentation: {
     title: "Documentation",
     type: "page",
