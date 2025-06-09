@@ -8,16 +8,63 @@ import {
   normalizePageMap,
 } from "nextra/page-map";
 import { importPage } from "nextra/pages";
-import { useMDXComponents as getMDXComponents } from "../../../../../mdx-components";
+import { useMDXComponents as getMDXComponents } from "@/../mdx-components";
 import { AppsGrid } from "@/components/AppsGrid";
-
-//raw.githubusercontent.com/Podcastindex-org/podcast-namespace/refs/heads/main/docs/1.0.md
-//raw.githubusercontent.com/theDanielJLewis/podcast-namespace/refs/heads/main/docs/other-recommendations.md
 
 const user = "theDanielJLewis";
 const repo = "podcast-namespace";
 const branch = "refs/heads/main";
 const docsPath = "/docs/";
+
+export async function generateMetadata(props: any) {
+  const params = await props.params;
+  const route = params.mdxPath?.join("/") ?? "";
+
+  // Check if this route should use local MDX
+  if (shouldUseLocalMdx(route)) {
+    try {
+      const localMdxPath = route
+        ? ["docs/podcast-namespace", ...route.split("/")]
+        : ["docs/podcast-namespace"];
+      const { metadata } = await importPage(localMdxPath);
+      return {
+        ...metadata,
+        title: metadata.title
+          ? `${metadata.title} - Podcast Namespace - Podcasting 2.0`
+          : "Podcasting 2.0",
+      };
+    } catch (error: any) {
+      // If we expected a local file but it's not found, return default metadata
+      return { title: "Page Not Found - Podcasting 2.0" };
+    }
+  }
+
+  // Use remote content from GitHub
+  try {
+    const { mdxPages } = await getPageData();
+    const filePath = mdxPages[route];
+
+    if (!filePath) {
+      return { title: "Page Not Found" };
+    }
+
+    const response = await fetch(
+      `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${filePath}`,
+    );
+    const data = await response.text();
+    const rawJs = await compileMdx(data, { filePath });
+    const { metadata } = evaluate(rawJs, components);
+    return {
+      ...metadata,
+      title: metadata.title
+        ? `${metadata.title} - Podcast Namespace - Podcasting 2.0`
+        : "Podcasting 2.0",
+    };
+  } catch (error) {
+    console.error("Error generating metadata for remote file:", error);
+    return { title: "Documentation - Podcasting 2.0" };
+  }
+}
 
 // Function to fetch all files from the tags directory
 async function getTagsFiles(): Promise<string[]> {

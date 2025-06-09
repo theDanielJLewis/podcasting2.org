@@ -96,7 +96,7 @@
 }
 
 @layer utilities {
-  main a {
+  /* main a {
     @apply text-primary dark:text-primary transition-all hover:text-red-400 hover:underline dark:hover:text-red-700;
   }
 
@@ -131,7 +131,7 @@
 
   h4 {
     @apply text-lg font-bold;
-  }
+  } */
 
   code span:not(.linenumber) {
     user-select: auto !important;

@@ -2,7 +2,15 @@ import { GitHubIcon } from "nextra/icons";
 import type { MetaRecord } from "nextra";
 
 const meta: MetaRecord = {
-  index: { title: "My Homepage", display: "hidden", type: "page" },
+  index: {
+    title: "Home",
+    display: "hidden",
+    type: "page",
+    theme: {
+      toc: false,
+      layout: "full",
+    },
+  },
   documentation: {
     title: "Documentation",
     type: "page",
@@ -11,14 +19,23 @@ const meta: MetaRecord = {
   apps: {
     title: "Apps",
     type: "page",
+    theme: {
+      layout: "full",
+    },
   },
   "publishing-tools": {
     title: "Publishing Tools",
     type: "page",
+    theme: {
+      layout: "full",
+    },
   },
   podcasters: {
     title: "Podcasting Tools",
     display: "hidden",
+    theme: {
+      layout: "full",
+    },
   },
   docs: {
     title: "Documentation",
@@ -27,10 +44,16 @@ const meta: MetaRecord = {
   marketing: {
     title: "Marketing",
     type: "page",
+    theme: {
+      layout: "full",
+    },
   },
   about: {
     title: "About",
     type: "page",
+    theme: {
+      layout: "full",
+    },
   },
 };
 
