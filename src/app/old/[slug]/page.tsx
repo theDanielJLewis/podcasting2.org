@@ -7,13 +7,11 @@ import { HeroHeader } from "@/components/ui/HeroHeader";
 import { MyCode } from "@/components/ui/MyCode";
 import { ItemNav } from "@/components/ItemNav";
 import { getApps } from "@/data/apps";
-import AppsGridSmall from "@/components/AppsGridSmall";
+import { AppsGridSmall } from "@/components/AppsGridSmall";
 
-export async function generateMetadata(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const tag: NamespaceTag | undefined = podcastNamespaceTags.find(
     (tag) => tag.slug.toLowerCase() === params.slug.toLowerCase(),
@@ -28,11 +26,9 @@ export async function generateMetadata(
   };
 }
 
-export default async function SingleTag(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export default async function SingleTag(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const tag: NamespaceTag | undefined = podcastNamespaceTags.find(
     (tag) => tag.slug.toLowerCase() === params.slug.toLowerCase(),
@@ -172,16 +168,18 @@ export default async function SingleTag(
         <AppsGridSmall apps={supportedOtherApps} />
       )}
 
-        <p><small>
-        This data is provided by Podcast Index.{" "}
-        <a
-          href="https://github.com/Podcastindex-org/web-ui/blob/master/server/data/apps.json"
-          target="_blank"
-        >
-           edit it on GitHub
-        </a></small>
+      <p>
+        <small>
+          This data is provided by Podcast Index.{" "}
+          <a
+            href="https://github.com/Podcastindex-org/web-ui/blob/master/server/data/apps.json"
+            target="_blank"
+          >
+            edit it on GitHub
+          </a>
+        </small>
       </p>
-      
+
       <ItemNav current={tag} items={podcastNamespaceTags} />
     </>
   );

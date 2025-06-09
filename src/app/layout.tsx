@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-// import { Footer } from "@/components/ui/Footer";
+import { Footer } from "@/components/ui/Footer";
 // import { Header } from "@/components/ui/Header";
 import { PHProvider, PostHogPageview } from "@/components/PHProvider";
 import { Suspense } from "react";
-import { Footer, Layout, Navbar } from "nextra-theme-docs";
+import { Layout, Navbar } from "nextra-theme-docs";
 import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
-import { getPageMap as getTestPageMap } from "./(docsPages)/docs/podcast-namespace/[[...slug]]/page";
+import { getPageMap as getTestPageMap } from "./docs/podcast-namespace/[[...mdxPath]]/page";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import "nextra-theme-docs/style.css";
@@ -39,7 +39,22 @@ const navbar = (
     // ... Your additional navbar options
   />
 );
-const footer = <Footer>Website built by Daniel J. Lewis.</Footer>;
+const footer = <Footer />;
+
+// Helper function to filter out podcast-namespace from base page map
+function filterPodcastNamespaceFromPageMap(pageMap: any[]): any[] {
+  return pageMap.map((item) => {
+    if (item.name === "docs" && item.children) {
+      return {
+        ...item,
+        children: item.children.filter(
+          (child: any) => child.name !== "podcast-namespace",
+        ),
+      };
+    }
+    return item;
+  });
+}
 
 export default async function RootLayout({
   children,
@@ -51,7 +66,10 @@ export default async function RootLayout({
     getPageMap(),
     getTestPageMap(),
   ]);
-  const pageMap = [...basePageMap, testPageMap];
+
+  // Filter out podcast-namespace from base page map to avoid duplication
+  const filteredBasePageMap = filterPodcastNamespaceFromPageMap(basePageMap);
+  const pageMap = [...filteredBasePageMap, testPageMap];
 
   return (
     <html

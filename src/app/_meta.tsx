@@ -1,13 +1,12 @@
 import { GitHubIcon } from "nextra/icons";
 
 export default {
-  index: { title: "My Homepage", display: "hidden" },
+  index: { title: "My Homepage", display: "hidden", type: "page" },
   documentation: {
     title: "Documentation",
     type: "page",
     href: "/docs",
   },
-
   apps: {
     title: "Apps",
     type: "page",

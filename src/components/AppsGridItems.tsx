@@ -35,7 +35,7 @@ import {
 import { Badge } from "./ui/badge";
 import Link from "next/link";
 
-export function AppsGrid({ apps }: { apps: PodcastIndexApps[] }) {
+export function AppsGridItems({ apps }: { apps: PodcastIndexApps[] }) {
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 

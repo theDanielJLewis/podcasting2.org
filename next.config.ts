@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 
 const withNextra = nextra({
   // ... Other Nextra config options
-  contentDirBasePath: "/docs", // Or even nested e.g. `/docs/advanced`
+  // contentDirBasePath: "/docs", // Or even nested e.g. `/docs/advanced`
 });
 
 const nextConfig: NextConfig = {
@@ -58,6 +58,16 @@ const nextConfig: NextConfig = {
       {
         source: "/podcast-namespace/tags/walletswitching",
         destination: "/podcast-namespace/tags/valuetimesplit",
+        permanent: false,
+      },
+      {
+        source: "/podcast-namespace/:path*",
+        destination: "/docs/podcast-namespace/:path*",
+        permanent: false,
+      },
+      {
+        source: "/live",
+        destination: "https://episodes.fm/1584274529/live",
         permanent: false,
       },
     ];
