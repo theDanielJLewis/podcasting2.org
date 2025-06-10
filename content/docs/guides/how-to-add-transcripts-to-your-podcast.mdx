@@ -7,9 +7,11 @@ description: "Learn how to add Podcasting 2.0 transcripts to your podcast episod
 
 _Powered by `<podcast:transcript>{:xml}`_
 
+Podcasting 2.0 allows you to produce transcripts of your podcast - including timed transcripts, known as "closed captions" or "subtitles". Transcripts are good to separately publish on your website to help people find your episodes; but closed captions, or subtitles, are good to ensure that podcast apps can show captions while you listen. Some, like Apple Podcasts, let you search these transcripts to skip to specific parts of a podcast; and combine transcripts with your chapters, showing chapter titles right in the transcript screen.
+
 Podcasting 2.0 transcripts require two parts: a transcript file (one per language for each episode) and the `<podcast:transcript>` tag in the episode in your RSS feed.
 
-1. **Create and edit a transcript file for your podcast episode(s)**. SRT or VTT are the best file formats for this. These are easiest to produce with a transcription service or AI-powered app. (See below for tools.)
+1. **Create and edit a transcript file for your podcast episode(s)**. VTT or SRT are the best file formats for this. These are easiest to produce with a transcription service or AI-powered app. See below for more on this.
 
 2. **Upload the transcript file** to your podcast-hosting provider or a file-hosting service (preferrably a CDN). Make sure the file is publicly accessible.
 
@@ -17,11 +19,32 @@ Podcasting 2.0 transcripts require two parts: a transcript file (one per languag
 
 4. **Publish your episode!**
 
-[Read the technical details](/podcast-namespace/tags/transcript)
+[Read the technical specification](/podcast-namespace/tags/transcript)
+
+## Which file format?
+
+Major apps that support Podcasting 2.0 transcripts support both VTT and SRT. Both these file formats allow you to mark individual speakers by name (something that you'll not get from automatic transcripts). So, which should you choose?
+
+VTT files are supported natively by web browsers, so you can add captions within your website players, too. [Here's a demonstration of that, and some code to achieve that for yourself](https://james.cridland.net/blog/2025/html-audio-player-with-captions/). If you're going to support just one type, it therefore makes sense to just support VTT files.
+
+## Implementation notes
+
+Try to avoid producing automatic transcripts without checking them first. The results may be poor, confusing, or useless for your intended audience. (If you're given a choice, use the "large" model for speech recognition, and always check it afterwards).
+
+Apple Podcasts produces its own transcript, and you need to go into Apple Podcasts Connect to request that Apple uses your transcript rather than Apple's automated one. Reasons you might wish to do this are that you can correct bad spellings in your own transcript, and also add speaker names (which display in the Apple Podcasts app). However, Apple will quietly reject your transcript if it feels it isn't as accurate as their own.
+
+Because of Apple's requirements, it's recommended that your transcript file only includes speech, rather than typical broadcast closed captions which may also include sound effects ("DOOR SLAMS") or music direction ("SPOOKY CHORDS"). Apple won't display portions of transcripts which aren't in speech - to guard against spam - and if you do too much of it, Apple will reject your transcription totally, and just use its own.
+
+If you're building a podcast app that supports timed captions, there are well-recognised icons for these already in use by Apple Podcasts, YouTube and others. Be aware that the letters "CC" in a box are only understood as being captions by those in North America.
 
 ## Tools for generating transcripts
 
+- [Free Podcast Transcription](https://freepodcasttranscription.com), powered by Spreaker
 - [Descript](https://www.descript.com/)
 - [Otter](https://otter.ai/)
 - [MacWhisper](https://macwhisper.com/)
 - [CastMagic](https://castmagic.io/)
+- [Whisper.cpp](https://github.com/ggml-org/whisper.cpp) (for the terminal) - here's [how to install to your Mac](https://podnews.net/article/installation-whisper-macos)
+
+### Page Editors
+Daniel J Lewis, James Cridland
