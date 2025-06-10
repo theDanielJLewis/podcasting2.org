@@ -20,7 +20,7 @@
         "next-sitemap": "^4.2.3",
         "nextra": "^4.2.17",
         "nextra-theme-docs": "^4.2.17",
-        "posthog-js": "^1.249.4",
+        "posthog-js": "^1.249.5",
         "posthog-node": "^4.18.0",
         "prism-react-renderer": "^2.4.1",
         "react": "19.1.0",

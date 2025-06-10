@@ -16,6 +16,8 @@ const repo = "podcast-namespace";
 const branch = "refs/heads/main";
 const docsPath = "/docs/";
 
+export const revalidate = 10;
+
 export async function generateMetadata(props: any) {
   const params = await props.params;
   const route = params.mdxPath?.join("/") ?? "";
@@ -30,7 +32,7 @@ export async function generateMetadata(props: any) {
       return {
         ...metadata,
         title: metadata.title
-          ? `${metadata.title} - Podcast Namespace - Podcasting 2.0`
+          ? `${metadata.title} - Podcasting 2.0`
           : "Podcasting 2.0",
       };
     } catch (error: any) {
