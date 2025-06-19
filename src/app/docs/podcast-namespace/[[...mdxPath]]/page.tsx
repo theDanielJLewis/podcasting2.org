@@ -11,7 +11,7 @@ import { importPage } from "nextra/pages";
 import { useMDXComponents as getMDXComponents } from "@/../mdx-components";
 import { AppsGrid } from "@/components/AppsGrid";
 
-const user = "theDanielJLewis";
+const user = "Podcastindex-org";
 const repo = "podcast-namespace";
 const branch = "refs/heads/main";
 const docsPath = "/docs/";
