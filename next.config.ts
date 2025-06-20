@@ -66,8 +66,18 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        source: "/podcast-namespace/tags/walletswitching",
+        destination: "/podcast-namespace/tags/valuetimesplit",
+        permanent: false,
+      },
+      {
         source: "/podcast-namespace/:path*",
         destination: "/docs/podcast-namespace/:path*",
+        permanent: true,
+      },
+      {
+        source: "/tags/:path*",
+        destination: "/docs/podcast-namespace/tags/:path*",
         permanent: true,
       },
       {
