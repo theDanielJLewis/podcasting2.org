@@ -6,21 +6,19 @@ description: "Learn how to add Podcasting 2.0 transcripts to your podcast episod
 
 # How to Add Transcripts to Your Podcast
 
-_Powered by `<podcast:transcript>{:xml}`_
+_Powered by [`<podcast:transcript>`](/tags/transcript)_
 
 Podcasting 2.0 allows you to produce transcripts of your podcast - including timed transcripts, known as "closed captions" or "subtitles". Transcripts are good to separately publish on your website to help people find your episodes; but closed captions, or subtitles, are good to ensure that podcast apps can show captions while you listen. Some, like Apple Podcasts, let you search these transcripts to skip to specific parts of a podcast; and combine transcripts with your chapters, showing chapter titles right in the transcript screen.
 
-Podcasting 2.0 transcripts require two parts: a transcript file (one per language for each episode) and the `<podcast:transcript>` tag in the episode in your RSS feed.
+Podcasting 2.0 transcripts require two parts: a transcript file (one per language for each episode) and the [`<podcast:transcript>`](/tags/transcript) tag in the episode in your RSS feed.
 
 1. **Create and edit a transcript file for your podcast episode(s)**. VTT or SRT are the best file formats for this. These are easiest to produce with a transcription service or AI-powered app. See below for more on this.
 
 2. **Upload the transcript file** to your podcast-hosting provider or a file-hosting service (preferrably a CDN). Make sure the file is publicly accessible.
 
-3. **Add the URL for your transcript file** to your episode's transcript field, or in the `<podcast:transcript>` tag in your RSS feed. (Skip this step if your podcast-hosting provider does this for you.)
+3. **Add the URL for your transcript file** to your episode's transcript field, or in the [`<podcast:transcript>`](/tags/transcript) tag in your RSS feed. (Skip this step if your podcast-hosting provider does this for you.)
 
 4. **Publish your episode!**
-
-[Read the technical specification](/podcast-namespace/tags/transcript)
 
 ## Which file format?
 
@@ -50,3 +48,7 @@ If you're building a podcast app that supports timed captions, there are well-re
 - [Otter](https://otterai.sjv.io/c/44407/1063514/13661?utm_term=ai_meeting_assistant_affiliate&utm_medium=tracking_link&utm_source=affiliate&utm_content=other&partnerpropertyid=7153126&MediaPartnerPropertyId=7153126) (web, paid)
 - [Whisper.cpp](https://github.com/ggml-org/whisper.cpp) (command line, free) - here's [how to install to your Mac](https://podnews.net/article/installation-whisper-macos)
 - [Whisper GUI](https://grisk.itch.io/whisper-gui) (Windows, free)
+
+## Transcript technical details and feature support
+
+[Read the technical spec or see where this is supported.](/podcast-namespace/tags/transcript)

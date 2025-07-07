@@ -5,18 +5,20 @@ description: "Learn what the Podcasting 2.0 TXT tag does and when you might need
 
 # How to Use the TXT tag
 
-_Powered by `<podcast:txt>{:xml}`_
+_Powered by [`<podcast:txt>`](/tags/txt)_
 
 The TXT tag is a versitle tag that can hold any kind of text. This is ideal for any kind of ownership verification an app or service might require. For example, transferring ownership of a podcast from one Apple account to another, or claiming your podcast on a new platform.
 
-You can put _any_ text between `<podcast:txt>` and `</podcast:txt>`.
+You can put _any_ text between `<podcast:txt>{:xml}` and `</podcast:txt>{:xml}`.
 
 1. **Copy the special text** you are given by the app or service you are trying to use.
 
-2. **Paste the special text into your publishing tool's TXT field** or manually insert it into the code, like `<podcast:txt>SPECIAL_TEXT_HERE</podcast:txt>`
+2. **Paste the special text into your publishing tool's TXT field** or manually insert it into the code, like `<podcast:txt>SPECIAL_TEXT_HERE</podcast:txt>{:xml}`
 
-3. **Enter the "purpose" if necessary** either in your publishing tool or update your code like this `<podcast:txt purpose="PURPOSE_HERE">SPECIAL_TEXT_HERE</podcast:txt>`
+3. **Enter the "purpose" if necessary** either in your publishing tool or update your code like this `<podcast:txt purpose="PURPOSE_HERE">SPECIAL_TEXT_HERE</podcast:txt>{:xml}`
 
-4. **Save your changes or paste the code** before the first `<item>` in your RSS feed.
+4. **Save your changes or paste the code** before the first `<item>{:xml}` in your RSS feed.
 
-[Read the technical details](/podcast-namespace/tags/txt)
+## TXT technical details and feature support
+
+[Read the technical spec or see where this is supported.](/podcast-namespace/tags/txt)
