@@ -9,7 +9,7 @@ import {
 } from "nextra/page-map";
 import { importPage } from "nextra/pages";
 import { useMDXComponents as getMDXComponents } from "@/../mdx-components";
-import { AppsGrid } from "@/components/AppsGrid";
+import { FeatureSupport } from "@/components/FeatureSupport";
 
 const user = process.env.NAMESPACE_REPO_USER;
 const repo = "podcast-namespace";
@@ -220,28 +220,7 @@ export default async function Page(props: PageProps) {
     <Wrapper toc={toc} metadata={metadata}>
       <MDXContent />
       {metadata.filePath.includes("tags") && (
-        <>
-          <h2>Podcast apps supporting {metadata.title.toLowerCase()}</h2>
-          <AppsGrid
-            types="podcast player"
-            tags={metadata.title.toLowerCase()}
-            size="sm"
-          />
-          <h2>
-            Publishing/hosting tools supporting {metadata.title.toLowerCase()}
-          </h2>
-          <AppsGrid
-            types="hosting"
-            tags={metadata.title.toLowerCase()}
-            size="sm"
-          />
-          <h2>Miscellaneous support for {metadata.title.toLowerCase()}</h2>
-          <AppsGrid
-            notTypes={["hosting", "podcast player"]}
-            tags={metadata.title.toLowerCase()}
-            size="sm"
-          />
-        </>
+        <FeatureSupport tags={metadata.title.toLowerCase()} />
       )}
     </Wrapper>
   );
