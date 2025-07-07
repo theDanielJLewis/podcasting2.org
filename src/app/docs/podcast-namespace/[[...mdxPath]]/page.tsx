@@ -54,7 +54,10 @@ export async function generateMetadata(props: any) {
       `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${filePath}`,
     );
     const data = await response.text();
-    const rawJs = await compileMdx(data, { filePath });
+    const rawJs = await compileMdx(data, {
+      filePath,
+      mdxOptions: { format: "detect" },
+    });
     const { metadata } = evaluate(rawJs, components);
     return {
       ...metadata,
@@ -207,7 +210,10 @@ export default async function Page(props: PageProps) {
     `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${filePath}`,
   );
   const data = await response.text();
-  const rawJs = await compileMdx(data, { filePath });
+  const rawJs = await compileMdx(data, {
+    filePath,
+    mdxOptions: { format: "detect" },
+  });
   const { default: MDXContent, toc, metadata } = evaluate(rawJs, components);
 
   return (
