@@ -1,0 +1,44 @@
+---
+title: "Use the funding tag, and help support your show"
+description: "Learn how the Podcasting 2.0 funding feature works, and see how others are using it"
+---
+
+# How to use the funding tag
+
+_Powered by [`<podcast:funding>`](/tags/funding)_
+
+The funding tag is really simple - a URL that links to a web-page that helps support a show; and some text that may appear in a podcast app. That's it.
+
+In this example, this is a simple link to an open, one-off, payment to Podnews, to use a credit card. You can set these links up using Stripe.
+
+```xml
+<podcast:funding
+ url="https://buy.stripe.com/4gw8zIcpc58CcGQ6ot"
+>
+Support us
+</podcast:funding>
+```
+
+You could also use a URL to a [PayPal page](https://www.paypal.com/paypalme/amazinglybrilliant), or to a subscription tool like Supporting Cast or others.
+
+The tag is supported by many podcast apps and directories, including the popular Pocket Casts app, as well as Podcast Addict and AntennaPod, two of the largest Android apps.
+
+It's also supported by most large podcast hosts, including Buzzsprout, RSS.com, Powerpress by Blubrry, and Transistor.
+
+## Examples
+
+Supporting Cast has written [a blog post about how to use the funding tag to link to subscription services like theirs.](https://www.supportingcast.fm/post/rss-funding-tag) In it, they note that NPR now supports the funding tag throughout their catalogue.
+
+##5creenshots
+
+![AntennaPod](/images/guides/funding-antennapod.webp)
+
+AntennaPod uses a section marked "Support", and the wording used in the tag itself.
+
+![Podcast Addict](/images/guides/funding-podcastaddict.webp)
+
+Podcast Addict uses a button marked "Support", with a dollar sign
+
+![Pocket Casts](/images/guides/funding-pocketcasts.webp)
+
+Pocket Casts uses a button marked as a coin.
