@@ -220,7 +220,7 @@ export default async function Page(props: PageProps) {
     <Wrapper toc={toc} metadata={metadata}>
       <MDXContent />
       {metadata.filePath.includes("tags") && (
-        <FeatureSupport tags={metadata.title.toLowerCase()} />
+        <FeatureSupport tags={[metadata.title.toLowerCase()]} />
       )}
     </Wrapper>
   );
