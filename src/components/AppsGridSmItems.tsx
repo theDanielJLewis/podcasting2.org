@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@custom-react-hooks/all";
 import { Button } from "./ui/button";
 import { useState } from "react";
-import Image from "next/image";
+import { AppIcon } from "./AppIcon";
 import _ from "lodash";
 import {
   Select,
@@ -43,7 +43,7 @@ export function AppsGridSmItems({ apps }: { apps: PodcastIndexApps[] }) {
     return (
       <div className="text-muted-foreground hover:bg-muted flex w-full cursor-pointer items-center gap-4 rounded-md p-2 transition-all">
         <div className="w-10">
-          <Image
+          <AppIcon
             src={`https://podcastindex.org/api/images/${app.appIconUrl}`}
             alt={app.appName}
             width={40}
@@ -71,7 +71,7 @@ export function AppsGridSmItems({ apps }: { apps: PodcastIndexApps[] }) {
                 </DialogTrigger>
                 <DialogContent>
                   <div className="flex items-start gap-4">
-                    <Image
+                    <AppIcon
                       src={
                         "https://podcastindex.org/api/images/" + app.appIconUrl
                       }
@@ -132,7 +132,7 @@ export function AppsGridSmItems({ apps }: { apps: PodcastIndexApps[] }) {
                 </DrawerTrigger>
                 <DrawerContent className="px-4">
                   <div className="flex flex-col items-center pt-4 sm:flex-row sm:items-start">
-                    <Image
+                    <AppIcon
                       src={
                         "https://podcastindex.org/api/images/" + app.appIconUrl
                       }
