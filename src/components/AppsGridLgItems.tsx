@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@custom-react-hooks/all";
 import { Button } from "./ui/button";
 import { useState } from "react";
-import Image from "next/image";
+import { AppIcon } from "./AppIcon";
 import _ from "lodash";
 import {
   Select,
@@ -83,7 +83,7 @@ export function AppsGridLgItems({ apps }: { apps: PodcastIndexApps[] }) {
             {isDesktop ? (
               <Dialog>
                 <DialogTrigger className="cursor-pointer">
-                  <Image
+                  <AppIcon
                     src={
                       "https://podcastindex.org/api/images/" + app.appIconUrl
                     }
@@ -96,7 +96,7 @@ export function AppsGridLgItems({ apps }: { apps: PodcastIndexApps[] }) {
                 </DialogTrigger>
                 <DialogContent>
                   <div className="flex items-start gap-4">
-                    <Image
+                    <AppIcon
                       src={
                         "https://podcastindex.org/api/images/" + app.appIconUrl
                       }
@@ -153,7 +153,7 @@ export function AppsGridLgItems({ apps }: { apps: PodcastIndexApps[] }) {
             ) : (
               <Drawer>
                 <DrawerTrigger className="cursor-pointer">
-                  <Image
+                  <AppIcon
                     src={
                       "https://podcastindex.org/api/images/" + app.appIconUrl
                     }
@@ -166,7 +166,7 @@ export function AppsGridLgItems({ apps }: { apps: PodcastIndexApps[] }) {
                 </DrawerTrigger>
                 <DrawerContent className="px-4">
                   <div className="flex flex-col items-center pt-4 sm:flex-row sm:items-start">
-                    <Image
+                    <AppIcon
                       src={
                         "https://podcastindex.org/api/images/" + app.appIconUrl
                       }
