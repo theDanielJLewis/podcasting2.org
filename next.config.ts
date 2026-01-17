@@ -85,6 +85,11 @@ const nextConfig: NextConfig = {
         destination: "https://episodes.fm/1584274529/live",
         permanent: false,
       },
+      {
+        source: "/tools",
+        destination: "/publishing-tools",
+        permanent: false,
+      },
     ];
   },
 };
