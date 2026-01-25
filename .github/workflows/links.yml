@@ -22,12 +22,12 @@ jobs:
           args: |
             --no-progress
             --exclude-all-private
+            --include-verbatim --include-wikilinks --include-fragments
             --base-url https://podcasting2.org
             'content/**/*.mdx' # './**/*.md' './**/*.html' './**/*.json' './**/*.tsx'
 
 #            --accept '100..=103,200..=299'
 #            --root-dir "$(pwd)"
-#            --include-verbatim --include-wikilinks --include-fragments
 #            --suggest      # Suggest link replacements for broken links, using a web archive
 #            --user-agent "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0"
 # https://lychee.cli.rs/guides/cli/
