@@ -23,7 +23,7 @@ jobs:
             --no-progress
             --exclude-all-private
             --base-url https://podcasting2.org
-            '.content/**/*.mdx' # './**/*.md' './**/*.html' './**/*.json' './**/*.tsx'
+            'content/**/*.mdx' # './**/*.md' './**/*.html' './**/*.json' './**/*.tsx'
 
 #            --accept '100..=103,200..=299'
 #            --root-dir "$(pwd)"
