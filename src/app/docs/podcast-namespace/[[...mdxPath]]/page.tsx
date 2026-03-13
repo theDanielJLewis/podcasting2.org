@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { unstable_cache } from "next/cache";
 import { compileMdx } from "nextra/compile";
 import { Callout, Tabs } from "nextra/components";
 import { evaluate } from "nextra/evaluate";
@@ -15,8 +16,85 @@ const user = process.env.NAMESPACE_REPO_USER;
 const repo = "podcast-namespace";
 const branch = "refs/heads/main";
 const docsPath = "/docs/";
+const docsDirectory = "docs";
+const DAY_IN_SECONDS = 60 * 60 * 24;
 
-export const revalidate = 10;
+export const revalidate = DAY_IN_SECONDS;
+
+function getGitHubMarkdownUrl(filePath: string): string {
+  return `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${filePath}`;
+}
+
+async function fetchRemoteMarkdown(filePath: string): Promise<string> {
+  const response = await fetch(getGitHubMarkdownUrl(filePath), {
+    next: { revalidate: DAY_IN_SECONDS },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch remote markdown: ${filePath}`);
+  }
+
+  return response.text();
+}
+
+type GitHubContentEntry = {
+  type: "file" | "dir";
+  name: string;
+  path: string;
+};
+
+function isMarkdownFile(fileName: string): boolean {
+  return /\.(md|mdx)$/i.test(fileName);
+}
+
+function toDocsRelativePath(path: string): string {
+  return path.replace(/^docs\//, "");
+}
+
+async function fetchGitHubDirectoryEntries(
+  relativePathFromDocsRoot: string,
+): Promise<GitHubContentEntry[]> {
+  try {
+    const path = `${docsDirectory}/${relativePathFromDocsRoot}`;
+    const response = await fetch(
+      `https://api.github.com/repos/${user}/${repo}/contents/${path}?ref=main`,
+      {
+        next: { revalidate: DAY_IN_SECONDS },
+      },
+    );
+
+    if (!response.ok) {
+      return [];
+    }
+
+    const data = await response.json();
+    return Array.isArray(data) ? (data as GitHubContentEntry[]) : [];
+  } catch (error) {
+    console.error(
+      `Error fetching directory entries for ${relativePathFromDocsRoot}:`,
+      error,
+    );
+    return [];
+  }
+}
+
+async function getMarkdownFilesRecursively(
+  relativePathFromDocsRoot: string,
+): Promise<string[]> {
+  const entries = await fetchGitHubDirectoryEntries(relativePathFromDocsRoot);
+  const nestedResults = await Promise.all(
+    entries.map(async (entry) => {
+      if (entry.type === "dir") {
+        return getMarkdownFilesRecursively(toDocsRelativePath(entry.path));
+      }
+      if (entry.type === "file" && isMarkdownFile(entry.name)) {
+        return [toDocsRelativePath(entry.path)];
+      }
+      return [];
+    }),
+  );
+  return nestedResults.flat();
+}
 
 export async function generateMetadata(props: any) {
   const params = await props.params;
@@ -50,10 +128,7 @@ export async function generateMetadata(props: any) {
       return { title: "Page Not Found" };
     }
 
-    const response = await fetch(
-      `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${filePath}`,
-    );
-    const data = await response.text();
+    const data = await fetchRemoteMarkdown(filePath);
     const rawJs = await compileMdx(data, {
       filePath,
       mdxOptions: { format: "detect" },
@@ -71,32 +146,16 @@ export async function generateMetadata(props: any) {
   }
 }
 
-// Function to fetch all files from the tags directory
-async function getTagsFiles(): Promise<string[]> {
-  try {
-    const response = await fetch(
-      `https://api.github.com/repos/${user}/${repo}/contents/docs/tags?ref=main`,
-    );
-    const data = await response.json();
-
-    if (Array.isArray(data)) {
-      return data
-        .filter(
-          (file: any) => file.type === "file" && file.name.endsWith(".md"),
-        )
-        .map((file: any) => `tags/${file.name}`);
-    }
-    return [];
-  } catch (error) {
-    console.error("Error fetching tags files:", error);
-    return [];
-  }
-}
-
 // Build filePaths dynamically
 async function buildFilePaths(): Promise<string[]> {
-  const tagsFiles = await getTagsFiles();
-  return ["1.0.md", "other-recommendations.md", ...tagsFiles];
+  const [tagsFiles, exampleFiles] = await Promise.all([
+    getMarkdownFilesRecursively("tags"),
+    getMarkdownFilesRecursively("examples"),
+  ]);
+
+  return Array.from(
+    new Set(["1.0.md", "other-recommendations.md", ...tagsFiles, ...exampleFiles]),
+  ).sort((a, b) => a.localeCompare(b));
 }
 
 // Build page map dynamically
@@ -132,6 +191,9 @@ async function buildPageMap() {
         tags: {
           title: "RSS Tags",
         },
+        examples: {
+          title: "Examples",
+        },
       },
     },
   });
@@ -142,15 +204,11 @@ async function buildPageMap() {
   };
 }
 
-// Cache the result to avoid multiple API calls
-let cachedPageData: { pageMap: any; mdxPages: any } | null = null;
-
-async function getPageData() {
-  if (!cachedPageData) {
-    cachedPageData = await buildPageMap();
-  }
-  return cachedPageData;
-}
+const getPageData = unstable_cache(
+  async () => buildPageMap(),
+  ["podcast-namespace-page-data"],
+  { revalidate: DAY_IN_SECONDS },
+);
 
 // Define which routes should be served from local MDX files
 const localMdxRoutes = new Set([
@@ -206,10 +264,7 @@ export default async function Page(props: PageProps) {
     notFound();
   }
 
-  const response = await fetch(
-    `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${filePath}`,
-  );
-  const data = await response.text();
+  const data = await fetchRemoteMarkdown(filePath);
   const rawJs = await compileMdx(data, {
     filePath,
     mdxOptions: { format: "detect" },
@@ -219,7 +274,7 @@ export default async function Page(props: PageProps) {
   return (
     <Wrapper toc={toc} metadata={metadata}>
       <MDXContent />
-      {metadata.filePath.includes("tags") && (
+      {metadata.filePath?.includes("tags") && (
         <FeatureSupport tags={[metadata.title.toLowerCase()]} />
       )}
     </Wrapper>
