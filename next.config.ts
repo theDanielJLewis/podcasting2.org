@@ -81,6 +81,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/docs/tags/:path*",
+        destination: "/docs/podcast-namespace/tags/:path*",
+        permanent: true,
+      },
+      {
         source: "/live",
         destination: "https://episodes.fm/1584274529/live",
         permanent: false,
