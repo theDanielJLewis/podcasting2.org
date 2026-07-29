@@ -19,7 +19,7 @@ const docsPath = "/docs/";
 const docsDirectory = "docs";
 const DAY_IN_SECONDS = 60 * 60 * 24;
 
-export const revalidate = DAY_IN_SECONDS;
+export const revalidate = 86400;
 
 function getGitHubMarkdownUrl(filePath: string): string {
   return `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${filePath}`;
