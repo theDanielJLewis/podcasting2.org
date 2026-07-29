@@ -54,28 +54,22 @@ function toDocsRelativePath(path: string): string {
 async function fetchGitHubDirectoryEntries(
   relativePathFromDocsRoot: string,
 ): Promise<GitHubContentEntry[]> {
-  try {
-    const path = `${docsDirectory}/${relativePathFromDocsRoot}`;
-    const response = await fetch(
-      `https://api.github.com/repos/${user}/${repo}/contents/${path}?ref=main`,
-      {
-        next: { revalidate: DAY_IN_SECONDS },
-      },
-    );
+  const path = `${docsDirectory}/${relativePathFromDocsRoot}`;
+  const response = await fetch(
+    `https://api.github.com/repos/${user}/${repo}/contents/${path}?ref=main`,
+    {
+      next: { revalidate: DAY_IN_SECONDS },
+    },
+  );
 
-    if (!response.ok) {
-      return [];
-    }
-
-    const data = await response.json();
-    return Array.isArray(data) ? (data as GitHubContentEntry[]) : [];
-  } catch (error) {
-    console.error(
-      `Error fetching directory entries for ${relativePathFromDocsRoot}:`,
-      error,
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch GitHub directory entries for ${relativePathFromDocsRoot}: ${response.status} ${response.statusText}`,
     );
-    return [];
   }
+
+  const data = await response.json();
+  return Array.isArray(data) ? (data as GitHubContentEntry[]) : [];
 }
 
 async function getMarkdownFilesRecursively(
@@ -154,7 +148,12 @@ async function buildFilePaths(): Promise<string[]> {
   ]);
 
   return Array.from(
-    new Set(["1.0.md", "other-recommendations.md", ...tagsFiles, ...exampleFiles]),
+    new Set([
+      "1.0.md",
+      "other-recommendations.md",
+      ...tagsFiles,
+      ...exampleFiles,
+    ]),
   ).sort((a, b) => a.localeCompare(b));
 }
 
